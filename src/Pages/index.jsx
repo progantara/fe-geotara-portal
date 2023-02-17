@@ -5,7 +5,8 @@ const Home = () => {
 	return (
 		<>
 			<PortalTemplate>
-				<h1>Ini Landing</h1>
+				<h1 className="font-DMSans">Ini dm sans</h1>
+				<h1>Ini bukan dm sans</h1>
 			</PortalTemplate>
 		</>
 	);

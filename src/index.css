@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'DMSans'; /*Can be any text*/
+	src: local('DMSans-Medium'), url('./Assets/Fonts/DMSans-Medium.ttf') format('truetype');
+}
+
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'DMSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
