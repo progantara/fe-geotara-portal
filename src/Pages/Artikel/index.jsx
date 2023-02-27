@@ -96,7 +96,7 @@ const Artikel = () => {
 									<input className='rounded-lg text-sm my-2' type="text" placeholder='Alamat' />
 									<div className='inline-block'>
 										<button class="bg-yellow-300 hover:bg-yellow-400 text-dark font-bold py-2 px-4 rounded mb-10">
-											Button
+											Subscribe
 										</button>
 									</div>
 								</div>
