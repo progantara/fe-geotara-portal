@@ -26,19 +26,19 @@ const Login = () => {
                     </div>
                     <div className='mx-7 flex flex-col text-green-800 font-semibold '>
                         <label>Email</label>
-                        <input className='p-4 rounded-lg text-xs my-2' type="password" placeholder='john.doe@gmail.com' />
+                        <input className='p-4 rounded-lg text-xs my-2' type="text" placeholder='john.doe@gmail.com' />
                     </div>
                     <div className='mx-7 flex flex-col text-green-800 font-semibold '>
                         <label>Username</label>
-                        <input className='p-4 rounded-lg text-xs my-2' type="password" placeholder='Username' />
+                        <input className='p-4 rounded-lg text-xs my-2' type="text" placeholder='Username' />
                     </div>
                     <div className='mx-7 flex flex-col text-green-800 font-semibold '>
                         <label>Password</label>
                         <input className='p-4 rounded-lg text-xs my-2' type="password" placeholder='password' />
                     </div>
                     <div className='mx-7 flex flex-col text-green-800 font-semibold '>
-                        <label>Re-Password</label>
-                        <input className='p-4 rounded-lg text-xs my-2' type="password" placeholder='Re- password' />
+                        <label>Re - Password</label>
+                        <input className='p-4 rounded-lg text-xs my-2' type="password" placeholder='Re - password' />
                     </div>
                     <div className='my-4'>
                         <Link

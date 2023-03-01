@@ -2,10 +2,10 @@ import React from 'react';
 import PortalTemplate from '../Component/Layout';
 import { Link } from 'react-router-dom';
 
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { BsBookmark } from 'react-icons/bs';
-import { BiMap } from 'react-icons/bi';
+
+import Card from '../Component/Card/Top-penginapan';
 
 import BgHero from '../Assets/img/hero.jpg';
 
@@ -50,8 +50,12 @@ const Hero = () => {
 				<h2 className="text-3xl font-extrabold text-gray-600">Top Wisata</h2>
 				<h1 className="mb-8 text-5xl font-extrabold text-primary">Paling Diminati Oleh Kebanyakan Orang</h1>
 				<div className="grid grid-cols-3 gap-8">
-					<div className="relative row-span-2 overflow-hidden rounded-3xl">
-						<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
+					<div
+						className="relative row-span-2 overflow-hidden rounded-3xl bg-center bg-cover"
+						style={{
+							backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+						}}
+					>
 						<div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
 							<p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
 								Gratis
@@ -125,48 +129,7 @@ const Penginapan = () => {
 			<h1 className="mb-8 text-5xl font-extrabold text-white">Pilih Penginapan Unggulan Untuk Kenyamanan Anda</h1>
 			<div className="grid grid-cols-3 gap-14 ">
 				{data.map((data, index) => {
-					return (
-						<div className="relative flex flex-col px-6 py-4 space-y-2 overflow-hidden bg-white rounded-[2rem] text-primary ">
-							<div class="absolute left-0 top-0 h-16 w-16">
-								<div class="absolute transform -rotate-45 bg-yellow-200 text-center text-white font-semibold py-1 left-[-36px] top-[32px] w-[170px]">
-									<span className="text-red-500">10%</span>
-									<span className="ml-2 text-black">OFF</span>
-								</div>
-							</div>
-							<img src={BgHero} alt="background hero" className="h-[15.75rem] rounded-3xl" />
-							<div>
-								<p className="text-2xl font-bold">Vanada Bugeul Cottage</p>
-								<p className="flex items-center">
-									<BiMap />
-									Ciwaru, Ciemas
-								</p>
-							</div>
-							<div className="flex items-center">
-								<AiFillStar size={20} color="yellow" />
-								<AiFillStar size={20} color="yellow" />
-								<AiFillStar size={20} color="yellow" />
-								<AiFillStar size={20} color="yellow" />
-								<AiOutlineStar size={20} color="yellow" />
-								<p className="ml-2 text-black">(365)</p>
-							</div>
-							<div className="flex items-center justify-between">
-								<div className="">
-									<p>
-										Start From :{' '}
-										<span className="text-red-500 line-through ">
-											Rp 1,219,513
-										</span>
-									</p>
-									<p className="text-2xl font-extrabold">Rp 1,097,561</p>
-								</div>
-								<div>
-									<button className="px-6 py-3 text-white bg-primary rounded-xl">
-										Lihat
-									</button>
-								</div>
-							</div>
-						</div>
-					);
+					return <Card image={BgHero} />;
 				})}
 			</div>
 			<Link className="flex items-center justify-end pr-8 mt-8 text-white ">
@@ -183,18 +146,30 @@ const Entertainment = () => {
 			<h2 className="text-3xl font-extrabold text-gray-400">Entertainment Baru</h2>
 			<h1 className="mb-8 text-5xl font-extrabold pr-[35rem] text-primary">Buatlah Memori Bersama Kami Di Geopark </h1>
 			<div className="grid grid-cols-4 gap-8 h-[33rem]">
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
 			</div>
 		</section>
 	);

@@ -1,5 +1,4 @@
 import React from 'react'
-import PortalTemplate from '../../Component/Layout'
 
 //Image Login
 import BgLogin from '../../Assets/img/BgLogin.jpg'
@@ -21,7 +20,7 @@ const Login = () => {
                 </div>
                 <form className='rounded-lg max-w-[520px] w-full mx-auto bg-emerald-200 p-4 shadow-lg bg-emerald-100/80'>
                     <div className='relative h-10 w-32'>
-                        <img className='absolute h-25 w-20 -left-10 -top-10' src={sitara} alt=""></img>
+                        <img className='static h-25 w-20 -left-10 -top-10' src={sitara} alt=""></img>
                     </div>
                     <h2 className='text-emerald-800 text-opacity-100 text-4xl font-bold text-center py-3'>LOGIN</h2>
                     <div className='mx-7 flex flex-col text-green-800 font-semibold'>
