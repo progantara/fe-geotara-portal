@@ -11,9 +11,14 @@ import Event from './Pages/Event';
 import Virtual from './Pages/VirtualTour';
 
 import Accomodation from './Pages/Accomodation';
+import AccomodationDetail from './Pages/Accomodation/detail';
+
 import TourAndTravel from './Pages/TourAndTravel';
+
 import MerhcantAndSourvenir from './Pages/MerhcantAndSourvenir';
+
 import Restaurant from './Pages/Restaurant';
+
 import Attraction from './Pages/Attraction';
 
 function App() {
@@ -30,7 +35,10 @@ function App() {
 					<Route path="/event" element={<Event />} />
 					<Route path="/virtual-tour" element={<Virtual />} />
 
-					<Route path="/accomodation" element={<Accomodation />} />
+					{/* Akomodasi */}
+					<Route exact path="/accomodation" element={<Accomodation />} />
+					<Route path="/accomodation/detail" element={<AccomodationDetail />} />
+
 					<Route path="/tour-travel" element={<TourAndTravel />} />
 					<Route path="/merchant-sourvenir" element={<MerhcantAndSourvenir />} />
 					<Route path="/restaurant" element={<Restaurant />} />
