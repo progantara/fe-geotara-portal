@@ -6,6 +6,7 @@ module.exports = {
 	theme: {
 		colors: {
 			primary: '#047857',
+
 			secondary: '#5A8877',
 			yellow: '#FFE141',
 		},
@@ -14,7 +15,7 @@ module.exports = {
 				DMSans: ['"DMSans"'],
 			},
 			backgroundImage: {
-				'hero-pattern': "url('./Assets/img/pattern/travel-pattern-2.png')",
+				'hero-pattern': "linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('./Assets/img/pattern/travel-pattern-2.png')",
 			},
 		},
 	},

@@ -43,7 +43,7 @@ const Hero = () => {
 						</div>
 					</div>
 				</div>
-				<img src={BgHero} alt="background hero" className="w-2/5 h-[22.375rem] rounded-tl-[10rem] rounded-3xl" />\
+				<img src={BgHero} alt="background hero" className="w-2/5 h-[22.375rem] rounded-tl-[10rem] rounded-3xl" />
 			</div>
 
 			<div>
