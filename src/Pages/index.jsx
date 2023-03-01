@@ -50,8 +50,12 @@ const Hero = () => {
 				<h2 className="text-3xl font-extrabold text-gray-600">Top Wisata</h2>
 				<h1 className="mb-8 text-5xl font-extrabold text-primary">Paling Diminati Oleh Kebanyakan Orang</h1>
 				<div className="grid grid-cols-3 gap-8">
-					<div className="relative row-span-2 overflow-hidden rounded-3xl">
-						<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
+					<div
+						className="relative row-span-2 overflow-hidden rounded-3xl bg-center bg-cover"
+						style={{
+							backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+						}}
+					>
 						<div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
 							<p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
 								Gratis
@@ -142,18 +146,30 @@ const Entertainment = () => {
 			<h2 className="text-3xl font-extrabold text-gray-400">Entertainment Baru</h2>
 			<h1 className="mb-8 text-5xl font-extrabold pr-[35rem] text-primary">Buatlah Memori Bersama Kami Di Geopark </h1>
 			<div className="grid grid-cols-4 gap-8 h-[33rem]">
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
-				<div className="relative overflow-hidden rounded-3xl">
-					<img src={BgHero} alt="Gambar" className="h-full bg-center bg-cover rounded-3xl" />
-				</div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
+				<div
+					className="relative overflow-hidden rounded-3xl  bg-center bg-cover"
+					style={{
+						backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+					}}
+				></div>
 			</div>
 		</section>
 	);

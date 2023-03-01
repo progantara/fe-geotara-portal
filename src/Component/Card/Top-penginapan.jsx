@@ -1,6 +1,8 @@
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BiMap } from 'react-icons/bi';
 
+import { Link } from 'react-router-dom';
+
 function Card(props) {
 	return (
 		<div className="relative flex flex-col px-6 py-4 space-y-2 overflow-hidden bg-white rounded-[2rem] text-primary ">
@@ -34,7 +36,9 @@ function Card(props) {
 					<p className="text-2xl font-extrabold">Rp 1,097,561</p>
 				</div>
 				<div>
-					<button className="px-6 py-3 text-white bg-primary rounded-xl">Lihat</button>
+					<Link to={props.link} className="px-6 py-3 text-white bg-primary rounded-xl">
+						Lihat
+					</Link>
 				</div>
 			</div>
 		</div>
