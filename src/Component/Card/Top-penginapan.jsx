@@ -4,8 +4,8 @@ import { BiMap } from 'react-icons/bi';
 function Card(props) {
 	return (
 		<div className="relative flex flex-col px-6 py-4 space-y-2 overflow-hidden bg-white rounded-[2rem] text-primary ">
-			<div class="absolute left-0 top-0 h-16 w-16">
-				<div class="absolute transform -rotate-45 bg-yellow-200 text-center text-white font-semibold py-1 left-[-36px] top-[32px] w-[170px]">
+			<div className="absolute top-0 left-0 w-16 h-16">
+				<div className="absolute transform -rotate-45 bg-yellow-200 text-center text-white font-semibold py-1 left-[-36px] top-[32px] w-[170px]">
 					<span className="text-red-500">10%</span>
 					<span className="ml-2 text-black">OFF</span>
 				</div>

@@ -7,7 +7,7 @@ import Footer from '../Footer';
 function PortalTemplate(props) {
 	const location = useLocation();
 
-	const notBreadcumb = location.pathname != '/';
+	const notBreadcumb = location.pathname !== '/';
 
 	return (
 		<>

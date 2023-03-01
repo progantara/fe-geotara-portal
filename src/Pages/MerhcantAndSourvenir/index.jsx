@@ -8,8 +8,8 @@ import BgHero from '../../Assets/img/hero.jpg';
 import { BiMap } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-const Accomodation = () => {
-	const items = [{ label: 'Accomodation', url: '/Accomodation' }];
+const MerhcantAndSourvenir = () => {
+	const items = [{ label: 'MerhcantAndSourvenir', url: '/MerhcantAndSourvenir' }];
 	let data = [1, 2, 3, 4, 5, 6];
 
 	return (
@@ -28,12 +28,12 @@ const Accomodation = () => {
 			<section className="z-50 px-20 -mt-10">
 				<div className="flex flex-col px-10 py-10 bg-green-100 rounded-lg rounded-t-[3rem] text-primary">
 					<div className="flex flex-col px-[16.25rem] text-center space-y-4 my-20">
-						<h1 className="text-5xl font-black">TEMUKAN HOTEL ATAU PENGINAPAN UNTUK BERISTIRAHAT</h1>
-						<p className="text-xl">Temukan penginapan terdekat dengan tujuan kunjungan mu !</p>
+						<h1 className="text-5xl font-black uppercase">tentukan barang yang akan diberikan </h1>
+						<p className="text-xl">Temukan oleh-oleh yang akan diberikan kepada orang terkasih mu !</p>
 					</div>
 					<div className="flex flex-col">
-						<p className="text-xl font-bold text-secondary">List Penginapan</p>
-						<p className="text-3xl font-bold">Avalaible Penginapan</p>
+						<p className="text-xl font-bold text-secondary">List Merchant & Souvenir</p>
+						<p className="text-3xl font-bold">Avalaible Merchant & Souvenir</p>
 						<div className="flex items-center justify-between w-full mb-[2.188rem] mt-[1.875rem]">
 							<button className="flex items-center px-4 py-2 bg-yellow-200 rounded-lg">
 								<GiHamburgerMenu />
@@ -275,4 +275,4 @@ const Accomodation = () => {
 	);
 };
 
-export default Accomodation;
+export default MerhcantAndSourvenir;

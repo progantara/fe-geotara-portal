@@ -7,11 +7,7 @@ import footer2 from '../../Assets/img/footer-2.jpg';
 import footer3 from '../../Assets/img/footer-3.jpg';
 import footer4 from '../../Assets/img/footer-4.jpg';
 
-import { Link, useNavigate } from 'react-router-dom';
-
 const Footer = () => {
-	const navigate = useNavigate();
-
 	return (
 		<footer className="p-4 text-white bg-green-600 pt-28 sm:px-20 ">
 			<div className="md:flex md:justify-between">
@@ -116,7 +112,7 @@ const Footer = () => {
 				</div>
 				<div>
 					<h2 className="mb-6 text-xl font-semibold ">Follow on Instagram</h2>
-					<div class="grid grid-cols-2 gap-4">
+					<div className="grid grid-cols-2 gap-4">
 						<img src={footer1} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
 						<img src={footer2} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
 						<img src={footer3} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
