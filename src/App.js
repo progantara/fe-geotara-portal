@@ -14,8 +14,10 @@ import Accomodation from './Pages/Accomodation';
 import AccomodationDetail from './Pages/Accomodation/detail';
 
 import TourAndTravel from './Pages/TourAndTravel';
+import TourAndTravelDetail from './Pages/TourAndTravel/detail';
 
 import MerhcantAndSourvenir from './Pages/MerhcantAndSourvenir';
+import MerhcantAndSourvenirDetail from './Pages/MerhcantAndSourvenir/detail';
 
 import Restaurant from './Pages/Restaurant';
 
@@ -39,8 +41,13 @@ function App() {
 					<Route exact path="/accomodation" element={<Accomodation />} />
 					<Route path="/accomodation/detail" element={<AccomodationDetail />} />
 
-					<Route path="/tour-travel" element={<TourAndTravel />} />
-					<Route path="/merchant-sourvenir" element={<MerhcantAndSourvenir />} />
+					{/* Tour And Travel */}
+					<Route exact path="/tour-travel" element={<TourAndTravel />} />
+					<Route path="/tour-travel/detail" element={<TourAndTravelDetail />} />
+
+					<Route exact path="/merchant-sourvenir" element={<MerhcantAndSourvenir />} />
+					<Route path="/merchant-sourvenir/detail" element={<MerhcantAndSourvenirDetail />} />
+
 					<Route path="/restaurant" element={<Restaurant />} />
 					<Route path="/attraction" element={<Attraction />} />
 
