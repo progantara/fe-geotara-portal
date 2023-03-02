@@ -16,11 +16,16 @@ const Detail = () => {
   return (
     <>
       <PortalTemplate>
-        <div className="p-2 pt-1 bg-green-600 sm:px-20 text-white">
-          <span>
-            Beranda {">"} Artikel {">"} Alam {">"} Keragaman Keidahan,
-            Pariwisata Indonesia
-          </span>
+        <div className="p-2 pt-1 bg-green-600 sm:px-20 text-white flex flex-row ">
+          <div className="flex space-x-2">
+            <a href="#">Beranda</a>
+            <a href="#">{">"}</a>
+            <a href="#">Artikel</a>
+            <a href="#">{">"}</a>
+            <a href="#">Alam</a>
+            <a href="#">{">"}</a>
+            <a href="#" className="font-semibold">Keragaman Keindahan, Pariwisata</a>
+          </div>
         </div>
         <div className="bg-green-100 flex flex-col">
           <div className="flex flex-row tracking-wider ml-20">
@@ -167,7 +172,7 @@ const Detail = () => {
                   />
                   <div>
                     <p className="text-white mt-10 ml-5">Selly Ardiyati</p>
-                    <p className="text-white ml-5">
+                    <p className="text-white text-sm ml-5">
                       Halo, saya adalah seorang penulis konten yang tertarik
                       dengan konten alam, wisata, dan gaya hidup. Membantu klien
                       menghadirkan konten yang tepat kepada orang yang tepat.
@@ -204,10 +209,10 @@ const Detail = () => {
                   Selly Ardiyati
                 </p>
               </div>
-              <div className="mt-5 ">
+              <div className="mt-5">
                 <input
                   type="text"
-                  class="w-[40rem] h-[10rem] bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="w-[40rem] h-[10rem]  bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Ketikan Komentar Anda"
                 />
               </div>
@@ -220,7 +225,7 @@ const Detail = () => {
 
             {/* Taks border */}
             <div className="flex flex-col ml-20 mr-20">
-              <div className="order-last border border-green-800 rounded-lg mt-6 h-48 w-74">
+              <div className="order-last border border-green-800 rounded-lg mt-6 h-42 w-74">
                 <div className="flex justify-center mt-5">
                   <p className="text-green-900 text-lg font-semibold">Tags</p>
                 </div>
@@ -258,7 +263,7 @@ const Detail = () => {
                   </div>
                 </div>
               </div>
-              <div className="order-last border border-green-800 rounded-lg mt-6 mb-[40rem] h-5/6">
+              <div className="order-last border border-green-800 rounded-lg mt-6 mb-[40rem] h-[37rem]">
                 <div className="flex justify-center mt-5">
                   <p className="text-green-900 font-semibold text-2xl">
                     Artikel Terbaru
@@ -268,8 +273,8 @@ const Detail = () => {
                   className="rounded-lg h-20 w-32 mt-5 ml-5"
                   src={articel2}
                 />
-                <div className="text-green-900 ml-40">
-                  <p className="-mt-20 font-bold text-lg">
+                <div className="text-green-900 ml-40 ">
+                  <p className="-mt-20 font-bold text-lg ">
                     Senyuman Baru dari Geopark Ciletuh
                   </p>
                   <p className="text-sm">Agustus 26, 2022</p>

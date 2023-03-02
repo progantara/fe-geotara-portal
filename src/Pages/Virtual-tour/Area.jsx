@@ -194,7 +194,7 @@ const Home = () => {
                 </div>
                 <input
                   type="search"
-                  class="w-[18rem] p-4 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="w-[16rem] p-4 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Cari Wisata"
                   required
                 />
@@ -215,15 +215,15 @@ const Home = () => {
                   />
                 </svg>
                 <div className="text-black text-lg font-medium ml-3 -mt-1">
-                  <a href="/virtual-tour">Map</a>
+                  <a href="#">Map</a>
                 </div>
               </div>
               <div className="flex flex-row mt-10 ml-3">
                 <p className="text-black text-xl font-medium tracking-wide">
-                  AREA
+                  CIEMAS AREA
                 </p>
               </div>
-              <div className="mt-3 ml-3 flex flex-row text-black border-lg  bg-yellow-200 h-[2rem]">
+              <div className="mt-3 ml-3 flex flex-row text-black  bg-yellow-200 h-[2rem]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -239,7 +239,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className="text-black text-[17px] font-medium ml-2">
-                  <a href="/Area">Ciemas</a>
+                  <a href="#">Pantai Karang Daeu</a>
                 </div>
               </div>
               <div className="flex flex-row text-black mt-6 ml-3">
@@ -258,7 +258,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Cikakak</a>
+                  <a href="#">Pulau Mandra dan Pulau Manuk</a>
                 </div>
               </div>
               <div className="flex flex-row text-black mt-6 ml-3">
@@ -277,7 +277,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Pelabuhan Ratu</a>
+                  <a href="#">Curug Puncak Manik</a>
                 </div>
               </div>
               <div className="flex flex-row text-black mt-6 ml-3">
@@ -296,7 +296,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Simpenan</a>
+                  <a href="#">Hutan Konvensional Cipeuncang</a>
                 </div>
               </div>
               <div className="flex flex-row text-black mt-6 ml-3">
@@ -315,7 +315,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Waluran</a>
+                  <a href="#">Curug Cimarinjung</a>
                 </div>
               </div>
               <div className="flex flex-row text-black mt-6 ml-3">
@@ -334,7 +334,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Cilacap</a>
+                  <a href="#">Puncak Darma</a>
                 </div>
               </div>
             </form>
