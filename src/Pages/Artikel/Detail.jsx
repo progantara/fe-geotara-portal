@@ -24,7 +24,9 @@ const Detail = () => {
             <a href="#">{">"}</a>
             <a href="#">Alam</a>
             <a href="#">{">"}</a>
-            <a href="#" className="font-semibold">Keragaman Keindahan, Pariwisata</a>
+            <a href="#" className="font-semibold">
+              Keragaman Keindahan, Pariwisata
+            </a>
           </div>
         </div>
         <div className="bg-green-100 flex flex-col">
@@ -54,22 +56,22 @@ const Detail = () => {
               />
               <p className="text-green-900">
                 Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
-                baru di Sukabumi, provinsi Jawa Barat .
+                baru di Sukabumi, provinsi Jawa Barat.
               </p>
               <p className="text-green-900 font-semibold text-xl">
                 Destinasi yang sering dikunjungi ini adalah Curug Cimarinjung
               </p>
               <p className="text-green-900">
                 Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
-                baru di Sukabumi, provinsi Jawa Barat .
+                baru di Sukabumi, provinsi Jawa Barat.
               </p>
               <p className="text-green-900">
                 Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
-                baru di Sukabumi, provinsi Jawa Barat .
+                baru di Sukabumi, provinsi Jawa Barat.
               </p>
               <p className="text-green-900">
                 Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
-                baru di Sukabumi, provinsi Jawa Barat .
+                baru di Sukabumi, provinsi Jawa Barat.
               </p>
               <div className="mt-5">
                 <p className="text-dark mt-3 mb-2 text-xl font-semibold">
