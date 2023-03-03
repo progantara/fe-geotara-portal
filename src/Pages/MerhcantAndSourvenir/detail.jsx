@@ -2,7 +2,6 @@ import React from 'react';
 
 import PortalTemplate from '../../Component/Layout';
 
-import BgHero from '../../Assets/img/hero.jpg';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BiMap } from 'react-icons/bi';
 import { BsHouseDoor } from 'react-icons/bs';
