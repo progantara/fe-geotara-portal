@@ -150,7 +150,7 @@ const TourAndTravel = () => {
 						</div>
 						<div className="grid grid-cols-3 gap-14 ">
 							{data.map((data, index) => {
-								return <Card key={index} image={BgHero} />;
+								return <Card key={index} image={BgHero} link={'/tour-travel/detail'} />;
 							})}
 						</div>
 						<div className="flex justify-center my-20">
