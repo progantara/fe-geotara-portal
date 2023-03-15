@@ -1,13 +1,11 @@
 import React from 'react';
 import Logo from '../../Assets/img/logo.png';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-	const navigate = useNavigate();
-
 	return (
-		<nav className="px-20 py-2 bg-white border-b-gray-900 shadow-lg border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+		<nav className="px-20 py-3 bg-white border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700">
 			<div className="container flex flex-wrap items-center justify-between mx-auto">
 				<Link to="/" className="flex items-center">
 					<img src={Logo} className="h-6 mr-3 sm:h-14" alt="Geotara Logo" />
@@ -125,7 +123,7 @@ const Navbar = () => {
 				</div>
 				<Link
 					to="/login"
-					class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+					className="focus:outline-none shadow-lg text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
 				>
 					Login
 				</Link>
