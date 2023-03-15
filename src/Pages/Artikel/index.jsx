@@ -21,10 +21,7 @@ const Artikel = () => {
 
 	return (
     <>
-      <PortalTemplate  items={items}>
-        <div className="p-2 pt-1 bg-green-600 sm:px-20 text-white">
-          <span>Beranda {">"} Artikel</span>
-        </div>
+      <PortalTemplate items={items}>
         <div className="bg-green-100 flex flex-col">
           <div className="flex ">
             <div className="ml-20 mt-7 mb-10 flex flex-row space-x-20">
