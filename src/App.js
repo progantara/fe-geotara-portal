@@ -1,26 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-<<<<<<< HEAD
 import Home from './Pages';
 import Artikel from './Pages/Artikel';
 import Detail from './Pages/Artikel/Detail';
 import Event from './Pages/Event';
-import Virtual from './Pages/Virtual-tour';
-import Area from "./Pages/Virtual-tour/Area";
+import Virtual from './Pages/VirtualTour';
+import Area from "./Pages/VirtualTour/Area";
 import Login from "./Pages/Auth/Login";
 import Regis from "./Pages/Auth/Regis";
 import Forgot from "./Pages/Auth/Forgot";
-=======
-import Login from './Pages/Auth/Login';
-import Regis from './Pages/Auth/Regis';
-import Forgot from './Pages/Auth/Forgot';
->>>>>>> 7e16235b10a6c55d7e02cb43421bc6bd31bd16ba
-
-import Home from './Pages';
-import Artikel from './Pages/Artikel';
-import Event from './Pages/Event';
-import Virtual from './Pages/VirtualTour';
 
 import Accomodation from './Pages/Accomodation';
 import AccomodationDetail from './Pages/Accomodation/detail';
@@ -38,29 +27,12 @@ import Attraction from './Pages/Attraction';
 import AttractionDetail from './Pages/Attraction/detail';
 
 function App() {
-<<<<<<< HEAD
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/artikel" element={<Artikel />} />
-          <Route path="/Detail" element={<Detail />} />
-          <Route path="/event" element={<Event />} />
-          <Route path="/virtual-tour" element={<Virtual />} />
-          <Route path="/Area" element={<Area />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Regis" element={<Regis />} />
-          <Route path="/Forgot" element={<Forgot />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
-=======
 	return (
 		<>
 			<Router>
 				<Routes>
+          			<Route path="/Area" element={<Area />} />
+
 					{/* Auth */}
 					<Route path="/Login" element={<Login />} />
 					<Route path="/Regis" element={<Regis />} />
@@ -69,8 +41,14 @@ function App() {
 					{/* Landing */}
 					<Route exact path="/" element={<Home />} />
 
+					{/* Artikel */}
 					<Route path="/artikel" element={<Artikel />} />
+					<Route path="/Detail" element={<Detail />} />
+
+					{/* Event */}
 					<Route path="/event" element={<Event />} />
+
+					{/* Virtual Tour */}
 					<Route path="/virtual-tour" element={<Virtual />} />
 
 					{/* Akomodasi */}
@@ -99,7 +77,6 @@ function App() {
 			</Router>
 		</>
 	);
->>>>>>> 7e16235b10a6c55d7e02cb43421bc6bd31bd16ba
 }
 
 export default App;

@@ -13,22 +13,14 @@ import articel6 from "../../Assets/img/Article-6.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Detail = () => {
+  const items = [
+		{ label: 'Artikel', url: '/artikel' },
+		{ label: 'Artikel Detail', url: '/artikel/detail' },
+	];
+
   return (
     <>
-      <PortalTemplate>
-        <div className="p-2 pt-1 bg-green-600 sm:px-20 text-white flex flex-row ">
-          <div className="flex space-x-2">
-            <a href="#">Beranda</a>
-            <a href="#">{">"}</a>
-            <a href="#">Artikel</a>
-            <a href="#">{">"}</a>
-            <a href="#">Alam</a>
-            <a href="#">{">"}</a>
-            <a href="#" className="font-semibold">
-              Keragaman Keindahan, Pariwisata
-            </a>
-          </div>
-        </div>
+      <PortalTemplate items={items}>
         <div className="bg-green-100 flex flex-col">
           <div className="flex flex-row tracking-wider ml-20">
             <h1 className="text-green-900 text-4xl font-semibold mt-10">
