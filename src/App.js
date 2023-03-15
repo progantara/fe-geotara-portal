@@ -1,14 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Login from './Pages/Auth/Login';
-import Regis from './Pages/Auth/Regis';
-import Forgot from './Pages/Auth/Forgot';
-
 import Home from './Pages';
 import Artikel from './Pages/Artikel';
+import Detail from './Pages/Artikel/Detail';
 import Event from './Pages/Event';
 import Virtual from './Pages/VirtualTour';
+import Area from "./Pages/VirtualTour/Area";
+import Login from "./Pages/Auth/Login";
+import Regis from "./Pages/Auth/Regis";
+import Forgot from "./Pages/Auth/Forgot";
 
 import Accomodation from './Pages/Accomodation';
 import AccomodationDetail from './Pages/Accomodation/detail';
@@ -30,6 +31,8 @@ function App() {
 		<>
 			<Router>
 				<Routes>
+          			<Route path="/Area" element={<Area />} />
+
 					{/* Auth */}
 					<Route path="/Login" element={<Login />} />
 					<Route path="/Regis" element={<Regis />} />
@@ -38,8 +41,14 @@ function App() {
 					{/* Landing */}
 					<Route exact path="/" element={<Home />} />
 
+					{/* Artikel */}
 					<Route path="/artikel" element={<Artikel />} />
+					<Route path="/Detail" element={<Detail />} />
+
+					{/* Event */}
 					<Route path="/event" element={<Event />} />
+
+					{/* Virtual Tour */}
 					<Route path="/virtual-tour" element={<Virtual />} />
 
 					{/* Akomodasi */}
