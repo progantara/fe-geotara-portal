@@ -144,7 +144,7 @@ const Home = () => {
       {/* SIDEBAR  */}
       <div class="flex flex-col border-xl sidebar lg:left-0 p-2 w-[350px] h-screen overflow-y-auto text-center bg-green-300 ">
         <div class="text-gray-100 text-xl">
-          <div class="p-2.5 mt-1 flex items-center">
+          <a href="/virtual-tour" class="p-2.5 mt-1 flex items-center">
             <button class="bg-green-800 hover:bg-green-600 text-dark text-sm font-semibold py-3 px-4 rounded-lg">
               <svg
                 class="w-6 h-6 dark:text-white"
@@ -165,7 +165,7 @@ const Home = () => {
               class="bi bi-x cursor-pointer ml-28 lg:hidden"
               onclick="openSidebar()"
             ></i>
-          </div>
+          </a>
           <div className="flex mt-5">
             <form>
               <label
@@ -215,7 +215,7 @@ const Home = () => {
                   />
                 </svg>
                 <div className="text-black text-lg font-medium ml-3 -mt-1">
-                  <a href="#">Map</a>
+                  <a href="/virtual-tour">Map</a>
                 </div>
               </div>
               <div className="flex flex-row mt-10 ml-3">
