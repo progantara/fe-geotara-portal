@@ -8,6 +8,7 @@ import Forgot from './Pages/Auth/Forgot';
 import Home from './Pages';
 import Artikel from './Pages/Artikel';
 import Event from './Pages/Event';
+import EventDetail from './Pages/Event/detail';
 import Virtual from './Pages/VirtualTour';
 
 import Accomodation from './Pages/Accomodation';
@@ -40,6 +41,7 @@ function App() {
 
 					<Route path="/artikel" element={<Artikel />} />
 					<Route path="/event" element={<Event />} />
+					<Route path="/event/detail" element={<EventDetail />} />
 					<Route path="/virtual-tour" element={<Virtual />} />
 
 					{/* Akomodasi */}
