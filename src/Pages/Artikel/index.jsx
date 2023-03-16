@@ -224,7 +224,7 @@ const Artikel = () => {
             </div>
             <div className="flex justify-center">
               <div className="border-green-600 bg-green-600 rounded-xl mb-10 w-2/4">
-                <h1 className="text-center text-white mt-5">Newsletter</h1>
+                 <p className='text-center text-white mt-5'> Newsletter</p>
                 <div className="mb-3 mt-4 ml-20 mr-40">
                   <input
                     type="text"

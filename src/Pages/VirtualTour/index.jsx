@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../Assets/img/logo.png";
 
 import { Link, useNavigate } from "react-router-dom";
 
+// import './App.css';
+import Map from "../../Component/Map";
+import { Layers, TileLayer, VectorLayer } from "../../Component/Map/Layers";
+import { Circle as CircleStyle, Fill, Stroke, Style } from "ol/style";
+import { osm, vector } from "../../Component/Map/Source";
+import { fromLonLat, get } from "ol/proj";
+import GeoJSON from "ol/format/GeoJSON";
+import { Controls, FullScreenControl } from "../../Component/Map/Controls";
+
+import mapConfig from "./config.json";
+
+let styles = {
+  MultiPolygon: new Style({
+    stroke: new Stroke({
+      color: "blue",
+      width: 1,
+    }),
+    fill: new Fill({
+      color: "rgba(0, 0, 255, 0.1)",
+    }),
+  }),
+};
+
+const geojsonObject = mapConfig.geojsonObject;
+const geojsonObject2 = mapConfig.geojsonObject2;
+const geojsonObject3 = mapConfig.geojsonObject3;
+const markersLonLat = [mapConfig.kansasCityLonLat, mapConfig.blueSpringsLonLat];
+
 const Home = () => {
+  const [center, setCenter] = useState([
+    106.48024124492765, -7.206881147968618,
+  ]);
+  const [zoom, setZoom] = useState(9);
+  const [showLayer1, setShowLayer1] = useState(true);
+  const [showLayer2, setShowLayer2] = useState(true);
+  const [showLayer3, setShowLayer3] = useState(true);
+
   return (
     <>
       {/* NAVBAR */}
@@ -141,204 +177,289 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* SIDEBAR  */}
-      <div class="flex flex-col border-xl sidebar lg:left-0 p-2 w-[350px] h-screen overflow-y-auto text-center bg-green-300 ">
-        <div class="text-gray-100 text-xl">
-          <div class="p-2.5 mt-1 flex items-center">
-            <button class="bg-green-800 hover:bg-green-600 text-dark text-sm font-semibold py-3 px-4 rounded-lg">
-              <svg
-                class="w-6 h-6 dark:text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                ></path>
-              </svg>
-            </button>
-            <i
-              class="bi bi-x cursor-pointer ml-28 lg:hidden"
-              onclick="openSidebar()"
-            ></i>
-          </div>
-          <div className="flex mt-5">
-            <form>
-              <label
-                for="search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-              >
-                Search
-              </label>
-              <div class="relative flex flex-row ml-3">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <div className="flex flex-1">
+        {/* SIDEBAR  */}
+        <div class="flex flex-col border-xl sidebar lg:left-0 p-2 w-[350px] h-screen overflow-y-auto text-center bg-green-300 ">
+          <div class="text-gray-100 text-xl">
+            <div class="p-2.5 mt-1 flex items-center">
+              <button class="bg-green-800 hover:bg-green-600 text-dark text-sm font-semibold py-3 px-4 rounded-lg">
+                <svg
+                  class="w-6 h-6 dark:text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  ></path>
+                </svg>
+              </button>
+              <i
+                class="bi bi-x cursor-pointer ml-28 lg:hidden"
+                onclick="openSidebar()"
+              ></i>
+            </div>
+            <div className="mt-5">
+              <form>
+                <label
+                  for="search"
+                  class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                >
+                  Search
+                </label>
+                <div class="relative flex flex-row ml-3">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg
+                      aria-hidden="true"
+                      class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    type="search"
+                    class="w-[18rem] p-4 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Cari Wisata"
+                    required
+                  />
+                </div>
+                <div className="flex flex-row text-black mt-6 ml-3">
                   <svg
-                    aria-hidden="true"
-                    class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
                   >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    ></path>
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
                   </svg>
+                  <div className="text-black text-lg font-medium ml-3 -mt-1">
+                    <a href="/virtual-tour">Map</a>
+                  </div>
                 </div>
-                <input
-                  type="search"
-                  class="w-[18rem] p-4 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Cari Wisata"
-                  required
-                />
-              </div>
-              <div className="flex flex-row text-black mt-6 ml-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className="text-black text-lg font-medium ml-3 -mt-1">
-                  <a href="/virtual-tour">Map</a>
+                <div className="flex flex-row mt-10 ml-3">
+                  <p className="text-black text-xl font-medium tracking-wide">
+                    KECAMATAN
+                  </p>
                 </div>
-              </div>
-              <div className="flex flex-row mt-10 ml-3">
-                <p className="text-black text-xl font-medium tracking-wide">
-                  AREA
-                </p>
-              </div>
-              <div className="mt-3 ml-3 flex flex-row text-black border-lg  bg-yellow-200 h-[2rem]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6 mt-1"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className="text-black text-[17px] font-medium ml-2">
-                  <a href="/Area">Ciemas</a>
+                <div className="mt-3 ml-3 flex flex-row text-black border-lg ">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 mt-1"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  <div className="text-black text-[17px] font-medium ml-2">
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={showLayer1}
+                        onChange={(event) =>
+                          setShowLayer1(event.target.checked)
+                        }
+                      />{" "}
+                      <a href="/area">Ciemas</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-row text-black mt-6 ml-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Cikakak</a>
+                <div className="flex flex-row text-black mt-6 ml-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={showLayer2}
+                        onChange={(event) =>
+                          setShowLayer2(event.target.checked)
+                        }
+                      />{" "}
+                      <a href="/area">Cikakak</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-row text-black mt-6 ml-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Pelabuhan Ratu</a>
+                <div className="flex flex-row text-black mt-6 ml-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={showLayer3}
+                        onChange={(event) =>
+                          setShowLayer3(event.target.checked)
+                        }
+                      />{" "}
+                      <a href="/area">Pelabuhan Ratu</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-row text-black mt-6 ml-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Simpenan</a>
+                <div className="flex flex-row text-black mt-6 ml-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
+                    <a href="#">Simpenan</a>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-row text-black mt-6 ml-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Waluran</a>
+                <div className="flex flex-row text-black mt-6 ml-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
+                    <a href="#">Waluran</a>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-row text-black mt-6 ml-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-                <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                  <a href="#">Cilacap</a>
+                <div className="flex flex-row text-black mt-6 ml-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                    />
+                  </svg>
+                  <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
+                    <a href="#">Cilacap</a>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
+        </div>
+        <div className="w-full">
+          <Map center={fromLonLat(center)} zoom={zoom}>
+            <Layers>
+              <TileLayer source={osm()} zIndex={0} />
+              {showLayer1 && (
+                <VectorLayer
+                  source={vector({
+                    features: new GeoJSON().readFeatures(geojsonObject, {
+                      featureProjection: get("EPSG:3857"),
+                    }),
+                  })}
+                  style={styles.MultiPolygon}
+                />
+              )}
+              {showLayer2 && (
+                <VectorLayer
+                  source={vector({
+                    features: new GeoJSON().readFeatures(geojsonObject2, {
+                      featureProjection: get("EPSG:3857"),
+                    }),
+                  })}
+                  style={styles.MultiPolygon}
+                />
+              )}
+              {showLayer3 && (
+                <VectorLayer
+                  source={vector({
+                    features: new GeoJSON().readFeatures(geojsonObject3, {
+                      featureProjection: get("EPSG:3857"),
+                    }),
+                  })}
+                  style={styles.MultiPolygon}
+                />
+              )}
+            </Layers>
+            <Controls>
+              <FullScreenControl />
+            </Controls>
+          </Map>
+          {/* <div>
+            <input
+              type="checkbox"
+              checked={showLayer1}
+              onChange={(event) => setShowLayer1(event.target.checked)}
+            />{" "}
+            Johnson County
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              checked={showLayer2}
+              onChange={(event) => setShowLayer2(event.target.checked)}
+            />{" "}
+            Wyandotte County
+          </div> */}
         </div>
       </div>
     </>
