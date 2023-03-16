@@ -1,0 +1,93 @@
+{
+    "center": [106.48024124492765, -7.206881147968618],
+    "geojsonObject": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "kind": "county",
+              "name": "Ciemas",
+              "state": "KS"
+            },
+            "geometry": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [ 106.48366059614209, -7.106206362564506],
+                    [106.37074322916598, -7.098834317936456],
+                    [106.37533394704273, -7.31211327160854],
+                    [106.58123020957628, -7.306395138846485],
+                    [106.57769192001653, -7.0998993957784515],
+                    [106.48366059614209, -7.106206362564506]
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "geojsonObject2": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "kind": "county",
+              "name": "Cikakak",
+              "state": "KS"
+            },
+            "geometry": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [106.48621203118283, -6.824214056278168],
+                    [106.48133930106023, -6.965638644176108],
+                    [106.5905706343269, -6.96534837695676],
+                    [106.58652851916524, -6.823341341395803],
+                    [106.48707179681024,-6.821083472505592],
+                    [106.48621203118283, -6.824214056278168]
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "geojsonObject3": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "kind": "county",
+              "name": "Pelabuhan Ratu",
+              "state": "KS"
+            },
+            "geometry": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [106.51233294815387, -6.965615607710157],
+                    [106.51249983861933, -7.029855685041326],
+                    [106.5905706343269, -6.96534837695676],
+                    [106.63338119442533, -7.029342339800261],
+                    [106.62769357963153, -6.924876523459571],
+                    [106.51387906424658, -6.92437862174225],
+                    [106.51233294815387, -6.965615607710157]
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+    "kansasCityLonLat": [-94.579228, 39.135386],
+    "blueSpringsLonLat": [-94.279851, 39.03412],
+    "markerImage24" : "https://cdn2.iconfinder.com/data/icons/social-media-and-payment/64/-47-24.png",
+    "markerImage32" : "https://cdn2.iconfinder.com/data/icons/social-media-and-payment/64/-47-32.png",
+    "markerImage64" : "https://cdn2.iconfinder.com/data/icons/social-media-and-payment/64/-47-64.png"
+}
