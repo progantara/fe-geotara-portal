@@ -2,11 +2,16 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './Pages';
+
 import Artikel from './Pages/Artikel';
 import Detail from './Pages/Artikel/Detail';
+
 import Event from './Pages/Event';
+import EventDetail from './Pages/Event/detail';
+
 import Virtual from './Pages/VirtualTour';
 import Area from "./Pages/VirtualTour/Area";
+
 import Login from "./Pages/Auth/Login";
 import Regis from "./Pages/Auth/Regis";
 import Forgot from "./Pages/Auth/Forgot";
@@ -47,6 +52,7 @@ function App() {
 
 					{/* Event */}
 					<Route path="/event" element={<Event />} />
+					<Route path="/event/detail" element={<EventDetail />} />
 
 					{/* Virtual Tour */}
 					<Route path="/virtual-tour" element={<Virtual />} />
