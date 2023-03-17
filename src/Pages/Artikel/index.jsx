@@ -1,25 +1,25 @@
-import React from 'react';
-import PortalTemplate from '../../Component/Layout';
+import React from "react";
+import PortalTemplate from "../../Component/Layout";
 
 // image
-import profile from '../../Assets/img/profile.jpg'
-import articel1 from '../../Assets/img/Article-1.jpg'
-import articel2 from '../../Assets/img/Article-2.jpg'
-import articel3 from '../../Assets/img/Article-3.jpg'
-import articel4 from '../../Assets/img/Article-4.jpg'
-import articel5 from '../../Assets/img/Article-5.jpg'
-import articel6 from '../../Assets/img/Article-6.jpg'
-import articel7 from '../../Assets/img/Article-7.jpg'
-import articel8 from '../../Assets/img/Article-8.jpg'
-import articel9 from '../../Assets/img/Article-9.jpg'
+import profile from "../../Assets/img/profile.jpg";
+import articel1 from "../../Assets/img/Article-1.jpg";
+import articel2 from "../../Assets/img/Article-2.jpg";
+import articel3 from "../../Assets/img/Article-3.jpg";
+import articel4 from "../../Assets/img/Article-4.jpg";
+import articel5 from "../../Assets/img/Article-5.jpg";
+import articel6 from "../../Assets/img/Article-6.jpg";
+import articel7 from "../../Assets/img/Article-7.jpg";
+import articel8 from "../../Assets/img/Article-8.jpg";
+import articel9 from "../../Assets/img/Article-9.jpg";
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
 const Artikel = () => {
-  const items = [{ label: 'Artikel', url: '/artikel' }];
-	let data = [1, 2, 3, 4, 5, 6];
+  const items = [{ label: "Artikel", url: "/artikel" }];
+  let data = [1, 2, 3, 4, 5, 6];
 
-	return (
+  return (
     <>
       <PortalTemplate items={items}>
         <div className="bg-green-100 flex flex-col">
@@ -106,7 +106,6 @@ const Artikel = () => {
               </div>
             </div>
           </div>
-
           <div className="ml-20 ">
             <p className="text-green-900 text-4xl font-semibold mb-4 mt-3">
               Artikel
@@ -224,22 +223,23 @@ const Artikel = () => {
             </div>
             <div className="flex justify-center">
               <div className="border-green-600 bg-green-600 rounded-xl mb-10 w-2/4">
-                 <p className='text-center text-white mt-5'> Newsletter</p>
-                <div className="mb-3 mt-4 ml-20 mr-40">
+                <p className="text-center text-white mt-5"> Newsletter</p>
+                <div className="mb-3 mt-4 ml-20 mr-40 grid grid-cols-2">
                   <input
                     type="text"
                     placeholder="Alamat Email"
-                    className="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block w-[30rem] h-[3rem] text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
-                <div className="mx-7 flex flex-col items-end static -mt-14">
-                  <button className="bg-yellow-300 hover:bg-yellow-400 text-dark text-sm font-semibold py-3 px-4 rounded-lg mb-10">
+                <div className="flex flex-col items-end static -ml-20">
+                  <button className="bg-yellow-300 hover:bg-yellow-400 text-dark text-sm font-semibold py-3 px-4 rounded-lg">
                     Subscribe
                   </button>
                 </div>
               </div>
             </div>
           </div>
+          s
         </div>
       </PortalTemplate>
     </>
