@@ -1,16 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import PortalTemplate from '../../Component/Layout';
 
 import Card from '../../Component/Card/Top-penginapan';
 
 import BgHero from '../../Assets/img/hero.jpg';
-import { BiMap } from 'react-icons/bi';
+import { BiMap, BiTrash } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { FiX } from 'react-icons/fi';
+import CheckBox from '../../Component/CheckBox';
+import Toggle from '../../Component/Toggle';
+import Slider from '../../Component/Slider';
+import Bintang from '../../Component/Slider/Bintang';
 
 const Accomodation = () => {
+
+	let dataKecamatan = [
+		{
+			"id": 1,
+			"nama": "Ciemas"
+		},
+		{
+			"id": 2,
+			"nama": "Cikakak"
+		},
+		{
+			"id": 3,
+			"nama": "Pelabuhan Ratu"
+		},
+		{
+			"id": 4,
+			"nama": "Simpenan"
+		},
+		{
+			"id": 5,
+			"nama": "Waluran"
+		},
+		{
+			"id": 6,
+			"nama": "Surade"
+		},
+		{
+			"id": 7,
+			"nama": "Cilacap"
+		}
+		
+	]
+
+	let dataTipe = [
+		{
+			"id": 1,
+			"nama": "Hotel"
+		},
+		{
+			"id": 2,
+			"nama": "Homestay"
+		},
+		{
+			"id": 3,
+			"nama": "Kost"
+		},
+		{
+			"id": 4,
+			"nama": "Villa"
+		}
+	]
+
 	const items = [{ label: 'Accomodation', url: '/Accomodation' }];
 	let data = [1, 2, 3, 4, 5, 6];
+
+	const [isFilterActive, setIsFilterActive] = useState(true);
+	const [isClear, setIsClear] = useState(false);
+
+  const toggleClass = () => {
+    setIsFilterActive(!isFilterActive);
+  };
+
+	const toggleClose = () => {
+		setIsFilterActive(!isFilterActive);
+	}
+
+	const initialState = dataKecamatan.reduce((acc, cur, idx) => {
+		return {
+			...acc,
+			[`kecamatan-${idx+1}`]: true // set nilai awal checkbox ke false
+		}
+	}, {})
+
+	const [checkboxStatus, setCheckboxStatus] = useState(initialState);
+	
+	const toggleClear = () => {
+		const newCheckboxStatus = {};
+		dataKecamatan.forEach((kecamatan, index) => {
+			newCheckboxStatus[`kecamatan-${index+1}`] = false;
+		});
+		setCheckboxStatus(newCheckboxStatus);
+	}
 
 	return (
 		<PortalTemplate items={items}>
@@ -35,10 +120,73 @@ const Accomodation = () => {
 						<p className="text-xl font-bold text-secondary">List Penginapan</p>
 						<p className="text-3xl font-bold">Avalaible Penginapan</p>
 						<div className="flex items-center justify-between w-full mb-[2.188rem] mt-[1.875rem]">
-							<button className="flex items-center px-4 py-2 bg-yellow-200 rounded-lg">
-								<GiHamburgerMenu />
-								<p className="ml-2 font-medium">Filter</p>
-							</button>
+							{/* Filter */}
+							<div className='relative'>
+								<button className="flex items-center px-4 py-2 bg-yellow-200 rounded-lg hover:bg-yellow-300" onClick={toggleClass}>
+									<GiHamburgerMenu />
+									<p className="ml-2 font-medium">Filter</p>
+								</button>
+								<div className={`${isFilterActive ? 'block' : 'hidden'} bg-green-50 absolute z-[100] w-72  left-0 shadow-xl text-sm  dark:text-gray-400 rounded-md py-5 px-5`}>
+									{/* Header */}
+									<div className='flex justify-between'>
+										<button className="flex items-center px-4 py-2 bg-yellow-200 hover:bg-yellow-300 rounded-lg">
+											<BiTrash></BiTrash>
+											<p className='ml-2 font-medium' onClick={toggleClear}>Clear All</p>
+										</button>
+										<button>
+											<FiX className='w-8 h-8' onClick={toggleClose}></FiX>
+										</button>
+									</div>
+									{/* End Header */}
+
+									{/* Body */}
+
+									{/* Checkbox Kecamatan*/}
+									<div className='mt-5'>
+										<p className='text-xl font-bold text-black mb-3'>Kecamatan</p>
+										<CheckBox
+											data={dataKecamatan}
+											checkboxStatus={checkboxStatus}
+											setCheckboxStatus={setCheckboxStatus}
+										/>
+									</div>
+
+									{/* Checkbox Tipe*/}
+									<div className='mt-5'>
+										<p className='text-xl font-bold text-black mb-3'>Tipe</p>
+										<CheckBox
+											data={dataTipe}
+											checkboxStatus={checkboxStatus}
+											setCheckboxStatus={setCheckboxStatus}
+										/>
+									</div>
+
+									{/* Slider Harga*/}
+									<div className='mt-5'>
+										<p className='text-xl font-bold text-black mb-3'>Harga</p>
+										<Toggle
+											nama="Harga"
+										/>
+										<Slider/>
+										
+									</div>
+									
+									{/* Slider Harga*/}
+									<div className='mt-5'>
+										<p className='text-xl font-bold text-black mb-3'>Bintang</p>
+										<Toggle
+											nama="Bintang"
+										/>
+										<Bintang/>
+										
+									</div>
+
+									
+
+
+									{/* End Body */}
+								</div>
+							</div>
 							<form className="w-[28.125rem]">
 								<label
 									htmlFor="default-search"
@@ -101,50 +249,6 @@ const Accomodation = () => {
 											/>
 										</svg>
 									</button>
-									{/* Dropdown menu */}
-									<div
-										id="dropdown"
-										className="z-50 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-									>
-										<ul
-											className="py-2 text-sm text-gray-700 dark:text-gray-200"
-											aria-labelledby="dropdownDefaultButton"
-										>
-											<li>
-												<a
-													href="#"
-													className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-												>
-													Dashboard
-												</a>
-											</li>
-											<li>
-												<a
-													href="#"
-													className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-												>
-													Settings
-												</a>
-											</li>
-											<li>
-												<a
-													href="#"
-													className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-												>
-													Earnings
-												</a>
-											</li>
-											<li>
-												<a
-													href="#"
-													className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-												>
-													Sign
-													out
-												</a>
-											</li>
-										</ul>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -156,9 +260,9 @@ const Accomodation = () => {
 						<div className="flex justify-center my-20">
 							<nav aria-label="Page navigation example">
 								<ul className="flex items-center space-x-4 text-primary">
-									<li>
+									<li key={1}>
 										<a
-											href="#"
+											href="/"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											<span className="sr-only">
@@ -179,50 +283,50 @@ const Accomodation = () => {
 											</svg>
 										</a>
 									</li>
-									<li>
+									<li key={2}>
 										<a
-											href="#"
+											href="/"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											1
 										</a>
 									</li>
-									<li>
+									<li key={3}>
 										<a
-											href="#"
+											href="/"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											2
 										</a>
 									</li>
-									<li>
+									<li key={4}>
 										<a
-											href="#"
+											href="/"
 											aria-current="page"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											3
 										</a>
 									</li>
-									<li>
+									<li key={5}>
 										<a
-											href="#"
+											href="/"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											4
 										</a>
 									</li>
-									<li>
+									<li key={6}>
 										<a
-											href="#"
+											href="/"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											5
 										</a>
 									</li>
-									<li>
+									<li key={7}>
 										<a
-											href="#"
+											href="/"
 											className="flex items-center justify-center w-8 h-8 leading-tight transition-all border-2 rounded-lg hover:text-white hover:bg-primary border-primary "
 										>
 											<span className="sr-only">
