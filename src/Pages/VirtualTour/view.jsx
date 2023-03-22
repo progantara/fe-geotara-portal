@@ -1,9 +1,8 @@
 import React from "react";
-import { Pannellum, PannellumVideo } from "pannellum-react";
+import { Pannellum } from "pannellum-react";
 
 //image
 import myImage from "../../Assets/img/view.jpg";
-import myVideo from "../../Assets/video/ViewVideo.mp4";
 
 const view = () => {
   return (
