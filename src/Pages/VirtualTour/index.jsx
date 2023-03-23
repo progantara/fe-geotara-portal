@@ -292,7 +292,7 @@ const Home = () => {
                           setShowLayer1(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Ciemas</a>
+                      <a href="/virtual-tour/view">Ciemas</a>
                     </div>
                   </div>
                 </div>
@@ -320,7 +320,7 @@ const Home = () => {
                           setShowLayer2(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Cikakak</a>
+                      <a href="/virtual-tour/view">Cikakak</a>
                     </div>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ const Home = () => {
                           setShowLayer3(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Pelabuhan Ratu</a>
+                      <a href="/virtual-tour/view">Pelabuhan Ratu</a>
                     </div>
                   </div>
                 </div>
@@ -376,7 +376,7 @@ const Home = () => {
                           setShowLayer4(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Simpenan</a>
+                      <a href="/virtual-tour/view">Simpenan</a>
                     </div>
                   </div>
                 </div>
@@ -404,7 +404,7 @@ const Home = () => {
                           setShowLayer5(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Waluran</a>
+                      <a href="/virtual-tour/view">Waluran</a>
                     </div>
                   </div>
                 </div>
@@ -432,7 +432,7 @@ const Home = () => {
                           setShowLayer6(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Cilacap</a>
+                      <a href="/virtual-tour/view">Cilacap</a>
                     </div>
                   </div>
                 </div>

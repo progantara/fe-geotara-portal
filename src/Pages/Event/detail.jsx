@@ -1,18 +1,18 @@
-import React from 'react';
-import PortalTemplate from '../../Component/Layout';
-import { IoArrowForwardSharp } from 'react-icons/io5';
-import { IoCalendarClearOutline } from 'react-icons/io5';
-import { BiMap } from 'react-icons/bi';
+import React from "react";
+import PortalTemplate from "../../Component/Layout";
+import { IoArrowForwardSharp } from "react-icons/io5";
+import { IoCalendarClearOutline } from "react-icons/io5";
+import { BiMap } from "react-icons/bi";
 
 //Image
-import BgEvent1 from '../../Assets/img/event-1.jpeg';
+import BgEvent1 from "../../Assets/img/event-1.jpeg";
 const EventDetail = () => {
-	const items = [
-		{ label: 'Event', url: '/Event' },
-		{ label: 'Geopark Ciletuh Spektakuler (GCS)', url: '/Event/detail' },
-	];
+  const items = [
+    { label: "Event", url: "/Event" },
+    { label: "Geopark Ciletuh Spektakuler (GCS)", url: "/Event/detail" },
+  ];
 
-	return (
+  return (
     <PortalTemplate items={items}>
       <div className="py-10 px-20 bg-green-100">
         <h2 className="mb-2 text-1xl font-bold text-primary">Event</h2>
@@ -24,7 +24,7 @@ const EventDetail = () => {
             <img
               src={BgEvent1}
               alt="Gambar"
-              className="h-[28rem] w-[21rem] bg-center filter brightness-75 bg-cover rounded-2xl"
+              className=" bg-center object-cover h-[30rem] w-[25rem] filter brightness-75 bg-cover rounded-2xl"
             />
             <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-10 left-4">
               <p className="text-xs text-white">Rp 20.000 - Rp 100.000</p>
@@ -39,7 +39,7 @@ const EventDetail = () => {
               </p>
               <div>
                 <button className="px-3 py-1 font-bold text-xs text-black bg-yellow-200 hover:bg-yellow-300 rounded-lg">
-                  Pesan Tiket
+                  <a href="">Pesan Tiket</a>
                 </button>
               </div>
             </div>
