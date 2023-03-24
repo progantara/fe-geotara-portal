@@ -36,7 +36,7 @@ function App() {
 		<>
 			<Router>
 				<Routes>
-          			<Route path="/Area" element={<Area />} />
+						<Route path="/Area" element={<Area />} />
 
 					{/* Auth */}
 					<Route path="/Login" element={<Login />} />
