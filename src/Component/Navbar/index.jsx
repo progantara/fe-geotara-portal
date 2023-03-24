@@ -18,16 +18,18 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className="w-full bg-white container px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700">
-				<div className="container flex flex-wrap items-center justify-between mx-auto">
+			<nav className="w-full bg-white container px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700 md:px-14">
+
+				<div className="container flex flex-wrap items-center justify-between mx-auto md:flex-nowrap">
+
 					{/* Logo */}
 					<Link to="/" className="flex items-center">
-						<img src={Logo} className="w-1/2" alt="Geotara Logo" />
+						<img src={Logo} className="w-24" alt="Geotara Logo" />
 					</Link>
 
 					{/* Menu */}
-					<div className="hidden w-full md:block md:w-auto">
-						<ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+					<div className="hidden w-full md:block md:w-fit">
+						<ul className="flex flex-col md:flex-row gap-5 md:text-sm md:font-medium">
 							<li key={1}>
 								<Link
 									to="/virtual-tour"
@@ -50,7 +52,7 @@ const Navbar = () => {
 								<button
 									id="dropdownNavbarLink"
 									data-dropdown-toggle="dropdownNavbar"
-									className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+									className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-primary rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
 									onClick={toggleClass}
 								>
 									Rencanakan Perjalanan Anda
@@ -72,7 +74,7 @@ const Navbar = () => {
 							<li key={7}>
 								<Link
 									to="/event"
-									className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+									className="block py-2 pl-3 pr-4 text-primary rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
 								>
 									Event
 								</Link>
@@ -83,14 +85,15 @@ const Navbar = () => {
 					{/* Login */}
 					<Link
 						to="/login"
-						className="hidden focus:outline-none shadow-lg text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+						className="hidden md:block focus:outline-none shadow-lg text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
 						Login
 					</Link>
 
 					{/* Hamburger */}
-					<div onClick={toggleClassMobile}>
+					<div onClick={toggleClassMobile} className="md:hidden text-primary">
 						<GiHamburgerMenu className='text-primary'></GiHamburgerMenu>
 					</div>
+
 				</div>
 			</nav>
 
@@ -176,7 +179,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 
-			<ul className={`${isNavbarActive ? 'block' : 'hidden'} bg-white shadow py-2 absolute z-50 left-[50%] text-sm text-gray-700 dark:text-gray-400 rounded`}>
+			<ul className={`${isNavbarActive ? 'block' : 'hidden'} bg-white shadow py-2 absolute z-50 left-[50%] text-sm text-primary dark:text-gray-400 rounded`}>
 				<li key={1}>
 					<Link
 						to="/accomodation"
