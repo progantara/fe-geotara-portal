@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Bintang() {
-  const [value, setValue] = useState(50000);
+  const [value, setValue] = useState(1);
 
   const handleOnChange = (event) => {
     setValue(event.target.value);
@@ -18,7 +18,7 @@ export default function Bintang() {
         max="5"
         value={value}
         onChange={handleOnChange}
-        className="w-full"
+        className="w-full md:w-1/3"
       />
     </div>
   )
