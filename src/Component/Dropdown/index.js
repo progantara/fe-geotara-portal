@@ -7,11 +7,13 @@ function Dropdown() {
   return (
     <div className="relative">
       <button
-        className="bg-white text-gray-500 px-4 py-2 rounded inline-flex items-center md:w-40"
+        className="bg-white text-gray-500 px-4 py-2 rounded inline-flex items-center md:w-40 lg:w-56"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="mr-1 text-sm">Sort By</span>
-        <FiChevronDown></FiChevronDown>
+        <div className="flex items-center justify-center w-full">
+          <span className="mr-1 text-sm">Sort By</span>
+          <FiChevronDown></FiChevronDown>
+        </div>
       </button>
 
       {isOpen && (

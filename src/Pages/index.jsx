@@ -13,7 +13,7 @@ const Hero = () => {
 			<div className="flex justify-between p-5 md:p-0 md:pt-8 xl:px-20">
 
 				{/* Hero */}
-				<div className="flex flex-col text-primary text-center md:px-14 md:text-left md:flex-row md:flex-wrap md:items-center md:py-14 xl:justify-betweenr">
+				<div className="flex flex-col text-primary text-center md:px-14 md:text-left md:flex-row md:flex-wrap md:items-center md:py-14 xl:justify-between">
 				
 					{/* Image Hero */}
 					<div className='order-1 md:order-2 md:basis-1/2 xl:flex xl:justify-end'>
@@ -82,97 +82,123 @@ const Hero = () => {
 				</div>
 
 			</div>
-      <div>
-        <h2 className="text-3xl font-extrabold text-gray-600">Top Wisata</h2>
-        <h1 className="mb-8 text-5xl font-extrabold text-primary">
-          Paling Diminati Oleh Kebanyakan Orang
-        </h1>
-        <div className="grid grid-cols-3 gap-8">
-          <div
-            className="relative row-span-2 overflow-hidden rounded-3xl bg-center bg-cover"
-            style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-            }}
-          >
-            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
-              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
-                Gratis
-              </p>
-            </div>
-            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
-              <p className="text-2xl font-bold text-white">Pantai Sawarna</p>
-              <p className="text-base text-white">Pantai</p>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl">
-            <img
-              src={BgHero}
-              alt="Gambar"
-              className="h-full bg-center bg-cover rounded-3xl"
-            />
-            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
-              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
-                5K per tiket
-              </p>
-            </div>
-            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
-              <p className="text-2xl font-bold text-white">Curug Sodong</p>
-              <p className="text-base text-white">Curug</p>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl">
-            <img
-              src={BgHero}
-              alt="Gambar"
-              className="h-full bg-center bg-cover rounded-3xl"
-            />
-            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
-              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
-                10K per tiket
-              </p>
-            </div>
-            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
-              <p className="text-2xl font-bold text-white">Bukit Tanjung</p>
-              <p className="text-base text-white">Bukit</p>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl">
-            <img
-              src={BgHero}
-              alt="Gambar"
-              className="h-full bg-center bg-cover rounded-3xl"
-            />
-            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
-              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
-                5K per tiket
-              </p>
-            </div>
-            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
-              <p className="text-2xl font-bold text-white">Pantai Citepus</p>
-              <p className="text-base text-white">Pantai</p>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl">
-            <img
-              src={BgHero}
-              alt="Gambar"
-              className="h-full bg-center bg-cover rounded-3xl"
-            />
-            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
-              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
-                10K per tiket
-              </p>
-            </div>
-            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
-              <p className="text-2xl font-bold text-white">Batuan Citepus</p>
-              <p className="text-base text-white">Batuan</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
+
+const TopWisata = () => {
+  return (
+  <section className='bg-cover bg-center bg-pattern mb-5'>
+    <div className='flex flex-col justify-between p-5 md:p-0 md:pt-8 md:px-14 lg:px-16 xl:px-32'>
+
+      {/* Title */}
+      <div className='flex flex-col'>
+        <h2 className="text-base font-extrabold text-gray-600 md:text-xl">Top Wisata</h2>
+        <h1 className="mb-8 text-md font-extrabold text-primary md:text-3xl">
+          Paling Diminati Oleh Kebanyakan Orang
+        </h1>
+      </div>
+
+      {/* Card Wisata */}
+      <div className='flex flex-col gap-3 lg:flex-row lg:h-96 lg:justify-between xl:h-[600px]'>
+
+        {/* Card Hero */}
+        <div className='w-full h-32 bg-white rounded-xl overflow-hidden relative lg:h-full lg:w-96 xl:w-[500px]'>
+
+          {/* Badge */}
+          <div className='absolute top-0 right-0 bg-yellow-300 z-10 px-6 py-2 rounded-bl-3xl'>
+            <p className='text-sm text-primary font-bold'>Gratis</p>
+          </div>
+
+          {/* Title */}
+          <div className='absolute bottom-3 left-3 text-white z-10'>
+            <p className='text-lg lg:text-xl'>Pantai Sawarna</p>
+            <p className='text-sm lg:text-lg'>Pantai</p>
+          </div>
+
+          <div className='w-full h-full bg-gray-900 absolute opacity-40' />
+          <img src={IMAGES.top1} alt="top-wisata" className='w-full object-cover lg:h-full' />
+        </div>
+
+				{/* Card 4 */}
+        <div className='flex flex-row flex-wrap gap-y-3 justify-between'>
+
+          {/* Card Item */}
+          <div className='w-[49%] h-52 bg-white rounded-xl overflow-hidden relative object-cover lg:h-[48%]'>
+            {/* Badge */}
+            <div className='absolute top-0 right-0 bg-yellow-300 z-10 px-6 py-2 rounded-bl-3xl'>
+              <p className='text-sm text-primary font-bold'>Gratis</p>
+            </div>
+
+            {/* Title */}
+            <div className='absolute bottom-3 left-3 text-white z-10'>
+              <p className='text-base lg:text-xl'>Curug Sodong</p>
+              <p className='text-sm lg:text-lg'>Curug</p>
+            </div>
+
+            <div className='w-full h-full bg-gray-900 absolute opacity-40' />
+            <img src={IMAGES.top2} alt="top-wisata" className='w-full h-full object-cover' />
+          </div>
+
+          {/* Card Item */}
+          <div className='w-[49%] h-52 bg-white rounded-xl overflow-hidden relative object-cover lg:h-[48%]'>
+            {/* Badge */}
+            <div className='absolute top-0 right-0 bg-yellow-300 z-10 px-6 py-2 rounded-bl-3xl'>
+              <p className='text-sm text-primary font-bold'>Gratis</p>
+            </div>
+
+            {/* Title */}
+            <div className='absolute bottom-3 left-3 text-white z-10'>
+              <p className='text-base lg:text-xl'>Pantai Citepus</p>
+              <p className='text-sm lg:text-lg'>Pantai</p>
+            </div>
+
+            <div className='w-full h-full bg-gray-900 absolute opacity-40' />
+            <img src={IMAGES.top3} alt="top-wisata" className='w-full h-full object-cover' />
+          </div>
+
+          {/* Card Item */}
+          <div className='w-[49%] h-52 bg-white rounded-xl overflow-hidden relative object-cover lg:h-[48%]'>
+            {/* Badge */}
+            <div className='absolute top-0 right-0 bg-yellow-300 z-10 px-6 py-2 rounded-bl-3xl'>
+              <p className='text-sm text-primary font-bold'>Gratis</p>
+            </div>
+
+            {/* Title */}
+            <div className='absolute bottom-3 left-3 text-white z-10'>
+              <p className='text-base lg:text-xl'>Bukit Tanjung</p>
+              <p className='text-sm lg:text-lg'>Bukit</p>
+            </div>
+
+            <div className='w-full h-full bg-gray-900 absolute opacity-40' />
+            <img src={IMAGES.top4} alt="top-wisata" className='w-full h-full object-cover' />
+          </div>
+
+          {/* Card Item */}
+          <div className='w-[49%] h-52 bg-white rounded-xl overflow-hidden relative object-cover lg:h-[48%]'>
+            {/* Badge */}
+            <div className='absolute top-0 right-0 bg-yellow-300 z-10 px-6 py-2 rounded-bl-3xl'>
+              <p className='text-sm text-primary font-bold'>Gratis</p>
+            </div>
+
+            {/* Title */}
+            <div className='absolute bottom-3 left-3 text-white z-10'>
+              <p className='text-base lg:text-xl'>Batuan Citepus</p>
+              <p className='text-sm lg:text-lg'>Batuan</p>
+            </div>
+
+            <div className='w-full h-full bg-gray-900 absolute opacity-40' />
+            <img src={IMAGES.top5} alt="top-wisata" className='w-full h-full object-cover' />
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  )
+}
 
 const Penginapan = () => {
 	return (
@@ -310,6 +336,7 @@ const Home = () => {
   return (
     <PortalTemplate>
       <Hero />
+			<TopWisata/>
       <Penginapan />
       <Entertainment />
       <Objek />

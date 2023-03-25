@@ -99,28 +99,28 @@ const Accomodation = () => {
 
 	return (
 		<PortalTemplate items={items}>
-			<div className="relative h-72 bg-center bg-cover bg-hero-hotel -z-50">
+			<div className="relative h-72 bg-center bg-cover bg-hero-hotel -z-50 xl:h-[400px]">
 				<div className='w-full h-full bg-gray-900 absolute opacity-50'></div>
 				<div className="absolute px-4 py-2 font-semibold top-10 border-white border-2 rounded-2xl flex items-center text-white right-20 w-62 ml-5">
-					<p>Kecamatan Citepus, Hotel Cleopatra</p>
+					<p className='text-sm'>Kecamatan Citepus, <br /> Hotel Cleopatra</p>
 					
 					<div className='lg:hidden'>
 						<BiMap size={40} />
 					</div>
 
-					<div className='hidden'>
+					<div className='hidden xl:block'>
 						<BiMap size={60} />
 					</div>
 
 
 				</div>
 			</div>
-			<section className="z-50 px-2 -mt-10">
-				<div className="flex flex-col px-4 py-10 bg-green-100 rounded-lg rounded-t-[3rem] text-primary">
+			<section className="z-50 px-2 -mt-10 md:px-10">
+				<div className="flex flex-col px-4 py-10 bg-green-100 rounded-lg rounded-t-[3rem] text-primary lg:px-14">
 
 					{/* Caption */}
 					<div className="flex flex-col text-center space-y-4 mt-16 mb-10">
-						<h1 className="text-xl md:text-3xl xl:text-5xl font-black">TEMUKAN HOTEL ATAU PENGINAPAN UNTUK BERISTIRAHAT</h1>
+						<h1 className="text-xl md:text-3xl xl:text-5xl font-bold lg:w-[800px] xl:mx-auto">TEMUKAN HOTEL ATAU PENGINAPAN UNTUK BERISTIRAHAT</h1>
 						<p className="text-sm md:text-lg xl:text-xl">Temukan penginapan terdekat dengan tujuan kunjungan mu !</p>
 					</div>
 
@@ -209,7 +209,7 @@ const Accomodation = () => {
 							</div>
 
 							{/* Search */}
-							<form className="w-36 md:w-52">
+							<form className="w-36 md:w-52 xl:w-[350px]">
 								<div className="relative">
 									<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 										<svg
@@ -240,7 +240,7 @@ const Accomodation = () => {
 
 							{/* Showing */}
 							<div className="flex items-center">
-								<p className="mr-4 text-sm hidden md:block">SHOWING 1 - 6 OF 12 ITEM(S)</p>
+								<p className="mr-4 text-[10px] hidden md:block xl:text-lg">SHOWING 1 - 6 OF 12 ITEM(S)</p>
 								<Dropdown></Dropdown>
 							</div>
 
@@ -248,8 +248,8 @@ const Accomodation = () => {
 
 					</div>
 					
-					{/* Hotel */}
-					<div className='flex flex-wrap gap-5 justify-center xl:justify-between xl:gap-10 mb-10'>
+					{/* Card Hotel */}
+					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
 						<Card
 							title="Vanada Bugeul Cottage"
 							image={IMAGES.hotel1}
@@ -308,7 +308,7 @@ const Accomodation = () => {
 					<div className="relative bg-center bg-cover bg-article-hotel h-96 rounded-md overflow-hidden">
 						<div className='w-full h-full bg-gray-900 opacity-40'></div>
 						<div className="absolute bottom-0 left-0 flex flex-col items-center justify-center w-full h-full text-white md:items-start md:mx-10">
-							<p className="text-xl font-bold text-center mb-2 md:text-left">
+							<p className="text-xl font-bold text-center mb-2 md:text-left md:text-2xl md:w-[500px]">
 								5 Alasan Mengapa Hotel Cleopatra Menjadi Tempat Yang Tepat Untuk Beristirahat
 							</p>
 							<button className="flex items-center px-8 py-4 bg-yellow-300 rounded-md">

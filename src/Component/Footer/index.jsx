@@ -140,7 +140,7 @@ const Footer = () => {
 			<div className="sm:flex sm:items-center sm:justify-between">
 				<span className="text-sm sm:text-left ">
 					<p className="font-bold text-center">Copyright © 2023 Geopark Kab. Sukabumi | All Rights Reserved</p>
-					<p className='text-center'>Dibuat dengan ❤️ oleh Tim Geotara Polban</p>
+					<p className='text-center lg:text-left'>Dibuat dengan ❤️ oleh Tim Geotara Polban</p>
 				</span>
 
 				<div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 justify-center">
