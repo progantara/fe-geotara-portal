@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import PortalTemplate from '../Component/Layout';
 import BgHero from '../Assets/img/hero.jpg';
 import "../Assets/Css/custom/custom.css"
@@ -82,8 +82,96 @@ const Hero = () => {
 				</div>
 
 			</div>
-		</section>
-	);
+      <div>
+        <h2 className="text-3xl font-extrabold text-gray-600">Top Wisata</h2>
+        <h1 className="mb-8 text-5xl font-extrabold text-primary">
+          Paling Diminati Oleh Kebanyakan Orang
+        </h1>
+        <div className="grid grid-cols-3 gap-8">
+          <div
+            className="relative row-span-2 overflow-hidden rounded-3xl bg-center bg-cover"
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+            }}
+          >
+            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
+              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
+                Gratis
+              </p>
+            </div>
+            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
+              <p className="text-2xl font-bold text-white">Pantai Sawarna</p>
+              <p className="text-base text-white">Pantai</p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl">
+            <img
+              src={BgHero}
+              alt="Gambar"
+              className="h-full bg-center bg-cover rounded-3xl"
+            />
+            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
+              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
+                5K per tiket
+              </p>
+            </div>
+            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
+              <p className="text-2xl font-bold text-white">Curug Sodong</p>
+              <p className="text-base text-white">Curug</p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl">
+            <img
+              src={BgHero}
+              alt="Gambar"
+              className="h-full bg-center bg-cover rounded-3xl"
+            />
+            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
+              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
+                10K per tiket
+              </p>
+            </div>
+            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
+              <p className="text-2xl font-bold text-white">Bukit Tanjung</p>
+              <p className="text-base text-white">Bukit</p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl">
+            <img
+              src={BgHero}
+              alt="Gambar"
+              className="h-full bg-center bg-cover rounded-3xl"
+            />
+            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
+              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
+                5K per tiket
+              </p>
+            </div>
+            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
+              <p className="text-2xl font-bold text-white">Pantai Citepus</p>
+              <p className="text-base text-white">Pantai</p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl">
+            <img
+              src={BgHero}
+              alt="Gambar"
+              className="h-full bg-center bg-cover rounded-3xl"
+            />
+            <div className="absolute bottom-0 left-0 flex flex-col items-end justify-start w-full h-full ">
+              <p className="text-xl font-bold bg-yellow-200 text-primary w-[11.75rem] rounded-bl-full text-center py-2">
+                10K per tiket
+              </p>
+            </div>
+            <div className="absolute flex flex-col items-start justify-end w-full h-full bottom-4 left-4">
+              <p className="text-2xl font-bold text-white">Batuan Citepus</p>
+              <p className="text-base text-white">Batuan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const Penginapan = () => {
@@ -219,14 +307,14 @@ const Objek = () => {
 };
 
 const Home = () => {
-	return (
-		<PortalTemplate>
-			<Hero />
-			<Penginapan />
-			<Entertainment />
-			<Objek />
-		</PortalTemplate>
-	);
+  return (
+    <PortalTemplate>
+      <Hero />
+      <Penginapan />
+      <Entertainment />
+      <Objek />
+    </PortalTemplate>
+  );
 };
 
 export default Home;
