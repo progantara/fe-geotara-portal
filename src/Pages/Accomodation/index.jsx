@@ -127,6 +127,7 @@ const Accomodation = () => {
 									<p className="ml-2 font-medium">Filter</p>
 								</button>
 								<div className={`${isFilterActive ? 'block' : 'hidden'} bg-green-50 absolute z-[100] w-72  left-0 shadow-xl text-sm  dark:text-gray-400 rounded-md py-5 px-5`}>
+								
 									{/* Header */}
 									<div className='flex justify-between'>
 										<button className="flex items-center px-4 py-2 bg-yellow-200 hover:bg-yellow-300 rounded-lg">
@@ -178,11 +179,7 @@ const Accomodation = () => {
 											nama="Bintang"
 										/>
 										<Bintang/>
-										
 									</div>
-
-									
-
 
 									{/* End Body */}
 								</div>
