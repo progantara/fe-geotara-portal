@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import PortalTemplate from '../Component/Layout';
 import { Link } from 'react-router-dom';
 
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { BsBookmark } from 'react-icons/bs';
 
-import Card from '../Component/Card/Top-penginapan';
-
 import BgHero from '../Assets/img/hero.jpg';
+import { slowImport } from './LoadingPosts';
+import LoadingPenginapan from './LoadingPosts';
+
+const Card = lazy(() => 
+   slowImport(import('../Component/Card/Top-penginapan'), 1000)
+);
 
 const Hero = () => {
 	return (
@@ -43,7 +47,7 @@ const Hero = () => {
 						</div>
 					</div>
 				</div>
-				<img src={BgHero} alt="background hero" className="w-2/5 h-[22.375rem] rounded-tl-[10rem] rounded-3xl" />
+					<img src={BgHero} alt="background hero" className="w-2/5 h-[22.375rem] rounded-tl-[10rem] rounded-3xl" />
 			</div>
 
 			<div>
@@ -126,12 +130,14 @@ const Penginapan = () => {
 	return (
 		<div className="p-20 bg-primary">
 			<h2 className="text-3xl font-extrabold text-gray-400">Top Penginapan</h2>
-			<h1 className="mb-8 text-5xl font-extrabold text-white">Pilih Penginapan Unggulan Untuk Kenyamanan Anda</h1>
-			<div className="grid grid-cols-3 gap-14 ">
-				{data.map((data, index) => {
-					return <Card image={BgHero} />;
-				})}
-			</div>
+			<h1 className="mb-8 text-5xl font-extrabold text-white">Pilih Penginapan Unggulan Untuk Kenyamanan Anda</h1>	
+			<Suspense fallback={<LoadingPenginapan />}>
+				<div className="grid grid-cols-3 gap-14 ">
+					{data.map((data, index) => {
+						return <Card image={BgHero} />;
+					})}
+				</div>
+			</Suspense>
 			<Link className="flex items-center justify-end pr-8 mt-8 text-white ">
 				Lihat Lebih Banyak
 				<IoArrowForwardSharp size={30} color="white" className="ml-2" />
