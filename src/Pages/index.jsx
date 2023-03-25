@@ -1,60 +1,54 @@
-import React from "react";
-import PortalTemplate from "../Component/Layout";
-import { Link } from "react-router-dom";
+import React, {lazy, Suspense} from 'react';
+import PortalTemplate from '../Component/Layout';
+import { Link } from 'react-router-dom';
 
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { BsBookmark } from "react-icons/bs";
 
-import Card from "../Component/Card/Top-penginapan";
+import BgHero from '../Assets/img/hero.jpg';
+import { slowImport } from './LoadingPosts';
+import LoadingPenginapan from './LoadingPosts';
 
-import BgHero from "../Assets/img/hero.jpg";
+const Card = lazy(() => 
+   slowImport(import('../Component/Card/Top-penginapan'), 1000)
+);
 
 const Hero = () => {
-  return (
-    <section className="bg-cover flex flex-col space-y-40 bg-hero-pattern pb-20 pt-[7.5rem] px-20">
-      <div className="flex justify-between ">
-        <div className="flex flex-col w-3/5 pr-[17rem] text-primary">
-          <h1 className="text-6xl font-bold leading-[4.125rem] ">
-            Lupakan kerja, Mulailah Liburan
-          </h1>
-          <p className="my-10 text-2xl">
-            Isilah hari-hari libur kamu dengan sesuatu yang membuat kamu
-            tersenyum, tertawa, dan bersyukur.
-          </p>
-          <div>
-            <button className="flex items-center px-8 py-4 text-white rounded-md bg-primary">
-              <a href="/virtual-tour/view">Coba 360</a>
-              <IoArrowForwardSharp color="white" />
-            </button>
-          </div>
-          <div className="grid grid-cols-3 mt-20">
-            <div className="flex flex-col space-y-4">
-              <BsBookmark size={50} />
-              <p>
-                <b>1000+</b> Wisata
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4">
-              <BsBookmark size={50} />
-              <p>
-                <b>5000+</b> Spot Foto
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4">
-              <BsBookmark size={50} />
-              <p>
-                <b>2500+</b> Pengunjung Baru
-              </p>
-            </div>
-          </div>
-        </div>
-        <img
-          src={BgHero}
-          alt="background hero"
-          className="w-2/5 h-[22.375rem] rounded-tl-[10rem] rounded-3xl"
-        />
-      </div>
-
+	return (
+		<section className="bg-cover flex flex-col space-y-40 bg-hero-pattern pb-20 pt-[7.5rem] px-20">
+			<div className="flex justify-between ">
+				<div className="flex flex-col w-3/5 pr-[17rem] text-primary">
+					<h1 className="text-6xl font-bold leading-[4.125rem] ">Lupakan kerja, Mulailah Liburan</h1>
+					<p className="my-10 text-2xl">Isilah hari-hari libur kamu dengan sesuatu yang membuat kamu tersenyum, tertawa, dan bersyukur.</p>
+					<div>
+						<button className="flex items-center px-8 py-4 text-white rounded-md bg-primary">
+							Coba 360
+							<IoArrowForwardSharp color="white" />
+						</button>
+					</div>
+					<div className="grid grid-cols-3 mt-20">
+						<div className="flex flex-col space-y-4">
+							<BsBookmark size={50} />
+							<p>
+								<b>1000+</b> Wisata
+							</p>
+						</div>
+						<div className="flex flex-col space-y-4">
+							<BsBookmark size={50} />
+							<p>
+								<b>5000+</b> Spot Foto
+							</p>
+						</div>
+						<div className="flex flex-col space-y-4">
+							<BsBookmark size={50} />
+							<p>
+								<b>2500+</b> Pengunjung Baru
+							</p>
+						</div>
+					</div>
+				</div>
+					<img src={BgHero} alt="background hero" className="w-2/5 h-[22.375rem] rounded-tl-[10rem] rounded-3xl" />
+			</div>
       <div>
         <h2 className="text-3xl font-extrabold text-gray-600">Top Wisata</h2>
         <h1 className="mb-8 text-5xl font-extrabold text-primary">
@@ -149,24 +143,23 @@ const Hero = () => {
 
 const Penginapan = () => {
   let data = [1, 2, 3, 4, 5, 6];
-
-  return (
-    <div className="p-20 bg-primary">
-      <h2 className="text-3xl font-extrabold text-gray-400">Top Penginapan</h2>
-      <h1 className="mb-8 text-5xl font-extrabold text-white">
-        Pilih Penginapan Unggulan Untuk Kenyamanan Anda
-      </h1>
-      <div className="grid grid-cols-3 gap-14 ">
-        {data.map((data, index) => {
-          return <Card image={BgHero} />;
-        })}
-      </div>
-      <Link className="flex items-center justify-end pr-8 mt-8 text-white ">
-        Lihat Lebih Banyak
-        <IoArrowForwardSharp size={30} color="white" className="ml-2" />
-      </Link>
-    </div>
-  );
+	return (
+		<div className="p-20 bg-primary">
+			<h2 className="text-3xl font-extrabold text-gray-400">Top Penginapan</h2>
+			<h1 className="mb-8 text-5xl font-extrabold text-white">Pilih Penginapan Unggulan Untuk Kenyamanan Anda</h1>	
+			<Suspense fallback={<LoadingPenginapan />}>
+				<div className="grid grid-cols-3 gap-14 ">
+					{data.map((data, index) => {
+						return <Card image={BgHero} />;
+					})}
+				</div>
+			</Suspense>
+			<Link className="flex items-center justify-end pr-8 mt-8 text-white ">
+				Lihat Lebih Banyak
+				<IoArrowForwardSharp size={30} color="white" className="ml-2" />
+			</Link>
+		</div>
+	);
 };
 
 const Entertainment = () => {
