@@ -6,10 +6,12 @@ import * as ol from "ol";
 const Map = ({ children, zoom, center }) => {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
+
   // on component mount
   useEffect(() => {
+    let view = new ol.View({ zoom, center });
     let options = {
-      view: new ol.View({ zoom, center }),
+      view: view,
       layers: [],
       controls: [],
       overlays: [],
@@ -17,6 +19,7 @@ const Map = ({ children, zoom, center }) => {
     let mapObject = new ol.Map(options);
     mapObject.setTarget(mapRef.current);
     setMap(mapObject);
+    
     return () => mapObject.setTarget(undefined);
   }, []);
   // zoom change handler
@@ -27,7 +30,7 @@ const Map = ({ children, zoom, center }) => {
   // center change handler
   useEffect(() => {
     if (!map) return;
-    map.getView().setCenter(center);
+    map.getView().animate({ center: center, duration: 1525, zoom: zoom });
   }, [center]);
   return (
     <MapContext.Provider value={{ map }}>
