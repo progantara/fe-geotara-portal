@@ -29,16 +29,22 @@ let styles = {
 const geojsonObject = mapConfig.geojsonObject;
 const geojsonObject2 = mapConfig.geojsonObject2;
 const geojsonObject3 = mapConfig.geojsonObject3;
+const geojsonObject4 = mapConfig.geojsonObject4;
+const geojsonObject5 = mapConfig.geojsonObject5;
+const geojsonObject6 = mapConfig.geojsonObject6;
 const markersLonLat = [mapConfig.kansasCityLonLat, mapConfig.blueSpringsLonLat];
 
 const Home = () => {
   const [center, setCenter] = useState([
-    106.48024124492765, -7.206881147968618,
+    106.92212358079824, -6.919457022684152,
   ]);
   const [zoom, setZoom] = useState(9);
   const [showLayer1, setShowLayer1] = useState(true);
   const [showLayer2, setShowLayer2] = useState(true);
   const [showLayer3, setShowLayer3] = useState(true);
+  const [showLayer4, setShowLayer4] = useState(true);
+  const [showLayer5, setShowLayer5] = useState(true);
+  const [showLayer6, setShowLayer6] = useState(true);
 
   return (
     <>
@@ -182,22 +188,24 @@ const Home = () => {
         <div class="flex flex-col border-xl sidebar lg:left-0 p-2 w-[350px] h-screen overflow-y-auto text-center bg-green-300 ">
           <div class="text-gray-100 text-xl">
             <div class="p-2.5 mt-1 flex items-center">
-              <button class="bg-green-800 hover:bg-green-600 text-dark text-sm font-semibold py-3 px-4 rounded-lg">
-                <svg
-                  class="w-6 h-6 dark:text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                  ></path>
-                </svg>
-              </button>
+              <a href="/">
+                <button class="bg-green-800 hover:bg-green-600 text-dark text-sm font-semibold py-3 px-4 rounded-lg">
+                  <svg
+                    class="w-6 h-6 dark:text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                    ></path>
+                  </svg>
+                </button>
+              </a>
               <i
                 class="bi bi-x cursor-pointer ml-28 lg:hidden"
                 onclick="openSidebar()"
@@ -251,12 +259,12 @@ const Home = () => {
                       d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
                     />
                   </svg>
-                  <div className="text-black text-lg font-medium ml-3 -mt-1">
+                  <div className="text-black text-lg font-small  ml-3 -mt-1">
                     <a href="/virtual-tour">Map</a>
                   </div>
                 </div>
                 <div className="flex flex-row mt-10 ml-3">
-                  <p className="text-black text-xl font-medium tracking-wide">
+                  <p className="text-black text-xl font-semibold tracking-wide">
                     KECAMATAN
                   </p>
                 </div>
@@ -284,7 +292,7 @@ const Home = () => {
                           setShowLayer1(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Ciemas</a>
+                      <a href="/virtual-tour/view">Ciemas</a>
                     </div>
                   </div>
                 </div>
@@ -312,7 +320,7 @@ const Home = () => {
                           setShowLayer2(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Cikakak</a>
+                      <a href="/virtual-tour/view">Cikakak</a>
                     </div>
                   </div>
                 </div>
@@ -340,7 +348,7 @@ const Home = () => {
                           setShowLayer3(event.target.checked)
                         }
                       />{" "}
-                      <a href="/area">Pelabuhan Ratu</a>
+                      <a href="/virtual-tour/view">Pelabuhan Ratu</a>
                     </div>
                   </div>
                 </div>
@@ -360,7 +368,16 @@ const Home = () => {
                     />
                   </svg>
                   <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                    <a href="#">Simpenan</a>
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={showLayer4}
+                        onChange={(event) =>
+                          setShowLayer4(event.target.checked)
+                        }
+                      />{" "}
+                      <a href="/virtual-tour/view">Simpenan</a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-row text-black mt-6 ml-3">
@@ -379,7 +396,16 @@ const Home = () => {
                     />
                   </svg>
                   <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                    <a href="#">Waluran</a>
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={showLayer5}
+                        onChange={(event) =>
+                          setShowLayer5(event.target.checked)
+                        }
+                      />{" "}
+                      <a href="/virtual-tour/view">Waluran</a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-row text-black mt-6 ml-3">
@@ -398,7 +424,16 @@ const Home = () => {
                     />
                   </svg>
                   <div className=" text-black text-[17px] font-medium -mt-1 ml-2">
-                    <a href="#">Cilacap</a>
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={showLayer6}
+                        onChange={(event) =>
+                          setShowLayer6(event.target.checked)
+                        }
+                      />{" "}
+                      <a href="/virtual-tour/view">Cilacap</a>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -439,27 +474,41 @@ const Home = () => {
                   style={styles.MultiPolygon}
                 />
               )}
+              {showLayer4 && (
+                <VectorLayer
+                  source={vector({
+                    features: new GeoJSON().readFeatures(geojsonObject4, {
+                      featureProjection: get("EPSG:3857"),
+                    }),
+                  })}
+                  style={styles.MultiPolygon}
+                />
+              )}
+              {showLayer5 && (
+                <VectorLayer
+                  source={vector({
+                    features: new GeoJSON().readFeatures(geojsonObject5, {
+                      featureProjection: get("EPSG:3857"),
+                    }),
+                  })}
+                  style={styles.MultiPolygon}
+                />
+              )}
+              {showLayer6 && (
+                <VectorLayer
+                  source={vector({
+                    features: new GeoJSON().readFeatures(geojsonObject6, {
+                      featureProjection: get("EPSG:3857"),
+                    }),
+                  })}
+                  style={styles.MultiPolygon}
+                />
+              )}
             </Layers>
             <Controls>
               <FullScreenControl />
             </Controls>
           </Map>
-          {/* <div>
-            <input
-              type="checkbox"
-              checked={showLayer1}
-              onChange={(event) => setShowLayer1(event.target.checked)}
-            />{" "}
-            Johnson County
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              checked={showLayer2}
-              onChange={(event) => setShowLayer2(event.target.checked)}
-            />{" "}
-            Wyandotte County
-          </div> */}
         </div>
       </div>
     </>

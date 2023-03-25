@@ -7,7 +7,6 @@ import sitara from '../../Assets/img/sitara.png'
 
 import { Link, useNavigate } from 'react-router-dom'
 
-
 const Login = () => {
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
@@ -19,7 +18,7 @@ const Login = () => {
                     <div className='relative h-10 w-32'>
                         <img className='absolute h-25 w-20 -left-10 -top-10' src={sitara} alt=""></img>
                     </div>
-                    <h2 className='text-emerald-800 text-opac ity-100 text-4xl font-bold text-center py-3'>LOGIN</h2>
+                    <h2 className='text-emerald-800 text-opac ity-100 text-4xl font-bold text-center py-3'>Daftar</h2>
                     <div className='mx-7 flex flex-col text-green-800 font-semibold'>
                         <label>Nama</label>
                         <input className='p-4 rounded-lg text-xs my-2' type="text" placeholder='Nama Lengkap' />

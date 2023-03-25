@@ -1,25 +1,23 @@
-import React from 'react';
-import PortalTemplate from '../../Component/Layout';
+import React from "react";
+import PortalTemplate from "../../Component/Layout";
 
 // image
-import profile from '../../Assets/img/profile.jpg'
-import articel1 from '../../Assets/img/Article-1.jpg'
-import articel2 from '../../Assets/img/Article-2.jpg'
-import articel3 from '../../Assets/img/Article-3.jpg'
-import articel4 from '../../Assets/img/Article-4.jpg'
-import articel5 from '../../Assets/img/Article-5.jpg'
-import articel6 from '../../Assets/img/Article-6.jpg'
-import articel7 from '../../Assets/img/Article-7.jpg'
-import articel8 from '../../Assets/img/Article-8.jpg'
-import articel9 from '../../Assets/img/Article-9.jpg'
-
-import { Link, useNavigate } from 'react-router-dom';
+import profile from "../../Assets/img/profile.jpg";
+import articel1 from "../../Assets/img/Article-1.jpg";
+import articel2 from "../../Assets/img/Article-2.jpg";
+import articel3 from "../../Assets/img/Article-3.jpg";
+import articel4 from "../../Assets/img/Article-4.jpg";
+import articel5 from "../../Assets/img/Article-5.jpg";
+import articel6 from "../../Assets/img/Article-6.jpg";
+import articel7 from "../../Assets/img/Article-7.jpg";
+import articel8 from "../../Assets/img/Article-8.jpg";
+import articel9 from "../../Assets/img/Article-9.jpg";
 
 const Artikel = () => {
-  const items = [{ label: 'Artikel', url: '/artikel' }];
-	let data = [1, 2, 3, 4, 5, 6];
+  const items = [{ label: "Artikel", url: "/artikel" }];
+  let data = [1, 2, 3, 4, 5, 6];
 
-	return (
+  return (
     <>
       <PortalTemplate items={items}>
         <div className="bg-green-100 flex flex-col">
@@ -29,6 +27,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg brightness-75 max-w-4xl bg-fixed"
                   src={articel1}
+                  alt="post-1"
                 />
               </div>
               <div className="absolute mt-96">
@@ -56,6 +55,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg h-20 w-32 mt-10 ml-5"
                   src={articel2}
+                  alt="post-2"
                 />
                 <div className="text-green-900 ml-40">
                   <p className="-mt-20 font-bold text-lg">
@@ -66,6 +66,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg h-20 w-32 mt-7 ml-5"
                   src={articel3}
+                  alt="post-3"
                 />
                 <div className="text-green-900 ml-40">
                   <p className="-mt-20 font-bold text-lg flex ">
@@ -76,6 +77,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg h-20 w-32 mt-14 ml-5"
                   src={articel4}
+                  alt="post-4"
                 />
                 <div className="text-green-900 ml-40">
                   <p className="-mt-20 font-bold text-lg">
@@ -86,6 +88,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg h-20 w-32 mt-7 ml-5"
                   src={articel5}
+                  alt="post-5"
                 />
                 <div className="text-green-900 ml-40">
                   <p className="-mt-20 font-bold text-lg">
@@ -96,6 +99,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg h-20 w-32 mt-7 ml-5"
                   src={articel6}
+                  alt="post-6"
                 />
                 <div className="text-green-900 ml-40">
                   <p className="-mt-20 font-bold text-lg">
@@ -106,7 +110,6 @@ const Artikel = () => {
               </div>
             </div>
           </div>
-
           <div className="ml-20 ">
             <p className="text-green-900 text-4xl font-semibold mb-4 mt-3">
               Artikel
@@ -116,10 +119,11 @@ const Artikel = () => {
                 <img
                   className="rounded-lg w-3/4 h-40 mt-7 ml-7 mb-3 object-cover object-right"
                   src={articel7}
+                  alt="post-7"
                 />
                 <div className="mt-9 ml-8 ">
                   <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                    <img className="w-10 h-8 rounded-full" src={profile} />
+                    <img className="w-10 h-8 rounded-full" src={profile} alt={profile} />
                     <p className="text-sm text-dark mt-2 ml-2">NurFauziyah</p>
                     <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
                     <p className="text-sm text-dark mt-2">Wisata</p>
@@ -127,13 +131,13 @@ const Artikel = () => {
                     <p className="text-sm text-dark mt-2">September 21, 2022</p>
                   </div>
                   <a
-                    href="#"
+                    href="/"
                     className="block mt-1 text-xl font-medium text-green-900"
                   >
                     Lagi Viral, yuk Healing ke
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="block mt-1 text-xl font-medium text-green-900"
                   >
                     Geopark Ciletuh Sukabumi{" "}
@@ -153,10 +157,11 @@ const Artikel = () => {
                 <img
                   className="rounded-lg w-4/6 h-40 mt-7 ml-7 mb-3 object-cover object-bottom"
                   src={articel8}
+                  alt="post-8"
                 />
                 <div className="mt-9 ml-8 ">
                   <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                    <img className="w-10 h-8 rounded-full" src={profile} />
+                    <img className="w-10 h-8 rounded-full" src={profile} alt={profile} />
                     <p className="text-sm text-dark mt-2 ml-2">Tiara</p>
                     <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
                     <p className="text-sm text-dark mt-2 ml-2">Wisata</p>
@@ -166,13 +171,13 @@ const Artikel = () => {
                     </p>
                   </div>
                   <a
-                    href="#"
+                    href="/"
                     className="block mt-1 text-xl font-medium text-green-900"
                   >
                     Lagi Viral, yuk Healing ke
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="block mt-1 text-xl font-medium text-green-900"
                   >
                     Geopark Ciletuh Sukabumi{" "}
@@ -191,6 +196,7 @@ const Artikel = () => {
                 <img
                   className="rounded-lg w-2/5 h-40 mt-7 ml-7 mb-3 object-cover object-bottom"
                   src={articel9}
+                  alt="post-9"
                 />
                 <div className="mt-9 ml-8 ">
                   <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
@@ -204,13 +210,13 @@ const Artikel = () => {
                     </p>
                   </div>
                   <a
-                    href="#"
+                    href="/"
                     className="block mt-1 text-xl font-medium text-green-900"
                   >
                     Lagi Viral, yuk Healing ke
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="block mt-1 text-xl font-medium text-green-900"
                   >
                     Geopark Ciletuh Sukabumi{" "}
@@ -222,24 +228,23 @@ const Artikel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="border-green-600 bg-green-600 rounded-xl mb-10 w-2/4">
-                 <p className='text-center text-white mt-5'> Newsletter</p>
-                <div className="mb-3 mt-4 ml-20 mr-40">
-                  <input
+            
+            <div className="w-fit pt-10 pb-14 px-40 bg-green-600 flex-col justify-center items-center text-white rounded-xl mx-auto">
+              <p className="mb-2 text-center">Newsletter</p>
+              <div className="flex flex-row gap-2 justify-center">
+                <input
                     type="text"
                     placeholder="Alamat Email"
-                    className="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block w-96 h-14 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
-                </div>
-                <div className="mx-7 flex flex-col items-end static -mt-14">
-                  <button className="bg-yellow-300 hover:bg-yellow-400 text-dark text-sm font-semibold py-3 px-4 rounded-lg mb-10">
+                  <button className="bg-yellow-300 hover:bg-yellow-400 text-dark text-sm font-semibold py-3 px-4 rounded-lg text-green-900">
                     Subscribe
                   </button>
-                </div>
               </div>
             </div>
+            
           </div>
+          s
         </div>
       </PortalTemplate>
     </>
