@@ -20,7 +20,6 @@ const Navbar = () => {
 		<>
 			<nav className="w-full bg-white px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700 md:px-14 xl:px-32">
 				<div className=" flex flex-wrap items-center justify-between mx-auto md:flex-nowrap">
-
 					{/* Logo */}
 					<Link to="/" className="flex items-center">
 						<img src={Logo} className="w-24 xl:w-32" alt="Geotara Logo" />
