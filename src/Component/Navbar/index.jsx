@@ -18,18 +18,17 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className="w-full bg-white container px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700 md:px-14">
-
-				<div className="container flex flex-wrap items-center justify-between mx-auto md:flex-nowrap">
+			<nav className="w-full bg-white px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700 md:px-14 xl:px-32">
+				<div className=" flex flex-wrap items-center justify-between mx-auto md:flex-nowrap">
 
 					{/* Logo */}
 					<Link to="/" className="flex items-center">
-						<img src={Logo} className="w-24" alt="Geotara Logo" />
+						<img src={Logo} className="w-24 xl:w-32" alt="Geotara Logo" />
 					</Link>
 
 					{/* Menu */}
 					<div className="hidden w-full md:block md:w-fit">
-						<ul className="flex flex-col md:flex-row gap-5 md:text-sm md:font-medium">
+						<ul className="flex flex-col md:flex-row gap-5 md:text-sm md:font-medium xl:text-base">
 							<li key={1}>
 								<Link
 									to="/virtual-tour"
@@ -179,7 +178,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 
-			<ul className={`${isNavbarActive ? 'block' : 'hidden'} bg-white shadow py-2 absolute z-50 left-[50%] text-sm text-primary dark:text-gray-400 rounded`}>
+			<ul className={`${isNavbarActive ? 'block' : 'hidden'} bg-white shadow-2xl py-2 absolute z-50 left-[50%] text-sm text-primary dark:text-gray-400 rounded xl:text-base`}>
 				<li key={1}>
 					<Link
 						to="/accomodation"

@@ -3,9 +3,20 @@
   background-color: rgba(255,255,255, 0,5);
 }
 
+.bg-hero-hotel{
+  background-image: url("../../img/hotel/hotel-1.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-article-hotel {
+  background-image: url("../../img/hotel/hotel-2.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+
 .button {
   font-size: 18px;
-  padding: 24px 36px;
+  padding: 12px 22px;
   border: none;
   border-radius: 10px;
   cursor: pointer;

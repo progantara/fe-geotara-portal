@@ -36,7 +36,7 @@ function Slider() {
         step={1000}
         value={value}
         onChange={handleOnChange}
-        className="w-full"
+        className="w-full md:w-1/3"
       />
     </div>
   );

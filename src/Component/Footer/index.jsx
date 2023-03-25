@@ -29,7 +29,7 @@ const Footer = () => {
 					<div className='flex flex-col mb-5'>
 						<span className="text-xl font-bold mb-2">Hubungi Kami</span>
 						<p className="mb-1">Email : geotara@gmail.com</p>
-						<p className='mb-1'>Alamat : <p className='hidden md:block'></p> Jalan Gegerkalong Hilir , Kec. Sukasari, Kota Bandung, Jawa Barat</p>
+						<p className='mb-1'>Alamat : <span className='hidden md:block'></span> Jalan Gegerkalong Hilir , Kec. Sukasari, Kota Bandung, Jawa Barat</p>
 					</div>
 
 				</div>
@@ -126,11 +126,11 @@ const Footer = () => {
 				{/* Konten */}
 				<div className='md:w-1/3 md:pt-4'>
 					<h2 className="mb-6 text-xl font-semibold ">Follow on Instagram</h2>
-					<div className="grid grid-cols-2 gap-4 md:gap-2">
-						<img src={footer1} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20" alt="FlowBite Logo" />
-						<img src={footer2} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20" alt="FlowBite Logo" />
-						<img src={footer3} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20" alt="FlowBite Logo" />
-						<img src={footer4} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20" alt="FlowBite Logo" />
+					<div className="grid grid-cols-2 gap-3 md:gap-2">
+						<img src={footer1} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
+						<img src={footer2} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
+						<img src={footer3} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
+						<img src={footer4} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
 					</div>
 				</div>
 			</div>
@@ -140,7 +140,7 @@ const Footer = () => {
 			<div className="sm:flex sm:items-center sm:justify-between">
 				<span className="text-sm sm:text-left ">
 					<p className="font-bold text-center">Copyright © 2023 Geopark Kab. Sukabumi | All Rights Reserved</p>
-					<p>Dibuat dengan ❤️ oleh Tim Geotara Polban</p>
+					<p className='text-center'>Dibuat dengan ❤️ oleh Tim Geotara Polban</p>
 				</span>
 
 				<div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 justify-center">
