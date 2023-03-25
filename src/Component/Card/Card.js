@@ -24,7 +24,7 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 	}
   
   return (
-    <div className="bg-white rounded-xl shadow-xl overflow-hidden p-3 text-primary relative max-w-[250px]">
+    <div className="bg-white rounded-xl shadow-xl overflow-hidden p-3 text-primary relative max-w-[250px] xl:w-[360px] xl:max-w-[360px] xl:p-5">
 
       {/* Discount Badge */}
       {
@@ -38,13 +38,13 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
       }
 
       {/* Image */}
-      <img src={image} alt={title} className="w-full object-cover h-48 rounded-xl" />
+      <img src={image} alt={title} className="w-full object-cover h-48 rounded-xl xl:h-64" />
 
       <div className="mt-2">
 
         {/* Title */}
         <div>
-          <p className="text-lg font-bold mb-0">{title}</p>
+          <p className="text-lg font-bold mb-0 xl:text-xl">{title}</p>
           <p className="text-sm flex items-center">
             <BiMap />
             {address}
@@ -76,16 +76,23 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
                 <p className="text-sm">Start From : </p>
               }
 
-              <p className="text-xl font-bold">Rp {formatRupiah(String(price)) }</p>
+              <p className="text-xl font-bold xl:text-2xl">Rp {formatRupiah(String(price)) }</p>
             </div>
           </div>
 
           {/* Link */}
-          <div className="">
+          <div className="xl:hidden">
             <Link to={link}>
               <Button size="small">Lihat</Button>
             </Link>
           </div>
+
+          <div className="hidden xl:block">
+            <Link to={link}>
+              <Button size="default">Lihat</Button>
+            </Link>
+          </div>
+
         </div>
 
       </div>

@@ -18,9 +18,9 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className="w-full bg-white container px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700 md:px-14">
+			<nav className="w-full bg-white px-5 py-2 border-gray-200 shadow-lg border-b-gray-900 dark:bg-gray-900 dark:border-gray-700 md:px-14 xl:px-32">
 
-				<div className="container flex flex-wrap items-center justify-between mx-auto md:flex-nowrap">
+				<div className="flex flex-wrap items-center justify-between mx-auto md:flex-nowrap">
 
 					{/* Logo */}
 					<Link to="/" className="flex items-center">
