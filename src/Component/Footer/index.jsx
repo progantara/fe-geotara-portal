@@ -9,126 +9,142 @@ import footer4 from '../../Assets/img/footer-4.jpg';
 
 const Footer = () => {
 	return (
-		<footer className="p-4 text-white bg-green-600 pt-28 sm:px-20 ">
+		<footer className="p-4 text-white bg-green-600 pt-12 sm:px-20 md:px-14">
+
 			<div className="md:flex md:justify-between">
-				<div className="flex flex-col justify-between">
-					<div>
-						<a href="https://flowbite.com/" className="flex items-center">
+
+				{/* Head */}
+				<div className="flex flex-col justify-between md:justify-start md:w-1/3">
+
+					{/* Logo */}
+					<div className='flex flex-col justify-center mb-5 md:justify-start'>
+						<a href="https://flowbite.com/" className="flex items-center justify-center md:justify-start">
 							<img src={Logo} className="h-12 mb-2 mr-3" alt="FlowBite Logo" />
 							<span className="self-center text-2xl font-semibold whitespace-nowrap">Geotara</span>
 						</a>
-						<span>Temukan Informasi Seputar Geopark di Ciletuh</span>
+						<span className='text-center md:text-left'>Temukan Informasi Seputar Geopark di Ciletuh</span>
 					</div>
-					<div>
-						<span className="self-center text-xl font-semibold whitespace-nowrap">Hubungi Kami</span>
-						<p className="mt-4 mb-2">Email : geotara@gmail.com</p>
-						<p>Alamat : Jalan Gegerkalong Hilir , Kec. Sukasari, Kota Bandung, Jawa Barat</p>
+
+					{/* Kontak */}
+					<div className='flex flex-col mb-5'>
+						<span className="text-xl font-bold mb-2">Hubungi Kami</span>
+						<p className="mb-1">Email : geotara@gmail.com</p>
+						<p className='mb-1'>Alamat : <span className='hidden md:block'></span> Jalan Gegerkalong Hilir , Kec. Sukasari, Kota Bandung, Jawa Barat</p>
 					</div>
+
 				</div>
-				<div>
-					<h2 className="mb-6 text-xl font-semibold ">Menu</h2>
+
+				{/* Menu */}
+				<div className='mb-5 md:w-1/3 md:pt-4 md:ml-5'>
+					<h2 className="mb-2 text-xl font-semibold ">Menu</h2>
 					<ul>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Home
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								About
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Virtual Tour
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Artikel
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Rencanakan Perjalanan Anda
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Event
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Login
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div>
-					<h2 className="mb-6 text-xl font-semibold ">Kecamatan</h2>
+
+				{/* Kecamatan */}
+				<div className='mb-5 md:w-1/3 md:pt-4'>
+					<h2 className="mb-2 text-xl font-semibold ">Kecamatan</h2>
 					<ul>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Cisolok
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Cikakak
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Palabuhanratu
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Simpenan
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Ciemas
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Waluran
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Surade
 							</a>
 						</li>
-						<li className="mb-4">
-							<a href="" className="hover:underline">
+						<li className="mb-2">
+							<a href="/" className="hover:underline">
 								Cilacap
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div>
+
+				{/* Konten */}
+				<div className='md:w-1/3 md:pt-4'>
 					<h2 className="mb-6 text-xl font-semibold ">Follow on Instagram</h2>
-					<div className="grid grid-cols-2 gap-4">
-						<img src={footer1} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
-						<img src={footer2} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
-						<img src={footer3} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
-						<img src={footer4} className="w-40 h-40 bg-center bg-cover border-4 border-white rounded-xl" alt="FlowBite Logo" />
+					<div className="grid grid-cols-2 gap-3 md:gap-2">
+						<img src={footer1} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
+						<img src={footer2} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
+						<img src={footer3} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
+						<img src={footer4} className="w-40 h-40 bg-center object-cover border-2 border-white rounded-xl md:w-20 md:h-20 xl:w-40 xl:h-40" alt="FlowBite Logo" />
 					</div>
 				</div>
 			</div>
+
 			<hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
 			<div className="sm:flex sm:items-center sm:justify-between">
 				<span className="text-sm sm:text-left ">
-					<p className="font-bold">Copyright © 2023 Geopark Kab. Sukabumi | All Rights Reserved</p>
-					<p>Dibuat dengan ❤️ oleh Tim Geotara Polban</p>
+					<p className="font-bold text-center">Copyright © 2023 Geopark Kab. Sukabumi | All Rights Reserved</p>
+					<p className='text-center lg:text-left'>Dibuat dengan ❤️ oleh Tim Geotara Polban</p>
 				</span>
 
-				<div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-					<a href="#" className=" dark:hover:text-white">
+				<div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 justify-center">
+					<a href="/" className=" dark:hover:text-white">
 						<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fillRule="evenodd"
@@ -138,7 +154,7 @@ const Footer = () => {
 						</svg>
 						<span className="sr-only">Facebook page</span>
 					</a>
-					<a href="#" className=" dark:hover:text-white">
+					<a href="/" className=" dark:hover:text-white">
 						<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fillRule="evenodd"
@@ -148,13 +164,13 @@ const Footer = () => {
 						</svg>
 						<span className="sr-only">Instagram page</span>
 					</a>
-					<a href="#" className=" dark:hover:text-white">
+					<a href="/" className=" dark:hover:text-white">
 						<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
 						</svg>
 						<span className="sr-only">Twitter page</span>
 					</a>
-					<a href="#" className=" dark:hover:text-white">
+					<a href="/" className=" dark:hover:text-white">
 						<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fillRule="evenodd"
@@ -164,7 +180,7 @@ const Footer = () => {
 						</svg>
 						<span className="sr-only">GitHub account</span>
 					</a>
-					<a href="#" className=" dark:hover:text-white">
+					<a href="/" className=" dark:hover:text-white">
 						<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fillRule="evenodd"
@@ -176,6 +192,7 @@ const Footer = () => {
 					</a>
 				</div>
 			</div>
+
 		</footer>
 	);
 };

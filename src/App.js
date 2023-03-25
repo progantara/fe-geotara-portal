@@ -2,14 +2,12 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./Pages";
-
-import Artikel from "./Pages/Artikel";
+import Artikel from './Pages/Artikel';
 import Detail from "./Pages/Artikel/Detail";
+import Event from './Pages/Event';
+import EventDetail from './Pages/Event/detail';
 
-import Event from "./Pages/Event";
-import EventDetail from "./Pages/Event/detail";
-
-import Virtual from "./Pages/VirtualTour";
+import Virtual from './Pages/VirtualTour';
 import Area from "./Pages/VirtualTour/Area";
 import ViewArea from "./Pages/VirtualTour/view";
 
