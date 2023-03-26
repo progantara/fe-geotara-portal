@@ -4,7 +4,7 @@ import { BiMap } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
-const BaseCard = ({ title, image, address, rating, price, link, discount, priceBefore }) => {
+const BaseCard = ({ title, image, address, rating, price, link, discount, priceBefore, open, close, per }) => {
 
   function formatRupiah(angka, prefix){
 		var number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -24,7 +24,7 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 	}
   
   return (
-    <div className="bg-white rounded-xl shadow-xl overflow-hidden p-3 text-primary relative max-w-[250px] xl:w-[360px] xl:max-w-[360px] xl:p-5 2xl:w-[400px] 2xl:max-w-2xl">
+    <div className="bg-white rounded-xl shadow-xl overflow-hidden p-3 text-primary relative max-w-[250px] md:min-w-[260px] xl:w-[360px] xl:max-w-[360px] xl:p-5 2xl:w-[380px] 2xl:max-w-2xl">
 
       {/* Discount Badge */}
       {
@@ -63,7 +63,10 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 
         <div className="flex justify-between">
         
-          {/* Price */}
+
+        {/* Price */}
+        {
+          price &&
           <div className="flex items-center justify-between">
             <div className="">
               {
@@ -76,9 +79,28 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
                 <p className="text-sm">Start From : </p>
               }
 
-              <p className="text-xl font-bold xl:text-2xl">Rp {formatRupiah(String(price)) }</p>
+              <div className="flex items-center gap-2">
+                <p className="text-xl font-bold xl:text-2xl">Rp {formatRupiah(String(price)) }</p>
+                {/* Trip */}
+                {
+                  per && 
+                    <p className="text-sm">/ {per}</p>
+                }
+              </div>
             </div>
           </div>
+        }
+
+        
+
+        {/* Open & CLose */}
+        {
+          open &&
+          <div className="flex flex-col justify-between">
+            <p className="text-sm">Open From : </p>
+            <p className="text-xl font-bold xl:text-2xl">{open} - {close}</p>
+          </div>
+        }
 
           {/* Link */}
           <div className="xl:hidden">

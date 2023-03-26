@@ -67,10 +67,8 @@ const Accomodation = () => {
 	]
 
 	const items = [{ label: 'Accomodation', url: '/Accomodation' }];
-	let data = [1, 2, 3, 4, 5, 6];
 
 	const [isFilterActive, setIsFilterActive] = useState(false);
-	const [isClear, setIsClear] = useState(false);
 
   const toggleClass = () => {
     setIsFilterActive(!isFilterActive);
@@ -83,7 +81,7 @@ const Accomodation = () => {
 	const initialState = dataKecamatan.reduce((acc, cur, idx) => {
 		return {
 			...acc,
-			[`kecamatan-${idx+1}`]: true // set nilai awal checkbox ke false
+			[`item-${idx+1}`]: true // set nilai awal checkbox ke false
 		}
 	}, {})
 
@@ -91,8 +89,8 @@ const Accomodation = () => {
 	
 	const toggleClear = () => {
 		const newCheckboxStatus = {};
-		dataKecamatan.forEach((kecamatan, index) => {
-			newCheckboxStatus[`kecamatan-${index+1}`] = false;
+		dataKecamatan.forEach((item, index) => {
+			newCheckboxStatus[`item-${index+1}`] = false;
 		});
 		setCheckboxStatus(newCheckboxStatus);
 	}
@@ -200,12 +198,12 @@ const Accomodation = () => {
 
 									</div>
 
-
 									<div className='mt-5'>
 										<Button size="small">Confirm</Button>
 									</div>
 
 								</div>
+
 							</div>
 
 							{/* Search */}
@@ -241,7 +239,7 @@ const Accomodation = () => {
 							{/* Showing */}
 							<div className="flex items-center">
 								<p className="mr-4 text-[10px] hidden md:block xl:text-lg">SHOWING 1 - 6 OF 12 ITEM(S)</p>
-								<Dropdown></Dropdown>
+							<Dropdown></Dropdown>
 							</div>
 
 						</div>
@@ -256,7 +254,7 @@ const Accomodation = () => {
 							address="Ciwaru, Ciemas"
 							rating="365"
 							price={850000}
-							link={"/virtual-tour"}
+							link={"/accomodation/detail"}
 						/>
 						<Card
 							title="Ciletuh Hills"
@@ -266,7 +264,7 @@ const Accomodation = () => {
 							discount="25"
 							priceBefore={1200000}
 							price={900000}
-							link={"/virtual-tour"}
+							link={"/accomodation/detail"}
 						/>
 						<Card
 							title="Homestay Family"
@@ -276,7 +274,7 @@ const Accomodation = () => {
 							discount="10"
 							priceBefore={1000000}
 							price={900000}
-							link={"/virtual-tour"}
+							link={"/accomodation/detail"}
 						/>
 						<Card
 							title="Villa Tenjo Gunung"
@@ -284,7 +282,7 @@ const Accomodation = () => {
 							address="Ciwaru, Ciemas"
 							rating="257"
 							price={900000}
-							link={"/virtual-tour"}
+							link={"/accomodation/detail"}
 						/>
 						<Card
 							title="Villa Satria Bahari"
@@ -292,7 +290,7 @@ const Accomodation = () => {
 							address="Ciwaru, Ciemas"
 							rating="150"
 							price={1580000}
-							link={"/virtual-tour"}
+							link={"/accomodation/detail"}
 						/>
 						<Card
 							title="Penginapan D'Leuit Exa"
@@ -300,7 +298,7 @@ const Accomodation = () => {
 							address="Ciwaru, Ciemas"
 							rating="650"
 							price={530000}
-							link={"/virtual-tour"}
+							link={"/accomodation/detail"}
 						/>
 					</div>
 
