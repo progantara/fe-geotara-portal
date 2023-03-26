@@ -113,16 +113,16 @@ const MerhcantAndSourvenir = () => {
 
 					{/* Caption */}
 					<div className="flex flex-col text-center space-y-4 mt-16 mb-10">
-						<h1 className="text-xl md:text-3xl xl:text-5xl font-bold lg:w-[800px] xl:mx-auto">TENTUKAN DESTINASI UNTUK BERLIBUR</h1>
-						<p className="text-sm md:text-lg xl:text-xl">Tentukan tour & travel yang membantu liburan mu!</p>
+						<h1 className="text-xl md:text-3xl xl:text-5xl font-bold lg:w-[800px] xl:mx-auto">TENTUKAN BARANG YANG AKAN DIBERIKAN</h1>
+						<p className="text-sm md:text-lg xl:text-xl">Temukan oleh-oleh yang akan diberikan kepada orang terkasih mu !</p>
 					</div>
 
 					{/* Filter Area */}
 					<div className="flex flex-col">
 						{/* Title */}
 						<div>
-							<p className="text-base md:text-lg xl:text-xl font-bold text-secondary">List Tour & Travel</p>
-							<p className="text-lg md:text-xl xl:text-3xl font-bold">Avalaible Tour & Travel</p>
+							<p className="text-base md:text-lg xl:text-xl font-bold text-secondary">List Merchant & Souveniers</p>
+							<p className="text-lg md:text-xl xl:text-3xl font-bold">Available Merchant & Souveniers</p>
 						</div>
 
 						<div className="flex items-center justify-between flex-nowrap w-full mb-5 mt-4 gap-2">
@@ -241,64 +241,64 @@ const MerhcantAndSourvenir = () => {
 
 					</div>
 					
-					{/* Card Tour */}
+					{/* Card Merchant */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
 						<Card
-							title="Travel Buddies"
-							image={IMAGES.travel1}
-							address="Duren Sawit, Kota Jakarta Timur"
-							rating="200"
-							price={280000}
-							link={"/tour-travel/detail"}
+							title="Gantungan Kunci"
+							image={IMAGES.merchant1}
+							address="Giri Mukti, Ciemas"
+							rating="120"
+							price={12500}
+							link={"/merchant-sourvenir/detail"}
 						/>
 						<Card
-							title="Jaswita Tourism"
-							image={IMAGES.travel2}
-							address="Lengkong, Bandung"
-							rating="358"
-							price={220000}
-							link={"/tour-travel/detail"}
+							title="Beras Hitam Srikandi"
+							image={IMAGES.merchant2}
+							address="Ciletuh, Sukabumi"
+							rating="235"
+							price={26000}
+							link={"/merchant-sourvenir/detail"}
 						/>
 						<Card
-							title="Raja Wisata"
-							image={IMAGES.travel3}
-							address="Cempaka, Jatibening Baru"
-							rating="200"
-							price={800000}
-							link={"/tour-travel/detail"}
+							title="Perangko"
+							image={IMAGES.merchant3}
+							address="Ciletuh, Sukabumi"
+							rating="453"
+							price={82250}
+							link={"/merchant-sourvenir/detail"}
 						/>
 						<Card
-							title="Campa Travel"
-							image={IMAGES.travel4}
-							address="Ngaglik Sleman, Yogyakarta"
-							rating="200"
-							price={280000}
-							link={"/tour-travel/detail"}
+							title="Beras Merah Srikandi"
+							image={IMAGES.merchant4}
+							address="Ciletuh, Sukabumi"
+							rating="120"
+							price={26000}
+							link={"/merchant-sourvenir/detail"}
 						/>
 						<Card
-							title="Ladita Tour"
-							image={IMAGES.travel5}
+							title="Cangkir Kayu"
+							image={IMAGES.merchant5}
 							address="Kramat Jati, DKI Jakarta"
-							rating="200"
-							price={219000}
-							link={"/tour-travel/detail"}
+							rating="339"
+							price={35000}
+							link={"/merchant-sourvenir/detail"}
 						/>
 						<Card
-							title="Pandooin"
-							image={IMAGES.travel6}
-							address="Tangerang, Banten"
-							rating="200"
-							price={225000}
-							link={"/tour-travel/detail"}
+							title="Gelang"
+							image={IMAGES.merchant6}
+							address="Giri Mukti, Ciemas"
+							rating="280"
+							price={15500}
+							link={"/merchant-sourvenir/detail"}
 						/>
 					</div>
 
 					{/* Artikel */}
-					<div className="relative bg-center bg-cover bg-article-hotel h-96 rounded-md overflow-hidden">
+					<div className="relative bg-center bg-cover bg-article-merchant h-96 rounded-md overflow-hidden">
 						<div className='w-full h-full bg-gray-900 opacity-40'></div>
 						<div className="absolute bottom-0 left-0 flex flex-col items-center justify-center w-full h-full text-white md:items-start md:mx-10">
 							<p className="text-xl font-bold text-center mb-2 md:text-left md:text-2xl md:w-[500px]">
-								5 Alasan Mengapa Hotel Cleopatra Menjadi Tempat Yang Tepat Untuk Beristirahat
+								Mengapa Harus Membeli Merchant Dan Souveniers Dari Geopark
 							</p>
 							<button className="flex items-center px-8 py-4 bg-yellow-300 rounded-md">
 								<span className="font-semibold text-black">

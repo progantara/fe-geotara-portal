@@ -29,6 +29,12 @@ const IMAGES = {
   merchant4 : require('./merchant/merchant-4.png'),
   merchant5 : require('./merchant/merchant-5.jpeg'),
   merchant6 : require('./merchant/merchant-6.png'),
+  restaurant1 : require('./restaurant/restaurant-1.jpg'),
+  restaurant2 : require('./restaurant/restaurant-2.jpg'),
+  restaurant3 : require('./restaurant/restaurant-3.jpg'),
+  restaurant4 : require('./restaurant/restaurant-4.jpg'),
+  restaurant5 : require('./restaurant/restaurant-5.png'),
+  restaurant6 : require('./restaurant/restaurant-6.png'),
 }
 
 export default IMAGES;

@@ -296,11 +296,11 @@ const TourAndTravel = () => {
 					</div>
 
 					{/* Artikel */}
-					<div className="relative bg-center bg-cover bg-article-hotel h-96 rounded-md overflow-hidden">
+					<div className="relative bg-center bg-cover bg-article-travel h-96 rounded-md overflow-hidden">
 						<div className='w-full h-full bg-gray-900 opacity-40'></div>
 						<div className="absolute bottom-0 left-0 flex flex-col items-center justify-center w-full h-full text-white md:items-start md:mx-10">
 							<p className="text-xl font-bold text-center mb-2 md:text-left md:text-2xl md:w-[500px]">
-								5 Alasan Mengapa Hotel Cleopatra Menjadi Tempat Yang Tepat Untuk Beristirahat
+								Alasan Harus Memilih Raja Wisata Sebagai Tour Dan Travel Terbaik
 							</p>
 							<button className="flex items-center px-8 py-4 bg-yellow-300 rounded-md">
 								<span className="font-semibold text-black">
