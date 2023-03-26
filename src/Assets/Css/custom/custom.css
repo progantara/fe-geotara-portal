@@ -23,6 +23,11 @@
   background-color: rgba(255,255,255, 0,5);
 }
 
+.bg-hero-attraction{
+  background-image: url("../../img/attraction/bg-hero-attraction.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
 .bg-article-hotel {
   background-image: url("../../img/hotel/hotel-2.jpg");
   background-color: rgba(255,255,255, 0,5);
@@ -40,6 +45,11 @@
 
 .bg-article-restaurant {
   background-image: url("../../img/restaurant/restaurant-2.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-article-attraction {
+  background-image: url("../../img/attraction/bg-article-attraction.jpeg");
   background-color: rgba(255,255,255, 0,5);
 }
 

@@ -154,7 +154,7 @@ const Restaurant = () => {
 									<div className='bg-green-100 rounded-lg p-5'>
 										{/* Checkbox Tour Travel*/}
 										<div className='mt-5'>
-											<p className='text-xl font-bold text-black mb-3'>Tour & Travel</p>
+											<p className='text-xl font-bold text-black mb-3'>Kecamatan</p>
 											<CheckBox
 												data={dataKecamatan}
 												checkboxStatus={checkboxStatus}
