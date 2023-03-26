@@ -94,7 +94,7 @@ const TourAndTravel = () => {
 
 	return (
 		<PortalTemplate items={items}>
-			<div className="relative h-72 bg-center bg-cover bg-hero-hotel -z-50 xl:h-[400px]">
+			<div className="relative h-72 bg-center bg-cover bg-hero-travel -z-50 xl:h-[400px]">
 				<div className='w-full h-full bg-gray-900 absolute opacity-50'></div>
 				<div className="absolute px-4 py-2 font-semibold top-10 border-white border-2 rounded-2xl flex items-center text-white right-20 w-62 ml-5">
 					<p className='text-sm'>Kecamatan Ciemas, <br /> Pantai Palangpang</p>

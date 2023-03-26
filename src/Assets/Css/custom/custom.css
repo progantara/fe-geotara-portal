@@ -8,6 +8,16 @@
   background-color: rgba(255,255,255, 0,5);
 }
 
+.bg-hero-travel{
+  background-image: url("../../img/travel/bg-hero-travel.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-hero-merchant{
+  background-image: url("../../img/merchant/bg-hero-merchant.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
 .bg-article-hotel {
   background-image: url("../../img/hotel/hotel-2.jpg");
   background-color: rgba(255,255,255, 0,5);
