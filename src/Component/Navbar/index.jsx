@@ -187,28 +187,28 @@ const Navbar = () => {
 				</li>
 				<li key={2}>
 					<Link
-						to="/TourAndTravel"
+						to="/tour-travel"
 						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Tour & Travel
 					</Link>
 				</li>
 				<li key={3}>
 					<Link
-						to="/merhcantandsourvenir"
+						to="/merchant-sourvenir"
 						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Merchant & Souveniers
 					</Link>
 				</li>
 				<li key={4}>
 					<Link
-						to="/Restaurant"
+						to="/restaurant"
 						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Restoran
 					</Link>
 				</li>
 				<li key={5}>
 					<Link
-						to="/Attraction"
+						to="/attraction"
 						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Atraksi
 					</Link>

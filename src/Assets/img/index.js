@@ -17,6 +17,12 @@ const IMAGES = {
   entertainment2 : require('./entertainment/entertainment-2.jpg'),
   entertainment3 : require('./entertainment/entertainment-3.jpg'),
   entertainment4 : require('./entertainment/entertainment-4.jpg'),
+  travel1 : require('./travel/travel-1.jpg'),
+  travel2 : require('./travel/travel-2.png'),
+  travel3 : require('./travel/travel-3.png'),
+  travel4 : require('./travel/travel-4.jpg'),
+  travel5 : require('./travel/travel-5.jpg'),
+  travel6 : require('./travel/travel-6.png'),
 }
 
 export default IMAGES;
