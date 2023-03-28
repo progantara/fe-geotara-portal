@@ -6,7 +6,7 @@ const Breadcrumbs = (props) => {
 	const { items } = props;
 
 	return (
-		<nav className="flex px-4 py-1 text-white bg-primary md:px-14 xl:px-32" aria-label="Breadcrumb">
+		<nav className="flex px-6 py-1 text-white bg-primary md:px-14 xl:px-32" aria-label="Breadcrumb">
 			<ol className="inline-flex items-center space-x-1 md:space-x-3 text-sm">
 				<li className="inline-flex items-center">
 					<Link to={'/'}>Beranda</Link>
