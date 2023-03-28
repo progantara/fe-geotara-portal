@@ -63,7 +63,7 @@ function App() {
 
           {/* Tour And Travel */}
           <Route exact path="/tour-travel" element={<TourAndTravel />} />
-          <Route path="/tour-travel/detail" element={<TourAndTravelDetail />} />
+          <Route path="/tour-travel/detail/:id" element={<TourAndTravelDetail />} />
 
           {/* Merchant And Sourvenir */}
           <Route
