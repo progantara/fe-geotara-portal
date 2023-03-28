@@ -11,7 +11,6 @@ import "../../Assets/Css/custom/custom.css"
 import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
-import IMAGES from '../../Assets/img';
 import { getPenginapan } from '../../Services/PenginapanService';
 
 const Accomodation = () => {
@@ -102,7 +101,6 @@ const Accomodation = () => {
   useEffect(() => {
     getPenginapan().then((res) => {
       setPenginapan(res.data.data);
-			console.log(res.data);
     });
   }, []);
 

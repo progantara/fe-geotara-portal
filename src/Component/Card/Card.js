@@ -55,7 +55,7 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 
         {/* Title */}
         <div>
-          <p className="text-lg font-bold mb-0 xl:text-xl">{title}</p>
+          <p className="text-lg font-bold mb-0 xl:text-xl text-left">{title}</p>
           <p className="text-sm flex items-center">
             <BiMap />
             {address}
@@ -110,17 +110,23 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
         }
 
           {/* Link */}
-          <div className="xl:hidden">
-            <Link to={link}>
-              <Button size="small">Lihat</Button>
-            </Link>
-          </div>
+          {
+            link &&
+            <>
+              <div className="xl:hidden">
+                <Link to={link}>
+                  <Button size="small">Lihat</Button>
+                </Link>
+              </div>
 
-          <div className="hidden xl:block">
-            <Link to={link}>
-              <Button size="default">Lihat</Button>
-            </Link>
-          </div>
+              <div className="hidden xl:block">
+                <Link to={link}>
+                  <Button size="default">Lihat</Button>
+                </Link>
+              </div>
+            </>
+
+          }
 
         </div>
 

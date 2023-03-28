@@ -9,7 +9,7 @@ import IMAGES from '../../Assets/img';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getAllDesa, getOneDesa, getOnePenginapan } from '../../Services/PenginapanService';
+import { getOnePenginapan } from '../../Services/PenginapanService';
 
 const AccomodationDetail = () => {
 	

@@ -78,7 +78,7 @@ function App() {
 
           {/* Restaurant */}
           <Route exact path="/restaurant" element={<Restaurant />} />
-          <Route path="/restaurant/detail" element={<RestaurantDetail />} />
+          <Route path="/restaurant/detail/:id" element={<RestaurantDetail />} />
 
           {/* Attraction */}
           <Route exact path="/attraction" element={<Attraction />} />
