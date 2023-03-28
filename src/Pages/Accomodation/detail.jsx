@@ -1,347 +1,256 @@
 import React from 'react';
 
 import PortalTemplate from '../../Component/Layout';
+import Badge from '../../Component/Badge';
 
 import BgHero from '../../Assets/img/hero.jpg';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { BiMap } from 'react-icons/bi';
+import { BiBed, BiMap, BiTv, BiWifi } from 'react-icons/bi';
+import { MdOutlineGarage, MdOutlineShower } from "react-icons/md";
+import { IoFastFoodOutline } from "react-icons/io5";
+import IMAGES from '../../Assets/img';
+
 const AccomodationDetail = () => {
 	const items = [
 		{ label: 'Accomodation', url: '/Accomodation' },
-		{ label: 'Accomodation Detail', url: '/Accomodation/detail' },
+		{ label: 'Vanada Bugeul Cottage', url: '/Accomodation/detail' },
 	];
 
 	return (
 		<PortalTemplate items={items}>
-			<div className="flex flex-col p-20 bg-green-100">
+			<div className="flex flex-col px-6 py-10 bg-green-100">
 				<section>
-					<div className="flex flex-col text-primary">
-						<p className="text-4xl font-bold">Vanada Bugeul Cottage</p>
-						<div className="flex items-center mt-4 mb-2">
-							<p className="text-black px-6 mr-2 rounded-3xl bg-[#FFE141]">Hotel</p>
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiOutlineStar size={20} color="#FFE141" />
+
+					{/* Header */}
+					<div className="flex flex-col text-primary mb-5">
+						<p className="text-xl md:text-4xl font-bold">Vanada Bugeul Cottage</p>
+						<div className="flex items-center mt-4 mb-2 gap-2">
+							<Badge name={"Hotel"}/>
+							<div className='flex'>
+								<AiFillStar size={20} color="#FFE141" />
+								<AiFillStar size={20} color="#FFE141" />
+								<AiFillStar size={20} color="#FFE141" />
+								<AiFillStar size={20} color="#FFE141" />
+								<AiOutlineStar size={20} color="#FFE141" />
+							</div>
 						</div>
-						<div className="flex items-center">
+						<div className="flex items-start gap-2">
 							<BiMap size={20} />
-							<p>Ciwaru, Ciemas, Sukabumi, West Java 43177</p>
+							<p className='text-sm'>Ciwaru, Ciemas, Sukabumi, West Java 43177</p>
 						</div>
 					</div>
-					<div class="grid grid-cols-4 gap-10 my-10">
-						<div
-							class="row-span-3 col-span-3 rounded-xl relative h-[35rem] w-full bg-center bg-cover"
-							style={{
-								backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-							}}
-						></div>
-						<div
-							class="  rounded-xl relative w-full bg-center bg-cover"
-							style={{
-								backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-							}}
-						></div>
-						<div
-							class="  rounded-xl relative w-full bg-center bg-cover"
-							style={{
-								backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-							}}
-						></div>
-						<div
-							class="  rounded-xl relative w-full bg-center bg-cover"
-							style={{
-								backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-							}}
-						></div>
+
+					{/* Gambar */}
+					<div className='flex flex-col gap-2'>
+						<div className='w-full h-52 bg-white rounded-xl overflow-hidden relative'>
+							<img src={IMAGES.hotel3} alt="hotel" className='w-full h-full object-cover'/>
+						</div>
+						<div className='flex flex-row justify-between'>
+							<div className='w-[30%] h-32 rounded-xl overflow-hidden relative'>
+								<img src={IMAGES.hoteldetail1} alt="hotel" className='w-full h-full object-cover'/>
+							</div>
+							<div className='w-[30%] h-32 rounded-xl overflow-hidden relative'>
+								<img src={IMAGES.hoteldetail2} alt="hotel" className='w-full h-full object-cover'/>
+							</div>
+							<div className='w-[30%] h-32 rounded-xl overflow-hidden relative'>
+								<img src={IMAGES.hoteldetail3} alt="hotel" className='w-full h-full object-cover'/>
+							</div>
+						</div>
 					</div>
+
 				</section>
-				<section>
-					<div className="flex flex-col ">
-						<p className=" text-center text-[#064E3B] font-extrabold text-3xl mb-4">FASILITAS</p>
-						<div className="flex bg-primary justify-center space-x-10 text-white py-[3.125rem]">
-							<div className="flex flex-col items-center">
-								<BiMap size={40} color="#FFE141" />
-								<p>Lorem.</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<BiMap size={40} color="#FFE141" />
-								<p>Lorem.</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<BiMap size={40} color="#FFE141" />
-								<p>Lorem.</p>
-							</div>
-							<div className="flex flex-col items-center">
-								<BiMap size={40} color="#FFE141" />
-								<p>Lorem.</p>
+
+				<section className='mt-5'>
+					<div className='flex flex-col gap-2'>
+						<h2 className='text-xl text-center text-primary font-bold'>FASILITAS</h2>
+						<div className='w-full h-32 bg-primary rounded-xl p-5 flex justify-center items-center'>
+							<div className='flex justify-between gap-3'>
+								
+								<div className='flex flex-col items-center'>
+									<IoFastFoodOutline className='w-5 h-5 text-yellow-300'></IoFastFoodOutline>
+									<p className='text-white text-[10px]'>Sarapan</p>
+								</div>
+								<div className='flex flex-col items-center'>
+									<MdOutlineGarage className='w-5 h-5 text-yellow-300'></MdOutlineGarage>
+									<p className='text-white text-[10px]'>Garasi</p>
+								</div>
+								<div className='flex flex-col items-center'>
+									<MdOutlineShower className='w-5 h-5 text-yellow-300'></MdOutlineShower>
+									<p className='text-white text-[10px]'>Kolam Renang</p>
+								</div>
+								<div className='flex flex-col items-center'>
+									<BiWifi className='w-5 h-5 text-yellow-300'></BiWifi>
+									<p className='text-white text-[10px]'>Wifi</p>
+								</div>
+
 							</div>
 						</div>
 					</div>
 				</section>
-				<section>
-					<div className="flex flex-col mt-20 text-primary">
-						<p className="text-4xl font-bold">Location Info</p>
-						<div className="flex items-center">
-							<BiMap size={20} />
-							<p>Ciwaru, Ciemas, Sukabumi, West Java 43177</p>
-						</div>
-					</div>
-					<div className="flex mt-4">
-						<div
-							class="h-[32rem] w-3/5 bg-center bg-cover"
-							style={{
-								backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-							}}
-						></div>
-						<div className="flex flex-col w-2/5 px-5">
-							<p className="font-bold">Destinasi Terdekat</p>
-							<br />
-							<div className="flex items-center justify-between p-2 my-4">
-								<div className="flex items-center">
-									<img
-										src={BgHero}
-										alt=""
-										className="w-[4.625rem] h-[4.625rem] mr-4 rounded-sm"
-									/>
-									<div className="flex flex-col justify-start">
-										<p className="font-semibold">
-											Curug Cimarinjung
-										</p>
-										<p>Wisata</p>
-									</div>
-								</div>
-								<div className="flex flex-col justify-end ">
-									<p>962 meters </p>
-									<p>(10 minute)</p>
-								</div>
-							</div>
-							<div className="flex items-center justify-between p-2 my-4">
-								<div className="flex items-center">
-									<img
-										src={BgHero}
-										alt=""
-										className="w-[4.625rem] h-[4.625rem] mr-4 rounded-sm"
-									/>
-									<div className="flex flex-col justify-start">
-										<p className="font-semibold">
-											Curug Cimarinjung
-										</p>
-										<p>Wisata</p>
-									</div>
-								</div>
-								<div className="flex flex-col justify-end ">
-									<p>962 meters </p>
-									<p>(10 minute)</p>
-								</div>
-							</div>
-							<div className="flex items-center justify-between p-2 my-4">
-								<div className="flex items-center">
-									<img
-										src={BgHero}
-										alt=""
-										className="w-[4.625rem] h-[4.625rem] mr-4 rounded-sm"
-									/>
-									<div className="flex flex-col justify-start">
-										<p className="font-semibold">
-											Curug Cimarinjung
-										</p>
-										<p>Wisata</p>
-									</div>
-								</div>
-								<div className="flex flex-col justify-end ">
-									<p>962 meters </p>
-									<p>(10 minute)</p>
-								</div>
-							</div>
-							<div className="flex items-center justify-between p-2 my-4">
-								<div className="flex items-center">
-									<img
-										src={BgHero}
-										alt=""
-										className="w-[4.625rem] h-[4.625rem] mr-4 rounded-sm"
-									/>
-									<div className="flex flex-col justify-start">
-										<p className="font-semibold">
-											Curug Cimarinjung
-										</p>
-										<p>Wisata</p>
-									</div>
-								</div>
-								<div className="flex flex-col justify-end ">
-									<p>962 meters </p>
-									<p>(10 minute)</p>
-								</div>
+
+				<section className='mt-5'>
+					<div className='flex flex-col gap-2 text-primary'>
+
+						{/* Header */}
+						<div>
+							<h2 className='text-xl font-bold'>LOCATION INFO</h2>
+							<div className="flex items-start gap-2">
+								<BiMap size={20} />
+								<p className='text-sm'>Ciwaru, Ciemas, Sukabumi, West Java 43177</p>
 							</div>
 						</div>
-					</div>
-				</section>
-				<section>
-					<div className="flex flex-col mt-10">
-						<p className="text-4xl font-bold">Available room</p>
-						<div className="flex my-4">
-							<div class="grid grid-cols-3 gap-4 bg-white w-2/5">
-								<div
-									class="col-span-3 rounded-xl relative h-[13.75rem] w-full bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-								<div
-									class="rounded-xl relative w-full h-[9.375rem] bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-								<div
-									class="rounded-xl relative w-full h-[9.375rem] bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-								<div
-									class="rounded-xl relative w-full h-[9.375rem] bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-							</div>
-							<div className="flex flex-col justify-between w-3/5 px-10 py-5 bg-white">
-								<p className="font-bold">Superior Double Room, 1 Double Bed</p>
-								<div className="flex flex-col">
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-								</div>
-								<div className="flex items-center justify-between">
-									<div className="flex flex-col">
-										<p>
-											<span className="line-through ">
-												Rp
-												1,219,513
-											</span>
-										</p>
-										<p className="text-2xl font-extrabold text-red-500">
-											Rp 1,097,561
-										</p>
-										<p>/malam</p>
+
+						{/* Map */}
+						<div className='w-full h-36 bg-white rounded-lg overflow-hidden'>
+							<img src={IMAGES.map1} alt="map" className='w-full h-full object-cover' />
+						</div>
+
+						{/* Destinasi Terdekat */}
+						<div className='flex flex-col gap-2'>
+							<h3 className='font-bold'>Destinasi Terdekat</h3>
+							<div className='flex flex-col gap-2'>
+								
+								{/* Destinasi */}
+								<div className='w-full flex justify-between items-center gap-2'>
+
+									<div className='flex items-center gap-2'>
+										<div className='w-10 h-10 overflow-hidden'>
+											<img src={IMAGES.hoteldetail4} alt="4" className='w-full h-full object-cover'/>
+										</div>
+										<div className='flex flex-col'>
+											<h4 className='font-bold text-sm'>Curug Cimarinjung</h4>
+											<p className='text-[10px]'>Wisata</p>
+										</div>
 									</div>
 
-									<div>
-										<button className="flex items-center px-8 py-4 bg-yellow-200 rounded-md ">
-											<span className="font-semibold text-black">
-												Pesan
-												Sekarang
-											</span>
+									<div className='flex flex-col items-center'>
+										<h4 className='text-[10px]'>962 meters</h4>
+										<p className='text-[10px]'>(10 Minute)</p>
+									</div>
+
+								</div>
+								
+								{/* Destinasi */}
+								<div className='w-full flex justify-between items-center gap-2'>
+
+									<div className='flex items-center gap-2'>
+										<div className='w-10 h-10 overflow-hidden'>
+											<img src={IMAGES.hoteldetail5} alt="4" className='w-full h-full object-cover'/>
+										</div>
+										<div className='flex flex-col'>
+											<h4 className='font-bold text-sm'>Curug Sodong</h4>
+											<p className='text-[10px]'>Wisata</p>
+										</div>
+									</div>
+
+									<div className='flex flex-col items-center'>
+										<h4 className='text-[10px]'>1200 meters</h4>
+										<p className='text-[10px]'>(12 Minute)</p>
+									</div>
+
+								</div>
+								
+								{/* Destinasi */}
+								<div className='w-full flex justify-between items-center gap-2'>
+
+									<div className='flex items-center gap-2'>
+										<div className='w-10 h-10 overflow-hidden'>
+											<img src={IMAGES.hoteldetail6} alt="4" className='w-full h-full object-cover'/>
+										</div>
+										<div className='flex flex-col'>
+											<h4 className='font-bold text-sm'>Batu Batik</h4>
+											<p className='text-[10px]'>Wisata</p>
+										</div>
+									</div>
+
+									<div className='flex flex-col items-center'>
+										<h4 className='text-[10px]'>873 meters</h4>
+										<p className='text-[10px]'>(8 Minute)</p>
+									</div>
+
+								</div>
+								
+								{/* Destinasi */}
+								<div className='w-full flex justify-between items-center gap-2'>
+
+									<div className='flex items-center gap-2'>
+										<div className='w-10 h-10 overflow-hidden'>
+											<img src={IMAGES.hoteldetail7} alt="4" className='w-full h-full object-cover'/>
+										</div>
+										<div className='flex flex-col'>
+											<h4 className='font-bold text-sm'>Pantai Pasir Putih</h4>
+											<p className='text-[10px]'>Wisata</p>
+										</div>
+									</div>
+
+									<div className='flex flex-col items-center'>
+										<h4 className='text-[10px]'>640 meters</h4>
+										<p className='text-[10px]'>(5 Minute)</p>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+				<section className='mt-5'>
+					<div className='text-primary'>
+						<h2 className='text-xl font-bold uppercase'>Available Room</h2>
+
+						<div>
+							<div className='flex justify-between items-center'>
+								{/* Gambar */}
+								<div className='flex flex-col gap-2 w-[48%] h-full'>
+									<div className='w-full h-32 bg-white rounded-xl overflow-hidden relative'>
+										<img src={IMAGES.hotel3} alt="hotel" className='w-full h-full object-cover'/>
+									</div>
+									<div className='flex flex-row justify-between'>
+										<div className='w-[30%] h-16 rounded-xl overflow-hidden relative'>
+											<img src={IMAGES.hoteldetail1} alt="hotel" className='w-full h-full object-cover'/>
+										</div>
+										<div className='w-[30%] h-16 rounded-xl overflow-hidden relative'>
+											<img src={IMAGES.hoteldetail2} alt="hotel" className='w-full h-full object-cover'/>
+										</div>
+										<div className='w-[30%] h-16 rounded-xl overflow-hidden relative'>
+											<img src={IMAGES.hoteldetail3} alt="hotel" className='w-full h-full object-cover'/>
+										</div>
+									</div>
+								</div>
+
+								<div className='w-[48%] h-full bg-white p-3'>
+									<h4 className='text-base font-bold mb-2'>Superior Double Room, 1 Double Bed</h4>
+									<div className='flex items-center gap-2'>
+										<BiBed></BiBed>
+										<p>1 Double Bed & 2 Twin</p>
+									</div>
+									<div className='flex items-center gap-2'>
+										<BiWifi></BiWifi>
+										<p>Wifi</p>
+									</div>
+									<div className='flex items-center gap-2'>
+										<IoFastFoodOutline></IoFastFoodOutline>
+										<p>Dinner</p>
+									</div>
+									<div className='flex items-center gap-2'>
+										<BiTv></BiTv>
+										<p>TV</p>
+									</div>
+									<div className='flex w-full text-sm items-center'>
+										<span className='font-bold'>Rp 2.000.000 / Malam</span>
+										<button className="flex justify-center px-2 py-2 bg-yellow-200 rounded-md">
+											<span className="text-sm font-bold text-primary">Pesan Sekarang</span>
 										</button>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="flex my-4">
-							<div class="grid grid-cols-3 gap-4 bg-white w-2/5">
-								<div
-									class="col-span-3 rounded-xl relative h-[13.75rem] w-full bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-								<div
-									class="rounded-xl relative w-full h-[9.375rem] bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-								<div
-									class="rounded-xl relative w-full h-[9.375rem] bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-								<div
-									class="rounded-xl relative w-full h-[9.375rem] bg-center bg-cover"
-									style={{
-										backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-									}}
-								></div>
-							</div>
-							<div className="flex flex-col justify-between w-3/5 px-10 py-5 bg-white">
-								<p className="font-bold">Superior Double Room, 1 Double Bed</p>
-								<div className="flex flex-col">
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-									<div className="flex items-center">
-										<BiMap />
-										<p className="ml-2">
-											1 Double & 2 Twin
-										</p>
-									</div>
-								</div>
-								<div className="flex items-center justify-between">
-									<div className="flex flex-col">
-										<p>
-											<span className="line-through ">
-												Rp
-												1,219,513
-											</span>
-										</p>
-										<p className="text-2xl font-extrabold text-red-500">
-											Rp 1,097,561
-										</p>
-										<p>/malam</p>
-									</div>
 
-									<div>
-										<button className="flex items-center px-8 py-4 bg-yellow-200 rounded-md ">
-											<span className="font-semibold text-black">
-												Pesan
-												Sekarang
-											</span>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</section>
+
 			</div>
 		</PortalTemplate>
 	);
