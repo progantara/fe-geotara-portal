@@ -8,8 +8,48 @@
   background-color: rgba(255,255,255, 0,5);
 }
 
+.bg-hero-travel{
+  background-image: url("../../img/travel/bg-hero-travel.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-hero-merchant{
+  background-image: url("../../img/merchant/bg-hero-merchant.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-hero-restaurant{
+  background-image: url("../../img/restaurant/restaurant-1.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-hero-attraction{
+  background-image: url("../../img/attraction/bg-hero-attraction.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
 .bg-article-hotel {
   background-image: url("../../img/hotel/hotel-2.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-article-travel {
+  background-image: url("../../img/travel/travel-2.png");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-article-merchant {
+  background-image: url("../../img/merchant/merchant-2.jpeg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-article-restaurant {
+  background-image: url("../../img/restaurant/restaurant-2.jpg");
+  background-color: rgba(255,255,255, 0,5);
+}
+
+.bg-article-attraction {
+  background-image: url("../../img/attraction/bg-article-attraction.jpeg");
   background-color: rgba(255,255,255, 0,5);
 }
 
