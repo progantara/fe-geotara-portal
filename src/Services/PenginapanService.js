@@ -15,3 +15,29 @@ export const getPenginapan = () => {
 		},
 	});
 };
+
+export const getOnePenginapan = (id) => {
+	return axios.get(`http://127.0.0.1:8000/api/portal/penginapan/` + id, {
+		headers: {
+			Accept: 'application/json',
+		},
+	});
+};
+
+// export const getAllDesa = () => {
+// 	return axios.get(`http://127.0.0.1:8000/api/master/lokasi/desa`, {
+// 		headers: {
+// 			Accept: 'application/json',
+// 			Authorization: `Bearer 6422f02b7927fb12fa066153|hUuxTOUVZEtcJnQv7z0DeBuHGuPloU7YvyO46SXE`,
+// 		},
+// 	});
+// };
+
+// export const getOneDesa = (id) => {
+// 	return axios.get(`http://127.0.0.1:8000/api/master/lokasi/desa/` + id, {
+// 		headers: {
+// 			Accept: 'application/json',
+// 			Authorization: `Bearer 6422f02b7927fb12fa066153|hUuxTOUVZEtcJnQv7z0DeBuHGuPloU7YvyO46SXE`,
+// 		},
+// 	});
+// };

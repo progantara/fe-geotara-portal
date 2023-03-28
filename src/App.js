@@ -59,7 +59,7 @@ function App() {
 
           {/* Akomodasi */}
           <Route exact path="/accomodation" element={<Accomodation />} />
-          <Route path="/accomodation/detail" element={<AccomodationDetail />} />
+          <Route path="/accomodation/detail/:id" element={<AccomodationDetail />} />
 
           {/* Tour And Travel */}
           <Route exact path="/tour-travel" element={<TourAndTravel />} />
@@ -82,6 +82,7 @@ function App() {
 
           {/* Attraction */}
           <Route exact path="/attraction" element={<Attraction />} />
+
           <Route path="/attraction/detail" element={<AttractionDetail />} />
 
           {/* 404 */}

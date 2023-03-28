@@ -102,6 +102,7 @@ const Accomodation = () => {
   useEffect(() => {
     getPenginapan().then((res) => {
       setPenginapan(res.data.data);
+			console.log(res.data);
     });
   }, []);
 
@@ -264,13 +265,14 @@ const Accomodation = () => {
 							penginapan.map((item, index) => {
 								return (
 									<Card
+										key={index}
 										id={item._id}
 										title={item.nama}
 										image={"http://127.0.0.1:8000/storage/penginapan/" + item.thumbnail}
 										address={item.lokasi.alamat}
 										rating={item.rating}
 										price={item.harga}
-										link={"/accomodation/detail"}
+										link={"/accomodation/detail/"+ item._id}
 									/>
 								)
 							})
