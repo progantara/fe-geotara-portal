@@ -35,10 +35,10 @@ const IMAGES = {
   restaurant4 : require('./restaurant/restaurant-4.jpg'),
   restaurant5 : require('./restaurant/restaurant-5.png'),
   restaurant6 : require('./restaurant/restaurant-6.png'),
-  attraction1 : require('./attraction/attraction-1.webp'),
+  attraction1 : require('./attraction/attraction-1.jpg'),
   attraction2 : require('./attraction/attraction-2.jpg'),
   attraction3 : require('./attraction/attraction-3.png'),
-  attraction4 : require('./attraction/attraction-4.webp'),
+  attraction4 : require('./attraction/attraction-4.jpg'),
   attraction5 : require('./attraction/attraction-5.png'),
   attraction6 : require('./attraction/attraction-6.jpg'),
 }

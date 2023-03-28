@@ -82,7 +82,7 @@ function App() {
 
           {/* Attraction */}
           <Route exact path="/attraction" element={<Attraction />} />
-          <Route path="/attraction/detail" element={<AttractionDetail />} />
+          <Route path="/attraction/detail/:id" element={<AttractionDetail />} />
 
           {/* 404 */}
           <Route path="*" element={<h1>404 Not Found</h1>} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PortalTemplate from '../../Component/Layout';
 import { BiMap, BiTrash } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -12,6 +12,7 @@ import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
 import IMAGES from '../../Assets/img';
+import { getAtraksi } from '../../Services/AtraksiService';
 
 const Attraction = () => {
 		let dataKecamatan = [
@@ -85,6 +86,15 @@ const Attraction = () => {
 	}
 
 	const items = [{ label: 'Attraction', url: '/Attraction' }];
+
+	// Get Data Atraksi
+	const [atraksi, setAtraksi] = useState([]);
+
+	useEffect(() => {
+		getAtraksi().then((res) => {
+		setAtraksi(res.data.data);
+		});
+	}, []);
 
 	return (
 		<PortalTemplate items={items}>
@@ -239,7 +249,23 @@ const Attraction = () => {
 					
 					{/* Card Attraction */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
+						{
+							atraksi.map((item, index) => {
+								return (
+									<Card
+										key={index}
+										id={item._id}
+										title={item.nama}
+										image={"http://127.0.0.1:8000/storage/atraksi/" + item.thumbnail}
+										address={item.lokasi.alamat}
+										price={item.harga_tiket}
+										per={"Tiket"}
+										link={"/attraction/detail/"+ item._id}
+									/>
+								)
+							})
+						}
+						{/* <Card
 							title="Banana Boat"
 							image={IMAGES.attraction1}
 							address="Desa Jayanti, Pelabuhan Ratu"
@@ -292,7 +318,7 @@ const Attraction = () => {
 							price={50000}
 							per="Ticket"
 							link={"/attraction/detail"}
-						/>
+						/> */}
 					</div>
 
 					{/* Artikel */}
