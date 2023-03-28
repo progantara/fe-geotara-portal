@@ -19,8 +19,8 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 			rupiah += separator + ribuan.join('.');
 		}
 
-		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+		rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+		return prefix === undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
 	}
 
   function setStars(rating) {
