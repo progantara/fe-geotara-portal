@@ -69,18 +69,18 @@ const Artikel = () => {
                   alt="post-3"
                 />
                 <div className="text-green-900 ml-40">
-                  <p className="-mt-20 font-bold text-lg flex ">
+                  <p className="-mt-20 font-bold text-lg mr-[2rem]">
                     Pesona Geopark Ciletuh
                   </p>
                   <p className="text-sm">Febuari 20, 2022</p>
                 </div>
                 <img
-                  className="rounded-lg h-20 w-32 mt-14 ml-5"
+                  className="rounded-lg h-20 w-32 mt-10 ml-5"
                   src={articel4}
                   alt="post-4"
                 />
                 <div className="text-green-900 ml-40">
-                  <p className="-mt-20 font-bold text-lg">
+                  <p className="-mt-20 font-bold text-lg mr-[2rem]">
                     Berpetualang Menyusuri Geopark
                   </p>
                   <p className="text-sm">November 15, 2022</p>
@@ -91,7 +91,7 @@ const Artikel = () => {
                   alt="post-5"
                 />
                 <div className="text-green-900 ml-40">
-                  <p className="-mt-20 font-bold text-lg">
+                  <p className="-mt-20 font-bold text-lg mr-[2rem]">
                     Geopark Ciletuh Spektakuler
                   </p>
                   <p className="text-sm">Desember 31, 2022</p>
@@ -102,7 +102,7 @@ const Artikel = () => {
                   alt="post-6"
                 />
                 <div className="text-green-900 ml-40">
-                  <p className="-mt-20 font-bold text-lg">
+                  <p className="-mt-20 font-bold text-lg mr-[2rem]">
                     Mengenal Geopark Ciletuh
                   </p>
                   <p className="mb-4 text-sm">May 02, 2018</p>
@@ -117,13 +117,17 @@ const Artikel = () => {
             <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10">
               <div className="flex">
                 <img
-                  className="rounded-lg w-3/4 h-40 mt-7 ml-7 mb-3 object-cover object-right"
+                  className="rounded-lg w-[45rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-right"
                   src={articel7}
                   alt="post-7"
                 />
                 <div className="mt-9 ml-8 ">
                   <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                    <img className="w-10 h-8 rounded-full" src={profile} alt={profile} />
+                    <img
+                      className="w-10 h-8 rounded-full"
+                      src={profile}
+                      alt={profile}
+                    />
                     <p className="text-sm text-dark mt-2 ml-2">NurFauziyah</p>
                     <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
                     <p className="text-sm text-dark mt-2">Wisata</p>
@@ -131,18 +135,18 @@ const Artikel = () => {
                     <p className="text-sm text-dark mt-2">September 21, 2022</p>
                   </div>
                   <a
-                    href="/"
-                    className="block mt-1 text-xl font-medium text-green-900"
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900"
                   >
                     Lagi Viral, yuk Healing ke
                   </a>
                   <a
-                    href="/"
-                    className="block mt-1 text-xl font-medium text-green-900"
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900"
                   >
                     Geopark Ciletuh Sukabumi{" "}
                   </a>
-                  <p className="mt-2 text-green-900 text-base">
+                  <p className="mt-2 text-green-900 text-base mr-10">
                     Sukabumi menyimpan berbagai wisata alam yang membuat betah
                     berlama - lama di sini. Dengan dataran tinggi, pegunungan
                     dan pantai indah, menjadikan kawasan ini selalu menjadi
@@ -155,13 +159,17 @@ const Artikel = () => {
               </div>
               <div className="flex">
                 <img
-                  className="rounded-lg w-4/6 h-40 mt-7 ml-7 mb-3 object-cover object-bottom"
+                  className="rounded-lg w-[40rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-bottom"
                   src={articel8}
                   alt="post-8"
                 />
                 <div className="mt-9 ml-8 ">
                   <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                    <img className="w-10 h-8 rounded-full" src={profile} alt={profile} />
+                    <img
+                      className="w-10 h-8 rounded-full"
+                      src={profile}
+                      alt={profile}
+                    />
                     <p className="text-sm text-dark mt-2 ml-2">Tiara</p>
                     <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
                     <p className="text-sm text-dark mt-2 ml-2">Wisata</p>
@@ -171,18 +179,13 @@ const Artikel = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
-                    className="block mt-1 text-xl font-medium text-green-900"
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900 mr-[20rem]"
                   >
-                    Lagi Viral, yuk Healing ke
+                    Wajib Melipir: 5 Tempat Wisata Geopark Ciletuh yang Bagus
+                    Banget
                   </a>
-                  <a
-                    href="/"
-                    className="block mt-1 text-xl font-medium text-green-900"
-                  >
-                    Geopark Ciletuh Sukabumi{" "}
-                  </a>
-                  <p className="mt-2 text-green-900 text-base">
+                  <p className="mt-2 text-green-900 text-base mr-10">
                     Wisata ke Geopark Ciletuh adalah satu hal yang harus kamu
                     masukkan ke dalam wishlist. Geopark Ciletuh adalah
                     satu-satunya Global Geopark Network yang ada di Jawa Barat.{" "}
@@ -194,7 +197,7 @@ const Artikel = () => {
               </div>
               <div className="flex">
                 <img
-                  className="rounded-lg w-2/5 h-40 mt-7 ml-7 mb-3 object-cover object-bottom"
+                  className="rounded-lg w-[17rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-bottom"
                   src={articel9}
                   alt="post-9"
                 />
@@ -210,41 +213,33 @@ const Artikel = () => {
                     </p>
                   </div>
                   <a
-                    href="/"
-                    className="block mt-1 text-xl font-medium text-green-900"
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900"
                   >
-                    Lagi Viral, yuk Healing ke
+                    Indahnya Air Terjun
                   </a>
-                  <a
-                    href="/"
-                    className="block mt-1 text-xl font-medium text-green-900"
-                  >
-                    Geopark Ciletuh Sukabumi{" "}
-                  </a>
-                  <p className="mt-2 mb-5 text-green-900 text-base">
+                  <p className="mt-2 mb-5 text-green-900 text-base mr-10">
                     Geopark Ciletuh Palabuhanratu, Sukabumi kini resmi menjadi
                     global geopark pertama di Jawa Barat.{" "}
                   </p>
                 </div>
               </div>
             </div>
-            
-            <div className="w-fit pt-10 pb-14 px-40 bg-green-600 flex-col justify-center items-center text-white rounded-xl mx-auto">
+
+            <div className="w-fit pt-10 pb-14 px-40 bg-green-600 flex-col justify-center items-center text-white rounded-xl mx-auto mb-10">
               <p className="mb-2 text-center">Newsletter</p>
               <div className="flex flex-row gap-2 justify-center">
                 <input
-                    type="text"
-                    placeholder="Alamat Email"
-                    className="block w-96 h-14 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  />
-                  <button className="bg-yellow-300 hover:bg-yellow-400 text-dark text-sm font-semibold py-3 px-4 rounded-lg text-green-900">
-                    Subscribe
-                  </button>
+                  type="text"
+                  placeholder="Alamat Email"
+                  className="block w-96 h-14 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                />
+                <button className="bg-yellow-300 hover:bg-yellow-400 text-dark text-sm font-semibold py-3 px-4 rounded-lg text-green-900">
+                  Subscribe
+                </button>
               </div>
             </div>
-            
           </div>
-          s
         </div>
       </PortalTemplate>
     </>

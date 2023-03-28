@@ -14,9 +14,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Detail = () => {
   const items = [
-		{ label: 'Artikel', url: '/artikel' },
-		{ label: 'Artikel Detail', url: '/artikel/detail' },
-	];
+    { label: "Artikel", url: "/artikel" },
+    {
+      label: "Keragaman Keindahan, Pariwisata Indonesia",
+      url: "/artikel/detail",
+    },
+  ];
 
   return (
     <>
@@ -66,7 +69,7 @@ const Detail = () => {
                 baru di Sukabumi, provinsi Jawa Barat.
               </p>
               <div className="mt-5">
-                <p className="text-dark mt-3 mb-2 text-xl font-semibold">
+                <p className="text-green-900 mt-3 mb-2 text-xl font-semibold">
                   Kesimpulan
                 </p>
                 <ul className="list-disc">
@@ -226,18 +229,22 @@ const Detail = () => {
                 <div className="grid grid-cols-3 gap-4 mt-3 ml-20 mr-20">
                   <div className="order-last border border-green-800 rounded-xl ">
                     <div className="flex justify-center">
-                      <p className="text-green-800 text-xs font-base ">Alam</p>
+                      <p className="text-green-800 text-base font-base ">
+                        Alam
+                      </p>
                     </div>
                   </div>
                   <div className="order-last border border-green-800 rounded-xl">
                     <div className="flex justify-center">
-                      <p className="text-green-800 text-xs font-base">Wisata</p>
+                      <p className="text-green-800 text-base font-base ">
+                        Wisata
+                      </p>
                     </div>
                   </div>
                   <div className="order-last border border-green-800 rounded-xl">
                     <div className="flex justify-center">
-                      <p className="text-green-800 text-xs font-base">
-                        Indonesia
+                      <p className="text-green-800 text-base font-base ">
+                        Indoneisa
                       </p>
                     </div>
                   </div>
@@ -245,14 +252,16 @@ const Detail = () => {
                 <div className="flex justify-center mt-7 mb-20">
                   <div className="order-last border border-green-800 rounded-xl w-[5rem]">
                     <div className="flex justify-center">
-                      <p className="text-green-800 text-xs font-base">
+                      <p className="text-green-800 text-base font-base ">
                         Geopark
                       </p>
                     </div>
                   </div>
                   <div className="order-last border border-green-800 rounded-xl ml-5 w-[5rem]">
                     <div className="flex justify-center">
-                      <p className="text-green-800 text-xs font-base">Pantai</p>
+                      <p className="text-green-800 text-base font-base ">
+                        Pantai
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -267,17 +276,17 @@ const Detail = () => {
                   className="rounded-lg h-20 w-32 mt-5 ml-5"
                   src={articel2}
                 />
-                <div className="text-green-900 ml-40 ">
-                  <p className="-mt-20 font-bold text-lg ">
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
+                  <p className="-mt-20 font-bold text-lg">
                     Senyuman Baru dari Geopark Ciletuh
                   </p>
                   <p className="text-sm">Agustus 26, 2022</p>
                 </div>
                 <img
-                  className="rounded-lg h-20 w-32 mt-14 ml-5"
+                  className="rounded-lg h-20 w-32 mt-[2rem] ml-5"
                   src={articel3}
                 />
-                <div className="text-green-900 ml-40">
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg flex ">
                     Pesona Geopark Ciletuh
                   </p>
@@ -287,27 +296,27 @@ const Detail = () => {
                   className="rounded-lg h-20 w-32 mt-14 ml-5"
                   src={articel4}
                 />
-                <div className="text-green-900 ml-40">
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
                     Berpetualang Menyusuri Geopark
                   </p>
                   <p className="text-sm">November 15, 2022</p>
                 </div>
                 <img
-                  className="rounded-lg h-20 w-32 mt-14 ml-5"
+                  className="rounded-lg h-20 w-32 mt-7 ml-5"
                   src={articel5}
                 />
-                <div className="text-green-900 ml-40">
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
                     Geopark Ciletuh Spektakuler
                   </p>
                   <p className="text-sm">Desember 31, 2022</p>
                 </div>
                 <img
-                  className="rounded-lg h-20 w-32 mt-14 ml-5"
+                  className="rounded-lg h-20 w-32 mt-7 ml-5"
                   src={articel6}
                 />
-                <div className="text-green-900 ml-40">
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
                     Mengenal Geopark Ciletuh
                   </p>
