@@ -199,6 +199,7 @@ const Home = () => {
                     image="https://flowbite.com/docs/images/blog/image-1.jpg"
                     title="Wisata 1"
                     description="Lorem"
+                    file360=""
                   />
                 }
               />
@@ -208,6 +209,7 @@ const Home = () => {
                 style={styles.Marker}
                 popup={
                   <CardImage
+                  file360=""
                     image="https://flowbite.com/docs/images/blog/image-1.jpg"
                     title="Telkom University"
                     description="Lorem"

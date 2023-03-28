@@ -22,6 +22,17 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
 		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
 	}
+
+  function setStars(rating) {
+    const stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push(<AiFillStar key={i+"fill"} size={20} color="#FFE141" />);
+    }
+    for (let i = 0; i < 5 - rating; i++) {
+      stars.push(<AiOutlineStar key={i+"out"} size={20} color="#FFE141" />);
+    }
+    return stars;
+  }
   
   return (
     <div className="bg-white rounded-xl shadow-xl overflow-hidden p-3 text-primary relative max-w-[250px] xl:w-[360px] xl:max-w-[360px] xl:p-5">
@@ -53,11 +64,7 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 
         {/* Rating */}
         <div className="flex items-center my-2">
-          <AiFillStar size={20} color="#FFE141" />
-          <AiFillStar size={20} color="#FFE141" />
-          <AiFillStar size={20} color="#FFE141" />
-          <AiFillStar size={20} color="#FFE141" />
-          <AiOutlineStar size={20} color="#FFE141" />
+          {setStars(rating)}
           <p className="ml-2 text-sm font-bold">({rating})</p>
         </div>
 
