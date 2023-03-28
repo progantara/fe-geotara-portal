@@ -11,7 +11,6 @@ import "../../Assets/Css/custom/custom.css"
 import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
-import IMAGES from '../../Assets/img';
 import { getPenginapan } from '../../Services/PenginapanService';
 
 const Accomodation = () => {
@@ -264,13 +263,14 @@ const Accomodation = () => {
 							penginapan.map((item, index) => {
 								return (
 									<Card
+										key={index}
 										id={item._id}
 										title={item.nama}
 										image={"http://127.0.0.1:8000/storage/penginapan/" + item.thumbnail}
 										address={item.lokasi.alamat}
 										rating={item.rating}
 										price={item.harga}
-										link={"/accomodation/detail"}
+										link={"/accomodation/detail/"+ item._id}
 									/>
 								)
 							})

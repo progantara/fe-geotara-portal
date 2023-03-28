@@ -12,6 +12,8 @@ import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
 import IMAGES from '../../Assets/img';
+import { useEffect } from 'react';
+import { getRestaurant } from '../../Services/RestaurantService';
 
 const Restaurant = () => {
 	let dataKecamatan = [
@@ -89,6 +91,16 @@ const Restaurant = () => {
 	}
 
 	const items = [{ label: 'Restaurant', url: '/Restaurant' }];
+
+	// Get Data Accomodation
+	const [restaurant, setRestaurant] = useState([]);
+
+  useEffect(() => {
+    getRestaurant().then((res) => {
+      setRestaurant(res.data.data);
+    });
+  }, []);
+
 
 	return (
 		<PortalTemplate items={items}>
@@ -243,7 +255,24 @@ const Restaurant = () => {
 					
 					{/* Card Restaurant */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
+						{
+								restaurant.map((item, index) => {
+									return (
+										<Card
+											key={index}
+											id={item._id}
+											title={item.nama}
+											image={"http://127.0.0.1:8000/storage/restoran/" + item.thumbnail}
+											address={item.lokasi.alamat}
+											rating={item.rating}
+											open={item.jam_buka}
+											close={item.jam_tutup}
+											link={"/restaurant/detail/"+ item._id}
+										/>
+									)
+								})
+							}
+						{/* <Card
 							title="Ghizra Kitchen"
 							image={IMAGES.restaurant1}
 							address="Ciwaru, Sukabumi"
@@ -296,7 +325,7 @@ const Restaurant = () => {
 							open="07.00"
 							close="21.00"
 							link={"/restaurant/detail"}
-						/>
+						/> */}
 					</div>
 
 					{/* Artikel */}
