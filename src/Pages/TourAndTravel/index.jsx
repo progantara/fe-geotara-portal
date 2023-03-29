@@ -263,7 +263,7 @@ const TourAndTravel = () => {
 										key={index}
 										id={item._id}
 										title={item.nama}
-										image={"http://127.0.0.1:8000/storage/tour/" + item.thumbnail}
+										image={process.env.REACT_APP_API_BASE_URL+"/storage/tour/" + item.thumbnail}
 										address={item.lokasi.alamat}
 										rating={item.rating}
 										price={item.harga}
