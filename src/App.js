@@ -47,7 +47,7 @@ function App() {
 
           {/* Artikel */}
           <Route path="/artikel" element={<Artikel />} />
-          <Route path="/Detail" element={<Detail />} />
+          <Route path="/Detail/:id" element={<Detail />} />
 
           {/* Event */}
           <Route path="/event" element={<Event />} />
@@ -55,7 +55,7 @@ function App() {
 
           {/* Virtual Tour */}
           <Route path="/virtual-tour" element={<Virtual />} />
-          <Route path="/virtual-tour/view" element={<ViewArea />} />
+          <Route path="/virtual-tour/view/:id" element={<ViewArea />} />
 
           {/* Akomodasi */}
           <Route exact path="/accomodation" element={<Accomodation />} />

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Logo from "../../Assets/img/logo.png";
 import LogoSm from "../../Assets/img/logo-sm.png";
 
 // import './App.css';
@@ -8,15 +7,14 @@ import { Layers, TileLayer, VectorLayer } from "../../Component/Map/Layers";
 import { Circle as CircleStyle, Fill, Icon, Stroke, Style } from "ol/style";
 import { osm, vector } from "../../Component/Map/Source";
 import { fromLonLat, get } from "ol/proj";
-import GeoJSON from "ol/format/GeoJSON";
 import { Controls, FullScreenControl } from "../../Component/Map/Controls";
 
-import mapConfig from "./config.json";
+// import mapConfig from "./config.json";
 import Marker from "../../Component/Map/Component/Marker";
 import Navbar from "../../Component/Navbar";
 import Popup from "../../Component/Map/Component/Popup";
 import CardImage from "../../Component/Card/CardImage";
-import MapContext from "../../Context/Map/MapContext";
+import { getAllWisata } from "../../Services/WisataService";
 
 let styles = {
   MultiPolygon: new Style({
@@ -31,25 +29,31 @@ let styles = {
   Marker: new Style({
     image: new Icon({
       anchor: [0.5, 46],
-      anchorXUnits: 'fraction',
-      anchorYUnits: 'pixels',
-      src: LogoSm
+      anchorXUnits: "fraction",
+      anchorYUnits: "pixels",
+      src: LogoSm,
     }),
   }),
 };
 
-const geojsonObject = mapConfig.geojsonObject;
-const geojsonObject2 = mapConfig.geojsonObject2;
-
 const Home = () => {
   const [center, setCenter] = useState([
-    106.92212358079824, -6.919457022684152,
+    108.56902933854934, -7.717141910380837,
   ]);
-  const [zoom, setZoom] = useState(15);  
+  const [zoom, setZoom] = useState(10);
   // const [showLayer1, setShowLayer1] = useState(true);
   // const [showLayer2, setShowLayer2] = useState(true);
   // const { view } = useContext(MapContext);
-  // const [viewing, setViewing] = useState(null);  
+  // const [viewing, setViewing] = useState(null);
+
+  const [wisata, setWisata] = useState([]);
+
+  useEffect(() => {
+    getAllWisata().then((res) => {
+      setWisata(res.data.data);
+      console.log(res.data.data);
+    });
+  }, []);
 
   return (
     <>
@@ -61,107 +65,80 @@ const Home = () => {
         <div className="flex flex-col border-xl sidebar lg:left-0 p-2 w-[350px] h-[calc(100vh-80px)] overflow-y-auto text-center bg-green-300 ">
           <div className="text-gray-100 text-xl">
             <div className="mt-5">
-                <form>
-                  <div className="search">
-                    <label
-                      htmlFor="search"
-                      className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                    >
-                      Search
-                    </label>
-                    <div className="relative flex mb-5">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg
-                          aria-hidden="true"
-                          className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                          ></path>
-                        </svg>
-                      </div>
-                      <input
-                        type="search"
-                        className="w-[18rem] p-4 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Cari Wisata"
-                        required
-                      />
+              <form>
+                <div className="search">
+                  <label
+                    htmlFor="search"
+                    className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                  >
+                    Search
+                  </label>
+                  <div className="relative flex mb-5">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg
+                        aria-hidden="true"
+                        className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        ></path>
+                      </svg>
                     </div>
+                    <input
+                      type="search"
+                      className="w-[18rem] p-4 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Cari Wisata"
+                      required
+                    />
                   </div>
-                </form>
-
-                <div className="flex flex-row ml-3 mb-3">
-                  <p className="text-black text-xl font-semibold tracking-wide">
-                    Explorer
-                  </p>
                 </div>
-                <button className="flex w-full text-black border-lg items-center hover:bg-[#98FB98] focus:bg-[#98FB98] rounded-lg p-3 mb-3"
-                onClick={() => {
-                          setCenter([106.92212358079824, -6.919457022684152]);
-                        }}>
-                  {/* <input
-                    type="checkbox"
-                    checked={showLayer1}
-                    onChange={(event) => setShowLayer1(event.target.checked)}
-                    className="mr-2"
-                  /> */}
-                  <div className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                      />
-                    </svg>
-                    <div className="text-black text-[17px] font-medium">
-                        Sukabumi
+              </form>
+
+              <div className="flex flex-row ml-3 mb-3">
+                <p className="text-black text-xl font-semibold tracking-wide">
+                  Explorer
+                </p>
+              </div>
+
+              {wisata.map((item) => {
+                return (
+                  <button
+                    className="flex w-full text-black border-lg items-center hover:bg-[#98FB98] focus:bg-[#98FB98] rounded-lg p-3 mb-3"
+                    onClick={() => {
+                      setZoom(13);
+                      setCenter([item.lokasi.long, item.lokasi.lat]);
+                    }}
+                  >
+                    <div className="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                        />
+                      </svg>
+                      <div className="text-black text-left text-[17px] font-medium ml-3">
+                        {item.nama}
+                      </div>
                     </div>
-                  </div>
-                </button>              
-                <button className="flex w-full text-black border-lg items-center hover:bg-[#98FB98] focus:bg-[#98FB98] rounded-lg p-3 mb-3"
-                onClick={() => {
-                          setCenter([107.6316278500759, -6.972258005991703]);
-                        }}>
-                  {/* <input
-                    type="checkbox"
-                    checked={showLayer1}
-                    onChange={(event) => setShowLayer1(event.target.checked)}
-                    className="mr-2"
-                  /> */}
-                  <div className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                      />
-                    </svg>
-                    <div className="text-black text-[17px] font-medium">
-                        Bandung
-                    </div>
-                  </div>
-                </button>              
+                  </button>
+                );
+              })}
+
             </div>
           </div>
         </div>
@@ -191,7 +168,29 @@ const Home = () => {
                 />
               )} */}
 
-              <Marker
+              {wisata.map((item) => {
+                return (
+                  <Marker
+                    key={item._id}
+                    coordinate={[item.lokasi.long, item.lokasi.lat]}
+                    style={styles.Marker}
+                    popup={
+                      <CardImage
+                        file360={item.file360}
+                        image={
+                          process.env.REACT_APP_API_BASE_URL +
+                          "/storage/wisata/" +
+                          item.thumbnail
+                        }
+                        title={item.nama}
+                        description={item.deskripsi}
+                        link={'/virtual-tour/view/'+item._id}
+                      />
+                    }
+                  />
+                );
+              })}
+              {/* <Marker
                 coordinate={center}
                 style={styles.Marker}
                 popup={
@@ -209,13 +208,13 @@ const Home = () => {
                 style={styles.Marker}
                 popup={
                   <CardImage
-                  file360=""
+                    file360=""
                     image="https://flowbite.com/docs/images/blog/image-1.jpg"
                     title="Telkom University"
                     description="Lorem"
                   />
                 }
-              />
+              /> */}
             </Layers>
 
             <Controls>
