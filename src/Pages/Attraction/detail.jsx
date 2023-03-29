@@ -41,10 +41,9 @@ const AttractionDetail = () => {
 						</div>
 					</div>
 					<div className="flex my-10">
-						<div class="grid grid-cols-4 gap-10 pr-8 w-3/4">
-							<div class="row-span-3 col-span-3 rounded-xl relative h-[35rem] w-full bg-center bg-cover">
-									<img src={"http://127.0.0.1:8000/storage/atraksi/" + atraksi.thumbnail} alt="atraksi"/>
-							</div>
+						<div class="grid grid-cols-4 gap-5 pr-8">
+							<img src={"http://127.0.0.1:8000/storage/atraksi/" + atraksi.thumbnail} alt="atraksi" class="col-span-4 rounded-xl relative h-full w-full bg-center bg-cover"/>
+						
 							{/* <div
 								class="  rounded-xl relative w-full bg-center bg-cover"
 								style={{

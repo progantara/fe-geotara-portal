@@ -51,7 +51,7 @@ function App() {
 
           {/* Event */}
           <Route path="/event" element={<Event />} />
-          <Route path="/event/detail" element={<EventDetail />} />
+          <Route path="/event/detail/:id" element={<EventDetail />} />
 
           {/* Virtual Tour */}
           <Route path="/virtual-tour" element={<Virtual />} />
@@ -72,7 +72,7 @@ function App() {
             element={<MerhcantAndSourvenir />}
           />
           <Route
-            path="/merchant-sourvenir/detail"
+            path="/merchant-sourvenir/detail/:id"
             element={<MerhcantAndSourvenirDetail />}
           />
 
