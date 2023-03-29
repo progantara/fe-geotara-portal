@@ -56,7 +56,7 @@ const AccomodationDetail = () => {
 					{/* Gambar */}
 					<div className='flex flex-col gap-2 lg:flex-row'>
 						<div className='w-full h-52 bg-white rounded-xl overflow-hidden relative lg:h-full lg:w-[70%]'>
-							<img src={"http://127.0.0.1:8000/storage/penginapan/" + penginapan?.thumbnail} alt="hotel" className='w-full h-full object-cover'/>
+							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/" + penginapan?.thumbnail} alt="hotel" className='w-full h-full object-cover'/>
 						</div>
 						<div className='flex flex-row justify-between lg:flex-col lg:w-[30%] lg:gap-2'>
 							<div className='w-[30%] h-32 rounded-xl overflow-hidden relative lg:w-full '>
@@ -225,7 +225,7 @@ const AccomodationDetail = () => {
 											{/* Gambar */}
 											<div className='flex flex-col gap-2 w-[48%] h-full lg:w-[40%]'>
 												<div className='w-full h-32 lg:h-52 bg-white rounded-xl overflow-hidden relative'>
-													<img src={"http://127.0.0.1:8000/storage/penginapan/kamar/" + item.thumbnail} alt="hotel" className='w-full h-full object-cover'/>
+													<img src={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/kamar/" + item.thumbnail} alt="hotel" className='w-full h-full object-cover'/>
 												</div>
 												<div className='flex flex-row justify-between'>
 													<div className='w-[30%] h-16 lg:h-32 rounded-xl overflow-hidden relative'>
