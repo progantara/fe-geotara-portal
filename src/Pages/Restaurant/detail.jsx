@@ -35,7 +35,10 @@ const RestaurantDetail = () => {
 						<p className="font-bold text-4xl">{restaurant.nama}</p>
 						<p>No telp : {restaurant.no_telp}</p>
 						<p>Email : {restaurant.email}</p>
-						<img src={"http://127.0.0.1:8000/storage/restoran/" + restaurant.thumbnail} alt="background" className="mt-2 h-96 w-[70%] mx-auto object-cover rounded-lg" />
+						{
+							restaurant.thumbnail &&
+							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail} alt="background" className="mt-2 h-96 w-[70%] mx-auto object-cover rounded-lg" />
+						}
 					</div>
 				</section>
 
@@ -44,7 +47,10 @@ const RestaurantDetail = () => {
 						<p className="text-4xl font-bold">Location Info</p>
 						<div className="flex items-center">
 							<BiMap size={20} />
-							<p>{restaurant.lokasi?.alamat}</p>
+							{
+								restaurant.lokasi &&
+								<p>{restaurant.lokasi?.alamat}</p>
+							}
 						</div>
 					</div>
 					<div className="flex mt-4">
@@ -59,22 +65,19 @@ const RestaurantDetail = () => {
 						<p className="font-bold text-4xl mb-5">Menu</p>
 
 						<div className="grid grid-cols-3 gap-14 ">
-							<Card
-								id={restaurant._id}
-								title={restaurant.detail?.menu[0].nama}
-								image={"http://127.0.0.1:8000/storage/restoran/" + restaurant.thumbnail}
-								address={restaurant.lokasi?.alamat}
-								rating={restaurant.detail?.menu[0].rating}
-								price={restaurant.detail?.menu[0].harga}
-							/>
-							<Card
-								id={restaurant._id}
-								title={restaurant.detail?.menu[1].nama}
-								image={"http://127.0.0.1:8000/storage/restoran/" + restaurant.thumbnail}
-								address={restaurant.lokasi?.alamat}
-								rating={restaurant.detail?.menu[1].rating}
-								price={restaurant.detail?.menu[1].harga}
-							/>
+							{
+								restaurant.detail &&
+								restaurant.detail.menu.map((item, index) => {
+								<Card
+									id={restaurant.detail._id}
+									title={item.nama}
+									image={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail}
+									address={restaurant.lokasi?.alamat}
+									rating={item.rating}
+									price={item.harga}
+								/>
+								})
+							}
 						</div>
 					</div>
 				</section>
