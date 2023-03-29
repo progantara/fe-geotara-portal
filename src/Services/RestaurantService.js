@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getTopRestaurant = () => {
-	return axios.get(`http://127.0.0.1:8000/api/portal/topRestoran`, {
+	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/topRestoran`, {
 		headers: {
 			Accept: 'application/json',
 		},
@@ -9,7 +9,7 @@ export const getTopRestaurant = () => {
 };
 
 export const getRestaurant = () => {
-	return axios.get(`http://127.0.0.1:8000/api/portal/restoran`, {
+	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/restoran`, {
 		headers: {
 			Accept: 'application/json',
 		},
@@ -17,7 +17,7 @@ export const getRestaurant = () => {
 };
 
 export const getOneRestaurant = (id) => {
-	return axios.get(`http://127.0.0.1:8000/api/portal/restoran/` + id, {
+	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/restoran/` + id, {
 		headers: {
 			Accept: 'application/json',
 		},

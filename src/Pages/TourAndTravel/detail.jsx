@@ -47,7 +47,7 @@ const TourAndTravelDetail = () => {
 					<div className="flex my-10">
 						<div class="pr-8 w-[70%]">
 							<div class="rounded-xl h-[35rem] w-full bg-center bg-cover">
-								<img src={"http://127.0.0.1:8000/storage/tour/" + tour.thumbnail} alt="tour" className='w-full h-full' />
+								<img src={process.env.REACT_APP_API_BASE_URL+"/storage/tour/" + tour.thumbnail} alt="tour" className='w-full h-full' />
 							</div>
 							{/* <div
 								class="  rounded-xl relative w-full bg-center bg-cover"
@@ -144,7 +144,7 @@ const TourAndTravelDetail = () => {
 							<div className="flex my-4 ">
 								<div class="grid grid-cols-3 gap-4 w-1/5">
 									<div class="col-span-3 rounded-xl relative h-[13.75rem] w-full bg-center bg-cover">
-										<img src={"http://127.0.0.1:8000/storage/tour/jurusan/" + tour.detail?.jurusan[0].thumbnail} alt="tour" className='h-full object-cover w-full'/>
+										<img src={process.env.REACT_APP_API_BASE_URL+"/storage/tour/jurusan/" + tour.detail?.jurusan[0].thumbnail} alt="tour" className='h-full object-cover w-full'/>
 									</div>
 								</div>
 
@@ -192,7 +192,7 @@ const TourAndTravelDetail = () => {
 							<div className="flex my-4 ">
 								<div class="grid grid-cols-3 gap-4 w-1/5">
 									<div class="col-span-3 rounded-xl relative h-[13.75rem] w-full bg-center bg-cover">
-										<img src={"http://127.0.0.1:8000/storage/tour/jurusan/" + tour.detail?.jurusan[0].thumbnail} alt="tour" className='h-full object-cover w-full'/>
+										<img src={process.env.REACT_APP_API_BASE_URL+"/storage/tour/jurusan/" + tour.detail?.jurusan[0].thumbnail} alt="tour" className='h-full object-cover w-full'/>
 									</div>
 								</div>
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getTopPenginapan = () => {
-	return axios.get(`http://127.0.0.1:8000/api/portal/topPenginapan`, {
+	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/topPenginapan`, {
 		headers: {
 			Accept: 'application/json',
 		},
@@ -9,7 +9,7 @@ export const getTopPenginapan = () => {
 };
 
 export const getPenginapan = () => {
-	return axios.get(`http://127.0.0.1:8000/api/portal/penginapan`, {
+	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/penginapan`, {
 		headers: {
 			Accept: 'application/json',
 		},
@@ -17,7 +17,7 @@ export const getPenginapan = () => {
 };
 
 export const getOnePenginapan = (id) => {
-	return axios.get(`http://127.0.0.1:8000/api/portal/penginapan/` + id, {
+	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/penginapan/` + id, {
 		headers: {
 			Accept: 'application/json',
 		},
@@ -25,7 +25,7 @@ export const getOnePenginapan = (id) => {
 };
 
 // export const getAllDesa = () => {
-// 	return axios.get(`http://127.0.0.1:8000/api/master/lokasi/desa`, {
+// 	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/master/lokasi/desa`, {
 // 		headers: {
 // 			Accept: 'application/json',
 // 			Authorization: `Bearer 6422f02b7927fb12fa066153|hUuxTOUVZEtcJnQv7z0DeBuHGuPloU7YvyO46SXE`,
@@ -34,7 +34,7 @@ export const getOnePenginapan = (id) => {
 // };
 
 // export const getOneDesa = (id) => {
-// 	return axios.get(`http://127.0.0.1:8000/api/master/lokasi/desa/` + id, {
+// 	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/master/lokasi/desa/` + id, {
 // 		headers: {
 // 			Accept: 'application/json',
 // 			Authorization: `Bearer 6422f02b7927fb12fa066153|hUuxTOUVZEtcJnQv7z0DeBuHGuPloU7YvyO46SXE`,

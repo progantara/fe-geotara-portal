@@ -197,7 +197,7 @@ const Home = () => {
                   style={styles.MultiPolygon}
                 />
               )} */}
-
+{/* 
               {wisata.map((item) => {
                 return (
                   <Marker
@@ -214,8 +214,8 @@ const Home = () => {
                     }
                   />
                 );
-              })}
-              {/* <Marker
+              })} */}
+              <Marker
                 coordinate={center}
                 style={styles.Marker}
                 popup={
@@ -239,7 +239,7 @@ const Home = () => {
                     description="Lorem"
                   />
                 }
-              /> */}
+              />
             </Layers>
 
             <Controls>
