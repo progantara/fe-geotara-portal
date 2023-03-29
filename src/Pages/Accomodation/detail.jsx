@@ -263,9 +263,7 @@ const AccomodationDetail = () => {
 								</div>
 								
 							</div>
-							<div className='flex justify-between items-center'>
-
-								{/* Gambar */}
+							{/* <div className='flex justify-between items-center'>								
 								<div className='flex flex-col gap-2 w-[48%] h-full lg:w-[40%]'>
 									<div className='w-full h-32 lg:h-52 bg-white rounded-xl overflow-hidden relative'>
 										<img src={process.env.REACT_APP_API_BASE_URL+"/storage/penginapan/kamar/" + penginapan.detail?.kamar[1].thumbnail} alt="hotel" className='w-full h-full object-cover'/>
@@ -308,8 +306,7 @@ const AccomodationDetail = () => {
 										</button>
 									</div>
 								</div>
-
-							</div>
+							</div> */}
 						</div>
 
 					</div>
