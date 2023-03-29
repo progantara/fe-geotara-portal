@@ -8,7 +8,7 @@ export const getTopWisata = () => {
 	});
 };
 
-export const getWisata = (id) => {
+export const getOneWisata = (id) => {
 	return axios.get(process.env.REACT_APP_API_BASE_URL+`/api/portal/wisata/` + id, {
 		headers: {
 			Accept: 'application/json',

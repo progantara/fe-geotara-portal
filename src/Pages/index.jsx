@@ -153,7 +153,7 @@ const TopWisata = () => {
                   <div className="w-full h-full bg-gray-900 absolute opacity-40" />
                   <img
                     src={
-                      "http://127.0.0.1:8000/storage/wisata/" + item.thumbnail
+                      process.env.REACT_APP_API_BASE_URL+"/storage/wisata/" + item.thumbnail
                     }
                     alt="top-wisata"
                     className="w-full object-cover lg:h-full"
@@ -190,7 +190,7 @@ const TopWisata = () => {
                     <div className="w-full h-full bg-gray-900 absolute opacity-40" />
                     <img
                       src={
-                        "http://127.0.0.1:8000/storage/wisata/" + item.thumbnail
+                        process.env.REACT_APP_API_BASE_URL+"/storage/wisata/" + item.thumbnail
                       }
                       alt="top-wisata"
                       className="w-full object-cover lg:h-full"
@@ -235,7 +235,7 @@ const Penginapan = () => {
               <Card
                 key={item._id}
                 title={item.nama}
-                image={"http://127.0.0.1:8000/storage/penginapan/"+item.thumbnail}
+                image={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/"+item.thumbnail}
                 address={item.lokasi.alamat}
                 rating={item.rating}
                 price={new Intl.NumberFormat("id-ID", {
