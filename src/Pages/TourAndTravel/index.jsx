@@ -12,6 +12,8 @@ import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
 import IMAGES from '../../Assets/img';
+import { useEffect } from 'react';
+import { getTour } from '../../Services/TourService';
 
 const TourAndTravel = () => {
 
@@ -91,6 +93,15 @@ const TourAndTravel = () => {
 
 	const items = [{ label: 'TourAndTravel', url: '/TourAndTravel' }];
 	let data = [1, 2, 3, 4, 5, 6];
+
+	// Get Data TOur
+	const [tour, setTour] = useState([]);
+
+  useEffect(() => {
+    getTour().then((res) => {
+      setTour(res.data.data);
+    });
+  }, []);
 
 	return (
 		<PortalTemplate items={items}>
@@ -245,7 +256,23 @@ const TourAndTravel = () => {
 					
 					{/* Card Tour */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
+						{
+							tour.map((item, index) => {
+								return (
+									<Card
+										key={index}
+										id={item._id}
+										title={item.nama}
+										image={"http://127.0.0.1:8000/storage/tour/" + item.thumbnail}
+										address={item.lokasi.alamat}
+										rating={item.rating}
+										price={item.harga}
+										link={"/tour-travel/detail/"+ item._id}
+									/>
+								)
+							})
+						}
+						{/* <Card
 							title="Travel Buddies"
 							image={IMAGES.travel1}
 							address="Duren Sawit, Kota Jakarta Timur"
@@ -292,7 +319,7 @@ const TourAndTravel = () => {
 							rating="200"
 							price={225000}
 							link={"/tour-travel/detail"}
-						/>
+						/> */}
 					</div>
 
 					{/* Artikel */}

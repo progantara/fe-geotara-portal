@@ -59,11 +59,11 @@ function App() {
 
           {/* Akomodasi */}
           <Route exact path="/accomodation" element={<Accomodation />} />
-          <Route path="/accomodation/detail" element={<AccomodationDetail />} />
+          <Route path="/accomodation/detail/:id" element={<AccomodationDetail />} />
 
           {/* Tour And Travel */}
           <Route exact path="/tour-travel" element={<TourAndTravel />} />
-          <Route path="/tour-travel/detail" element={<TourAndTravelDetail />} />
+          <Route path="/tour-travel/detail/:id" element={<TourAndTravelDetail />} />
 
           {/* Merchant And Sourvenir */}
           <Route
@@ -78,10 +78,11 @@ function App() {
 
           {/* Restaurant */}
           <Route exact path="/restaurant" element={<Restaurant />} />
-          <Route path="/restaurant/detail" element={<RestaurantDetail />} />
+          <Route path="/restaurant/detail/:id" element={<RestaurantDetail />} />
 
           {/* Attraction */}
           <Route exact path="/attraction" element={<Attraction />} />
+
           <Route path="/attraction/detail" element={<AttractionDetail />} />
 
           {/* 404 */}
