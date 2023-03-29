@@ -9,7 +9,7 @@ import { osm, vector } from "../../Component/Map/Source";
 import { fromLonLat, get } from "ol/proj";
 import { Controls, FullScreenControl } from "../../Component/Map/Controls";
 
-import mapConfig from "./config.json";
+// import mapConfig from "./config.json";
 import Marker from "../../Component/Map/Component/Marker";
 import Navbar from "../../Component/Navbar";
 import Popup from "../../Component/Map/Component/Popup";
@@ -38,9 +38,9 @@ let styles = {
 
 const Home = () => {
   const [center, setCenter] = useState([
-    106.92212358079824, -6.919457022684152,
+    108.56902933854934, -7.717141910380837,
   ]);
-  const [zoom, setZoom] = useState(15);
+  const [zoom, setZoom] = useState(10);
   // const [showLayer1, setShowLayer1] = useState(true);
   // const [showLayer2, setShowLayer2] = useState(true);
   // const { view } = useContext(MapContext);
@@ -51,6 +51,7 @@ const Home = () => {
   useEffect(() => {
     getAllWisata().then((res) => {
       setWisata(res.data.data);
+      console.log(res.data.data);
     });
   }, []);
 
@@ -105,70 +106,39 @@ const Home = () => {
                   Explorer
                 </p>
               </div>
-              <button
-                className="flex w-full text-black border-lg items-center hover:bg-[#98FB98] focus:bg-[#98FB98] rounded-lg p-3 mb-3"
-                onClick={() => {
-                  setCenter([106.92212358079824, -6.919457022684152]);
-                }}
-              >
-                {/* <input
-                    type="checkbox"
-                    checked={showLayer1}
-                    onChange={(event) => setShowLayer1(event.target.checked)}
-                    className="mr-2"
-                  /> */}
-                <div className="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6"
+
+              {wisata.map((item) => {
+                return (
+                  <button
+                    className="flex w-full text-black border-lg items-center hover:bg-[#98FB98] focus:bg-[#98FB98] rounded-lg p-3 mb-3"
+                    onClick={() => {
+                      setZoom(13);
+                      setCenter([item.lokasi.long, item.lokasi.lat]);
+                    }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                    />
-                  </svg>
-                  <div className="text-black text-[17px] font-medium">
-                    Sukabumi
-                  </div>
-                </div>
-              </button>
-              <button
-                className="flex w-full text-black border-lg items-center hover:bg-[#98FB98] focus:bg-[#98FB98] rounded-lg p-3 mb-3"
-                onClick={() => {
-                  setCenter([107.6316278500759, -6.972258005991703]);
-                }}
-              >
-                {/* <input
-                    type="checkbox"
-                    checked={showLayer1}
-                    onChange={(event) => setShowLayer1(event.target.checked)}
-                    className="mr-2"
-                  /> */}
-                <div className="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                    />
-                  </svg>
-                  <div className="text-black text-[17px] font-medium">
-                    Bandung
-                  </div>
-                </div>
-              </button>
+                    <div className="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                        />
+                      </svg>
+                      <div className="text-black text-left text-[17px] font-medium ml-3">
+                        {item.nama}
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+
             </div>
           </div>
         </div>
@@ -197,25 +167,30 @@ const Home = () => {
                   style={styles.MultiPolygon}
                 />
               )} */}
-{/* 
+
               {wisata.map((item) => {
                 return (
                   <Marker
-                    coordinate={[item.longitude, item.latitude]}
+                    key={item._id}
+                    coordinate={[item.lokasi.long, item.lokasi.lat]}
                     style={styles.Marker}
                     popup={
                       <CardImage
                         file360={item.file360}
-                        image={item.thumbnail}
+                        image={
+                          process.env.REACT_APP_API_BASE_URL +
+                          "/storage/wisata/" +
+                          item.thumbnail
+                        }
                         title={item.nama}
                         description={item.deskripsi}
-                        link={item._id}
+                        link={'/virtual-tour/view/'+item._id}
                       />
                     }
                   />
                 );
-              })} */}
-              <Marker
+              })}
+              {/* <Marker
                 coordinate={center}
                 style={styles.Marker}
                 popup={
@@ -239,7 +214,7 @@ const Home = () => {
                     description="Lorem"
                   />
                 }
-              />
+              /> */}
             </Layers>
 
             <Controls>
