@@ -61,7 +61,7 @@ const {id} = useParams();
             <div className="flex flex-col">
             <img
                 className="rounded-lg w-[50rem] h-96 mt-5 mb-5"
-                src={process.env.REACT_APP_API_BASE_URL+ '/storage/artikel/' + artikel.thumbnail}
+                src={process.env.REACT_APP_API_BASE_URL+ "/storage/artikel/" + artikel?.thumbnail}
               />
               <p className="font-medium">
               {artikel.content}
@@ -241,7 +241,7 @@ const {id} = useParams();
                       </div>
                       <img
                         className="rounded-lg h-20 w-32 ml-5 -mt-[4.5rem]"
-                        src={process.env.REACT_APP_API_BASE_URL+ '/storage/artikel/' + artikel.thumbnail}
+                        src={process.env.REACT_APP_API_BASE_URL+ "/storage/artikel/" + artikel?.thumbnail}
                       />
                     </>
                   )
