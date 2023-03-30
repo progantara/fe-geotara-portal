@@ -38,7 +38,7 @@ const Artikel = () => {
                         <div className="flex">
                           <img
                             className="rounded-lg brightness-75 max-w-4xl bg-fixed"
-                            src={"http://127.0.0.1:8000/storage/artikel/" + item.thumbnail}
+                            src={"process.env.REACT_APP_API_BASE_URL+`/api/portal/artikel" + item.thumbnail}
                             alt="post-1"
                           />
                         </div>
@@ -71,7 +71,7 @@ const Artikel = () => {
                   return(
                 <img
                   className="rounded-lg h-20 w-32 mt-10 ml-5"
-                  src={"http://127.0.0.1:8000/storage/artikel/" + item.thumbnail}
+                  src={"process.env.REACT_APP_API_BASE_URL+`/api/portal/artikel" + item.thumbnail}
                   alt="post-2"
                 />
                   )
@@ -106,7 +106,7 @@ const Artikel = () => {
                         <div className="flex">
                           <img
                             className="rounded-lg w-[45rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-right"
-                            src={"http://127.0.0.1:8000/storage/artikel/" + item.thumbnail}
+                            src={"process.env.REACT_APP_API_BASE_URL+`/api/portal/artikel" + item.thumbnail}
                             alt="post-1"
                           />
                           <div className="mt-9 ml-8 ">
