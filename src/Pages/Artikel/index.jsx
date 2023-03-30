@@ -13,6 +13,7 @@ import articel6 from "../../Assets/img/Article-6.jpg";
 import articel7 from "../../Assets/img/Article-7.jpg";
 import articel8 from "../../Assets/img/Article-8.jpg";
 import articel9 from "../../Assets/img/Article-9.jpg";
+import { all } from "axios";
 
 const Artikel = () => {
   const items = [{ label: "Artikel", url: "/artikel" }];
@@ -146,42 +147,18 @@ const Artikel = () => {
               </div>
               <div>
                 <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10 ml-20 p-5 w-[380px]">
-                  <p className="font-semibold text-lg text-green-900 text-center">Kategori</p>
+                  <p className="font-semibold text-3xl text-green-900 text-center">Kategori</p>
+                  {allArtikel.map((item, index)=>{
+                    return  (
                   <div className="flex justify-between mt-3">
                     <div className="flex">
                       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" id="mainIconPathAttribute"></path> </svg>
-                      <p className="font-semibold text-lg text-green-900 text-left ">Wisata</p>
+                      <p className="font-semibold text-lg text-green-900 text-left ">{item.tags[1]}</p>
                     </div>
-                    <p className="font-semibold">{"(20)"}</p>
+                    <p className="font-semibold">{"(2)"}</p>
                   </div>
-                  <div className="flex justify-between mt-3">
-                    <div className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" id="mainIconPathAttribute"></path> </svg>
-                      <p className="font-semibold text-lg text-green-900 text-left">Alam</p>
-                    </div>
-                    <p className="font-semibold">{"(20)"}</p>
-                  </div>
-                  <div className="flex justify-between mt-3">
-                    <div className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" id="mainIconPathAttribute"></path> </svg>
-                      <p className="font-semibold text-lg text-green-900 text-left">Indonesia</p>
-                    </div>
-                    <p className="font-semibold">{"(20)"}</p>
-                  </div>
-                  <div className="flex justify-between mt-3">
-                    <div className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" id="mainIconPathAttribute"></path> </svg>
-                      <p className="font-semibold text-lg text-green-900 text-left">Geopark</p>
-                    </div>
-                    <p className="font-semibold">{"(20)"}</p>
-                  </div>
-                  <div className="flex justify-between mt-3">
-                    <div className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" id="mainIconPathAttribute"></path> </svg>
-                      <p className="font-semibold text-lg text-green-900 text-left">Pantai</p>
-                    </div>
-                    <p className="font-semibold">{"(20)"}</p>
-                  </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
