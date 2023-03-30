@@ -29,7 +29,7 @@ const RestaurantDetail = () => {
 
 	return (
 		<PortalTemplate items={items}>
-			<div className="flex flex-col p-20 pt-5 space-y-10 bg-green-100 text-primary">
+			<div className="flex flex-col p-4 md:p-20 pt-5 bg-green-100 text-primary md:pt-5">
 				<section>
 					<div className="text-center">
 						<p className="font-bold text-4xl">{restaurant.nama}</p>
@@ -37,25 +37,25 @@ const RestaurantDetail = () => {
 						<p>Email : {restaurant.email}</p>
 						{
 							restaurant.thumbnail &&
-							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail} alt="background" className="mt-2 h-96 w-[70%] mx-auto object-cover rounded-lg" />
+							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail} alt="background" className="mt-2 h-52 md:h-96 w-[70%] bg-white mx-auto object-cover rounded-lg" />
 						}
 					</div>
 				</section>
 
-				<section>
-					<div className="flex flex-col text-primary">
-						<p className="text-4xl font-bold">Location Info</p>
+				<section className='md:px-16'>
+					<div className="flex flex-col text-primary mt-5">
+						<p className="text-xl md:text-4xl font-bold">Location Info</p>
 						<div className="flex items-center">
 							<BiMap size={20} />
 							{
 								restaurant.lokasi &&
-								<p>{restaurant.lokasi?.alamat}</p>
+								<p className='text-sm md:text-xl'>{restaurant.lokasi?.alamat}</p>
 							}
 						</div>
 					</div>
 					<div className="flex mt-4">
-						<div class="h-[9.5rem] w-full bg-center bg-cover">
-							<img src={IMAGES.map1} alt="background" className="h-52 w-full mx-auto object-cover rounded-lg" />
+						<div class="h-32 w-full bg-center bg-cover md:h-96">
+							<img src={IMAGES.map1} alt="background" className="h-full w-full mx-auto object-cover rounded-lg" />
 						</div>
 					</div>
 				</section>
@@ -81,6 +81,7 @@ const RestaurantDetail = () => {
 						</div>
 					</div>
 				</section>
+				
 			</div>
 		</PortalTemplate>
 	);
