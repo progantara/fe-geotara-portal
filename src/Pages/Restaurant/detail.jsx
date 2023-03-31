@@ -29,7 +29,7 @@ const RestaurantDetail = () => {
 
 	return (
 		<PortalTemplate items={items}>
-			<div className="flex flex-col p-4 md:p-20 pt-5 bg-green-100 text-primary md:pt-5">
+			<div className="flex flex-col p-4 lg:p-20 pt-5 bg-green-100 text-primary md:pt-5">
 				<section>
 					<div className="text-center">
 						<p className="font-bold text-4xl">{restaurant.nama}</p>
@@ -37,7 +37,7 @@ const RestaurantDetail = () => {
 						<p>Email : {restaurant.email}</p>
 						{
 							restaurant.thumbnail &&
-							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail} alt="background" className="mt-2 h-52 md:h-96 w-[70%] bg-white mx-auto object-cover rounded-lg" />
+							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail} alt="background" className="mt-2 h-52 md:h-96 w-[70%] bg-white mx-auto object-cover rounded-lg overflow-hidden" />
 						}
 					</div>
 				</section>
@@ -64,18 +64,21 @@ const RestaurantDetail = () => {
 					<div className="text-center mt-10">
 						<p className="font-bold text-4xl mb-5">Menu</p>
 
-						<div className="grid grid-cols-3 gap-14 ">
+						<div className="flex flex-col justify-center items-center gap-2 md:flex-row">
 							{
 								restaurant.detail &&
 								restaurant.detail.menu.map((item, index) => {
-								<Card
-									id={restaurant.detail._id}
-									title={item.nama}
-									image={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail}
-									address={restaurant.lokasi?.alamat}
-									rating={item.rating}
-									price={item.harga}
-								/>
+									return (
+										<Card
+											key={"menu-" + index}
+											id={restaurant.detail._id}
+											title={item.nama}
+											image={process.env.REACT_APP_API_BASE_URL + "/storage/restoran/" + restaurant.thumbnail}
+											address={restaurant.lokasi?.alamat}
+											rating={item.rating}
+											price={item.harga}
+										/>
+									)
 								})
 							}
 						</div>
