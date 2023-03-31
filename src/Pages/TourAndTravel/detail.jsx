@@ -2,7 +2,7 @@ import React from 'react';
 
 import PortalTemplate from '../../Component/Layout';
 
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { AiFillStar, AiOutlineLine, AiOutlineStar } from 'react-icons/ai';
 import { BiMap, BiWifi } from 'react-icons/bi';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
@@ -31,7 +31,8 @@ const TourAndTravelDetail = () => {
 
 	return (
 		<PortalTemplate items={items}>
-			<div className="bg-green-100 p-6 md:px-32 pt-10">
+			<div className="bg-green-100 p-6 md:px-16 lg:px-32 pt-10">
+
 				<section>
 					<div className="flex flex-col text-primary">
 						<p className="text-xl md:text-4xl font-bold">{tour.nama}</p>
@@ -46,8 +47,8 @@ const TourAndTravelDetail = () => {
 					</div>
 
 					<div className="flex flex-col md:flex-row my-10 gap-5">
-						<div className="w-full h-52 md:w-[70%] md:h-[550px]">
-							<div className="rounded-xl h-full w-full bg-center bg-cover bg-white">
+						<div className="w-full h-52 md:w-[70%] md:h-[620px]">
+							<div className="rounded-xl h-full w-full overflow-hidden bg-center bg-cover bg-white">
 								<img src={process.env.REACT_APP_API_BASE_URL + "/storage/tour/" + tour.thumbnail} alt="tour" className='w-full h-full' />
 							</div>
 						</div>
@@ -97,8 +98,10 @@ const TourAndTravelDetail = () => {
 								return (
 									<div className="flex flex-col mb-10" key={"titik-" + index}>
 										<p className=" text-center text-[#064E3B] font-extrabold text-3xl mb-4">TITIK</p>
-										<div className="flex bg-white justify-between md:px-8 rounded-3xl text-black text-sm p-5">
-											<div>
+										<div className="flex flex-col bg-white justify-center md:justify-evenly md:px-8 rounded-3xl text-black text-sm p-5 md:flex-row">
+
+											{/* Naik */}
+											<div className=''>
 												<p className="md:text-lg font-semibold">Titik Naik</p>
 												<div className="flex flex-col">
 													<p>{tour.detail?.jurusan[0].jam_keberangkatan} WIB </p>
@@ -106,6 +109,12 @@ const TourAndTravelDetail = () => {
 													<p>{tour.detail?.jurusan[0].keberangkatan}</p>
 												</div>
 											</div>
+
+											<div className='md:flex md:items-center'>
+												<AiOutlineLine className='rotate-90 md:rotate-0'></AiOutlineLine>
+											</div>
+
+											{/* Turun */}
 											<div>
 												<p className="md:text-lg font-semibold">Titik Turun</p>
 												<div className="flex flex-col">
@@ -114,6 +123,7 @@ const TourAndTravelDetail = () => {
 													<p>{tour.detail?.jurusan[0].tujuan}</p>
 												</div>
 											</div>
+
 										</div>
 									</div>
 								)

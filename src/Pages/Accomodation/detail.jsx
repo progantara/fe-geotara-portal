@@ -12,11 +12,6 @@ import { useEffect } from 'react';
 import { getOnePenginapan } from '../../Services/PenginapanService';
 
 const AccomodationDetail = () => {
-	
-	const items = [
-		{ label: 'Accomodation', url: '/Accomodation' },
-		{ label: 'Vanada Bugeul Cottage', url: '/Accomodation/detail' },
-	];
 
 	const {id} = useParams();
 
@@ -28,6 +23,11 @@ const AccomodationDetail = () => {
       setPenginapan(res.data.data);
     });
   }, []);
+
+	const items = [
+		{ label: 'Accomodation', url: '/Accomodation' },
+		{ label: `${penginapan.nama}`, url: `/Accomodation/detail/${penginapan._id}` },
+	];
 
 	return (
 		<PortalTemplate items={items}>
@@ -55,10 +55,10 @@ const AccomodationDetail = () => {
 
 					{/* Gambar */}
 					<div className='flex flex-col gap-2 lg:flex-row'>
-						<div className='w-full h-52 bg-white rounded-xl overflow-hidden relative lg:h-full lg:w-[70%]'>
+						<div className='w-full h-52 bg-white rounded-xl overflow-hidden relative lg:h-96 lg:w-[70%]'>
 							<img src={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/" + penginapan?.thumbnail} alt="hotel" className='w-full h-full object-cover'/>
 						</div>
-						<div className='flex flex-row justify-between lg:flex-col lg:w-[30%] lg:gap-2'>
+						<div className='flex flex-row justify-between lg:flex-col lg:w-[30%] lg:h-96 lg:gap-2'>
 							<div className='w-[30%] h-32 rounded-xl overflow-hidden relative lg:w-full '>
 								<img src={IMAGES.hoteldetail1} alt="hotel" className='w-full h-full object-cover'/>
 							</div>
@@ -220,46 +220,49 @@ const AccomodationDetail = () => {
 								penginapan.detail?.kamar &&
 								penginapan.detail.kamar.map((item, index) => {
 									return (
-										<div key={"kamar-" + index} className='flex justify-between items-center'>
+										<div key={"kamar-" + index} className='flex flex-col justify-between items-center gap-2 h-96 md:flex-row'>
 
 											{/* Gambar */}
-											<div className='flex flex-col gap-2 w-[48%] h-full lg:w-[40%]'>
-												<div className='w-full h-32 lg:h-52 bg-white rounded-xl overflow-hidden relative'>
+											<div className='w-full h-[50%] md:h-full flex flex-col gap-2 lg:w-[40%] justify-between'>
+												<div className='w-full h-[60%] md:h-[70%] lg:h-[70%] bg-white rounded-xl overflow-hidden relative'>
 													<img src={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/kamar/" + item.thumbnail} alt="hotel" className='w-full h-full object-cover'/>
 												</div>
-												<div className='flex flex-row justify-between'>
-													<div className='w-[30%] h-16 lg:h-32 rounded-xl overflow-hidden relative'>
+												<div className='flex flex-row justify-between h-[40%] md:h-[30%]'>
+													<div className='w-[32%] h-full lg:h-full rounded-xl overflow-hidden relative'>
 														<img src={IMAGES.hoteldetail1} alt="hotel" className='w-full h-full object-cover'/>
 													</div>
-													<div className='w-[30%] h-16 lg:h-32 rounded-xl overflow-hidden relative'>
+													<div className='w-[32%] h-full lg:h-full rounded-xl overflow-hidden relative'>
 														<img src={IMAGES.hoteldetail2} alt="hotel" className='w-full h-full object-cover'/>
 													</div>
-													<div className='w-[30%] h-16 lg:h-32 rounded-xl overflow-hidden relative'>
+													<div className='w-[32%] h-full lg:h-full rounded-xl overflow-hidden relative'>
 														<img src={IMAGES.hoteldetail3} alt="hotel" className='w-full h-full object-cover'/>
 													</div>
 												</div>
 											</div>
 
-											<div className='w-[48%] h-full bg-white p-3 lg:w-[55%]'>
-												<h4 className='text-base font-bold mb-2'>{item.tipe}</h4>
-												<div className='flex items-center gap-2'>
-													<BiBed></BiBed>
-													<p>1 Double Bed & 2 Twin</p>
+											{/* Kamar */}
+											<div className='w-full h-[50%] p-2 md:h-full bg-white lg:p-5 lg:w-[55%] rounded-lg md:flex md:flex-col md:justify-between'>
+												<div>
+													<h4 className='text-base font-bold mb-0 md:mb-2'>{item.tipe}</h4>
+													<div className='flex items-center gap-2'>
+														<BiBed></BiBed>
+														<p>1 Double Bed & 2 Twin</p>
+													</div>
+													<div className='flex items-center gap-2'>
+														<BiWifi></BiWifi>
+														<p>Wifi</p>
+													</div>
+													<div className='flex items-center gap-2'>
+														<IoFastFoodOutline></IoFastFoodOutline>
+														<p>Dinner</p>
+													</div>
+													<div className='flex items-center gap-2'>
+														<BiTv></BiTv>
+														<p>TV</p>
+													</div>
 												</div>
-												<div className='flex items-center gap-2'>
-													<BiWifi></BiWifi>
-													<p>Wifi</p>
-												</div>
-												<div className='flex items-center gap-2'>
-													<IoFastFoodOutline></IoFastFoodOutline>
-													<p>Dinner</p>
-												</div>
-												<div className='flex items-center gap-2'>
-													<BiTv></BiTv>
-													<p>TV</p>
-												</div>
-												<div className='flex w-full text-sm items-center lg:justify-between'>
-													<span className='font-bold'>Rp {item.harga} / Malam</span>
+												<div className='flex flex-col w-full text-sm lg:justify-between'>
+													<span className='font-bold md:mr-5 lg:mr-0 self-center'>Rp {item.harga} / Malam</span>
 													<button className="flex justify-center px-2 py-2 bg-yellow-200 rounded-md">
 														<span className="text-sm font-bold text-primary">Pesan Sekarang</span>
 													</button>
