@@ -153,7 +153,9 @@ const TopWisata = () => {
                   <div className="w-full h-full bg-gray-900 absolute opacity-40" />
                   <img
                     src={
-                      process.env.REACT_APP_API_BASE_URL+"/storage/wisata/" + item.thumbnail
+                      process.env.REACT_APP_API_BASE_URL +
+                      "/storage/wisata/" +
+                      item.thumbnail
                     }
                     alt="top-wisata"
                     className="w-full object-cover lg:h-full"
@@ -190,7 +192,9 @@ const TopWisata = () => {
                     <div className="w-full h-full bg-gray-900 absolute opacity-40" />
                     <img
                       src={
-                        process.env.REACT_APP_API_BASE_URL+"/storage/wisata/" + item.thumbnail
+                        process.env.REACT_APP_API_BASE_URL +
+                        "/storage/wisata/" +
+                        item.thumbnail
                       }
                       alt="top-wisata"
                       className="w-full object-cover lg:h-full"
@@ -235,7 +239,11 @@ const Penginapan = () => {
               <Card
                 key={item._id}
                 title={item.nama}
-                image={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/"+item.thumbnail}
+                image={
+                  process.env.REACT_APP_API_BASE_URL +
+                  "/storage/penginapan/" +
+                  item.thumbnail
+                }
                 address={item.lokasi.alamat}
                 rating={item.rating}
                 price={new Intl.NumberFormat("id-ID", {
@@ -246,7 +254,7 @@ const Penginapan = () => {
                 link="#"
               />
             );
-          })}          
+          })}
         </div>
       </div>
     </section>
@@ -254,6 +262,21 @@ const Penginapan = () => {
 };
 
 const Entertainment = () => {
+  const iframe_container = {
+    left: 0,
+    width: "100%",
+    height: 500,
+    position: "relative",
+  };
+
+  const iframe = {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    border: 0,
+  };
   return (
     <section>
       <div className="flex flex-col p-5 md:px-14 xl:px-32">
@@ -263,7 +286,7 @@ const Entertainment = () => {
             Entertainment Baru
           </p>
           <h2 className="text-md font-extrabold mb-4 text-primary md:text-2xl xl:text-3xl">
-            Buatlah Memori Bersama Kami Di Geopark
+            Buatlah Memori Bersama Kami Sekarang
           </h2>
         </div>
 
@@ -271,35 +294,41 @@ const Entertainment = () => {
         <div className="flex flex-row flex-wrap justify-center gap-2 md:flex-nowrap">
           <div className="w-[45%] h-64 rounded-xl overflow-hidden relative md:h-72 lg:h-96 xl:h-[530px]">
             <div className="w-full h-full bg-gray-900 absolute opacity-40"></div>
-            <img
-              src={IMAGES.entertainment1}
-              alt="enter-1"
-              className="h-full object-cover"
-            />
+            
+            <iframe
+              src="https://www.tiktok.com/embed/7193681471612226842"
+              style={iframe}
+              allowFullScreen
+              allow="encrypted-media;"
+            ></iframe>
+            
           </div>
           <div className="w-[45%] h-64 rounded-xl overflow-hidden relative md:h-72 lg:h-96 xl:h-[530px]">
             <div className="w-full h-full bg-gray-900 absolute opacity-40"></div>
-            <img
-              src={IMAGES.entertainment2}
-              alt="enter-1"
-              className="h-full object-cover"
-            />
+            <iframe
+              src="https://www.tiktok.com/embed/7149067586339179803"
+              style={iframe}
+              allowFullScreen
+              allow="encrypted-media;"
+            ></iframe>
           </div>
           <div className="w-[45%] h-64 rounded-xl overflow-hidden relative md:h-72 lg:h-96 xl:h-[530px]">
             <div className="w-full h-full bg-gray-900 absolute opacity-40"></div>
-            <img
-              src={IMAGES.entertainment3}
-              alt="enter-1"
-              className="h-full object-cover"
-            />
+            <iframe
+              src="https://www.tiktok.com/embed/7156476227698642202"
+              style={iframe}
+              allowFullScreen
+              allow="encrypted-media;"
+            ></iframe>
           </div>
           <div className="w-[45%] h-64 rounded-xl overflow-hidden relative md:h-72 lg:h-96 xl:h-[530px]">
             <div className="w-full h-full bg-gray-900 absolute opacity-40"></div>
-            <img
-              src={IMAGES.entertainment4}
-              alt="enter-1"
-              className="h-full object-cover"
-            />
+            <iframe
+              src="https://www.tiktok.com/embed/7140242882434288923"
+              style={iframe}
+              allowFullScreen
+              allow="encrypted-media;"
+            ></iframe>
           </div>
         </div>
       </div>
