@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PortalTemplate from "../../Component/Layout";
-import { getAllArtikel } from "../../Services/ArtikelService";
-import { getOneArtikel } from "../../Services/ArtikelService";
 
 // Image
 import profile from "../../Assets/img/profile.jpg";
@@ -11,8 +9,8 @@ import articel3 from "../../Assets/img/Article-3.jpg";
 import articel4 from "../../Assets/img/Article-4.jpg";
 import articel5 from "../../Assets/img/Article-5.jpg";
 import articel6 from "../../Assets/img/Article-6.jpg";
-import { useParams } from "react-router-dom";
 
+import { Link, useNavigate } from "react-router-dom";
 
 const Detail = () => {
   const items = [
@@ -22,26 +20,14 @@ const Detail = () => {
       url: "/artikel/detail",
     },
   ];
-const [allArtikel, setAllArtikel] = useState([]);
-useEffect(()=> {
-  getAllArtikel().then((res)=> {
-    setAllArtikel(res.data.data);
-  })
-})
-const {id} = useParams();
-	const [artikel, setArtikel] = useState([]);
-  useEffect(() => {
-    getOneArtikel(id).then((res) => {
-      setArtikel(res.data.data);
-    });
-  }, []);
+
   return (
     <>
       <PortalTemplate items={items}>
         <div className="bg-green-100 flex flex-col">
           <div className="flex flex-row tracking-wider ml-20">
             <h1 className="text-green-900 text-4xl font-semibold mt-10">
-              {artikel.judul}
+              Keragaman Keindahan, Pariwisata Indonesia
             </h1>
           </div>
           <div className="flex flex-row mt-3">
@@ -59,14 +45,47 @@ const {id} = useParams();
           </div>
           <div className="flex ml-20">
             <div className="flex flex-col">
-            <img
+              <img
                 className="rounded-lg w-[50rem] h-96 mt-5 mb-5"
-                src={process.env.REACT_APP_API_BASE_URL+ "/storage/artikel/" + artikel?.thumbnail}
+                src={articel1}
               />
-              <p className="font-medium">
-              {artikel.content}
+              <p className="text-green-900">
+                Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
+                baru di Sukabumi, provinsi Jawa Barat.
               </p>
-              <div>
+              <p className="text-green-900 font-semibold text-xl">
+                Destinasi yang sering dikunjungi ini adalah Curug Cimarinjung
+              </p>
+              <p className="text-green-900">
+                Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
+                baru di Sukabumi, provinsi Jawa Barat.
+              </p>
+              <p className="text-green-900">
+                Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
+                baru di Sukabumi, provinsi Jawa Barat.
+              </p>
+              <p className="text-green-900">
+                Taman Nasional Ciletuh-Palabuhanratu, merupakan tempat wisata
+                baru di Sukabumi, provinsi Jawa Barat.
+              </p>
+              <div className="mt-5">
+                <p className="text-green-900 mt-3 mb-2 text-xl font-semibold">
+                  Kesimpulan
+                </p>
+                <ul className="list-disc">
+                  <li>
+                    Perjalanan ke Geopark Ciletuh sangat cantik, terlebih lagi
+                    ketika siang hari.
+                  </li>
+                  <li>Dapat menikmati pemandangannya</li>
+                  <li>
+                    Perjalanan ke Geopark Ciletuh memang disarankan untuk
+                    dilakukan pada siang hari,
+                  </li>
+                  <li>Memiliki pemandangan eksotis selama perjalanan</li>
+                </ul>
+              </div>
+              <div className="">
                 <p className="text-black font-medium mt-5 mb-5">Bagikan Ke :</p>
                 <div className="flex mt-4 space-x-6 sm:justify-start sm:mb-5">
                   <a href="#" className=" dark:hover:text-white">
@@ -160,17 +179,17 @@ const {id} = useParams();
               </div>
               <div className="flex flex-row mt-10">
                 <div className="flex flex-col border border-green-800 rounded-xl w-[24rem] h-36 mb-10 ">
-                  <a href="#" className="text-green-900 font-bold text-xl ml-5 mt-5">
-                    Postingan Terkait
-                  </a>
+                  <p className="text-green-900 font-medium ml-5 mt-5">
+                    Post Sebelumnya
+                  </p>
                   <p className="mt-[1rem] text-2xl font-medium ml-5 text-green-800">
                     5 Hotel terbaik di Geopark Ciletuh
                   </p>
                 </div>
                 <div className="flex flex-col border border-green-800 rounded-xl w-[23rem] h-36 ml-10">
-                  <a href="#" className="text-green-900 font-bold text-xl ml-5 mt-5">
-                    Postingan Terkait
-                  </a>
+                  <p className="text-green-900 font-medium ml-5 mt-5">
+                    Post Sebelumnya
+                  </p>
                   <p className="mt-[1rem] text-2xl font-medium ml-5 text-green-800">
                     Rekomendasi tempat makan yang sering dikunjungi
                   </p>
@@ -203,25 +222,48 @@ const {id} = useParams();
 
             {/* Taks border */}
             <div className="flex flex-col ml-20 mr-20">
-              <div className="order-last border border-green-800 rounded-lg mt-6 h-[200px] w-74">
+              <div className="order-last border border-green-800 rounded-lg mt-6 h-42 w-74">
                 <div className="flex justify-center mt-5">
                   <p className="text-green-900 text-lg font-semibold">Tags</p>
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-3 ml-20 mr-20">
-                <div className="order-last border border-green-800 rounded-xl ">
-                      <div className="flex justify-center">
-                        <p className="text-green-800 text-base font-base ">
-                          {artikel?.tags[0]}
-                        </p>
-                      </div>
+                  <div className="order-last border border-green-800 rounded-xl ">
+                    <div className="flex justify-center">
+                      <p className="text-green-800 text-base font-base ">
+                        Alam
+                      </p>
                     </div>
-                    <div className="order-last border border-green-800 rounded-xl ">
-                      <div className="flex justify-center">
-                        <p className="text-green-800 text-base font-base ">
-                          {artikel?.tags[1]}
-                        </p>
-                      </div>
+                  </div>
+                  <div className="order-last border border-green-800 rounded-xl">
+                    <div className="flex justify-center">
+                      <p className="text-green-800 text-base font-base ">
+                        Wisata
+                      </p>
                     </div>
+                  </div>
+                  <div className="order-last border border-green-800 rounded-xl">
+                    <div className="flex justify-center">
+                      <p className="text-green-800 text-base font-base ">
+                        Indoneisa
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center mt-7 mb-20">
+                  <div className="order-last border border-green-800 rounded-xl w-[5rem]">
+                    <div className="flex justify-center">
+                      <p className="text-green-800 text-base font-base ">
+                        Geopark
+                      </p>
+                    </div>
+                  </div>
+                  <div className="order-last border border-green-800 rounded-xl ml-5 w-[5rem]">
+                    <div className="flex justify-center">
+                      <p className="text-green-800 text-base font-base ">
+                        Pantai
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="order-last border border-green-800 rounded-lg mt-6 mb-[40rem] h-[37rem]">
@@ -230,22 +272,56 @@ const {id} = useParams();
                     Artikel Terbaru
                   </p>
                 </div>
-                {allArtikel.map((item, index)=>{
-                  return(
-                    <>
-                      <div className="text-green-900 ml-[11rem] mr-[6rem]">
-                        <p className="mt-10 font-bold text-lg">
-                          {item.judul}
-                        </p>
-                        <p className="text-sm">Agustus 26, 2022</p>
-                      </div>
-                      <img
-                        className="rounded-lg h-20 w-32 ml-5 -mt-[4.5rem]"
-                        src={process.env.REACT_APP_API_BASE_URL+ "/storage/artikel/" + artikel?.thumbnail}
-                      />
-                    </>
-                  )
-              })}
+                <img
+                  className="rounded-lg h-20 w-32 mt-5 ml-5"
+                  src={articel2}
+                />
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
+                  <p className="-mt-20 font-bold text-lg">
+                    Senyuman Baru dari Geopark Ciletuh
+                  </p>
+                  <p className="text-sm">Agustus 26, 2022</p>
+                </div>
+                <img
+                  className="rounded-lg h-20 w-32 mt-[2rem] ml-5"
+                  src={articel3}
+                />
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
+                  <p className="-mt-20 font-bold text-lg flex ">
+                    Pesona Geopark Ciletuh
+                  </p>
+                  <p className="text-sm">Febuari 20, 2022</p>
+                </div>
+                <img
+                  className="rounded-lg h-20 w-32 mt-14 ml-5"
+                  src={articel4}
+                />
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
+                  <p className="-mt-20 font-bold text-lg">
+                    Berpetualang Menyusuri Geopark
+                  </p>
+                  <p className="text-sm">November 15, 2022</p>
+                </div>
+                <img
+                  className="rounded-lg h-20 w-32 mt-7 ml-5"
+                  src={articel5}
+                />
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
+                  <p className="-mt-20 font-bold text-lg">
+                    Geopark Ciletuh Spektakuler
+                  </p>
+                  <p className="text-sm">Desember 31, 2022</p>
+                </div>
+                <img
+                  className="rounded-lg h-20 w-32 mt-7 ml-5"
+                  src={articel6}
+                />
+                <div className="text-green-900 ml-[11rem] mr-[6rem]">
+                  <p className="-mt-20 font-bold text-lg">
+                    Mengenal Geopark Ciletuh
+                  </p>
+                  <p className="mb-4 text-sm">May 02, 2018</p>
+                </div>
               </div>
             </div>
           </div>
