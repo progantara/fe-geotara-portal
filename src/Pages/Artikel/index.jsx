@@ -32,7 +32,7 @@ const Artikel = () => {
               </div>
               <div className="absolute mt-96">
                 <a
-                  href="/Detail"
+                  href="/artikel/detail"
                   className="font-dmserif text-3xl font-semibold text-white mt-96 -ml-10"
                 >
                   Keragaman Keindahan,
