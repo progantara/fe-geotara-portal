@@ -47,7 +47,7 @@ function App() {
 
           {/* Artikel */}
           <Route path="/artikel" element={<Artikel />} />
-          <Route path="/Detail" element={<Detail />} />
+          <Route path="/Detail/:id" element={<Detail />} />
 
           {/* Event */}
           <Route path="/event" element={<Event />} />

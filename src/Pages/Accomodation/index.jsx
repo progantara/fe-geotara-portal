@@ -266,7 +266,7 @@ const Accomodation = () => {
 										key={index}
 										id={item._id}
 										title={item.nama}
-										image={process.env.REACT_APP_API_BASE_URL+"/storage/penginapan/" + item.thumbnail}
+										image={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/" + item.thumbnail}
 										address={item.lokasi.alamat}
 										rating={item.rating}
 										price={item.harga}

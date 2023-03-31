@@ -114,126 +114,117 @@ const Artikel = () => {
             <p className="text-green-900 text-4xl font-semibold mb-4 mt-3">
               Artikel
             </p>
-
-            <div className="flex">
-              <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10">
-                <div className="flex">
-                  <img
-                    className="rounded-lg w-[45rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-right"
-                    src={articel7}
-                    alt="post-7"
-                  />
-                  <div className="mt-9 ml-8 ">
-                    <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                      <img
-                        className="w-10 h-8 rounded-full"
-                        src={profile}
-                        alt={profile}
-                      />
-                      <p className="text-sm text-dark mt-2 ml-2">NurFauziyah</p>
-                      <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
-                      <p className="text-sm text-dark mt-2">Wisata</p>
-                      <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
-                      <p className="text-sm text-dark mt-2">September 21, 2022</p>
-                    </div>
-                    <a
-                      href="/Detail"
-                      className="block mt-1 text-xl font-semibold text-green-900"
-                    >
-                      Lagi Viral, yuk Healing ke
-                    </a>
-                    <a
-                      href="/Detail"
-                      className="block mt-1 text-xl font-semibold text-green-900"
-                    >
-                      Geopark Ciletuh Sukabumi{" "}
-                    </a>
-                    <p className="mt-2 text-green-900 text-base mr-10">
-                      Sukabumi menyimpan berbagai wisata alam yang membuat betah
-                      berlama - lama di sini. Dengan dataran tinggi, pegunungan
-                      dan pantai indah, menjadikan kawasan ini selalu menjadi
-                      favorit untuk liburan
-                    </p>
+            <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10">
+              <div className="flex">
+                <img
+                  className="rounded-lg w-[45rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-right"
+                  src={articel7}
+                  alt="post-7"
+                />
+                <div className="mt-9 ml-8 ">
+                  <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
+                    <img
+                      className="w-10 h-8 rounded-full"
+                      src={profile}
+                      alt={profile}
+                    />
+                    <p className="text-sm text-dark mt-2 ml-2">NurFauziyah</p>
+                    <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
+                    <p className="text-sm text-dark mt-2">Wisata</p>
+                    <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
+                    <p className="text-sm text-dark mt-2">September 21, 2022</p>
                   </div>
-                </div>
-                <div className="flex justify-center">
-                  <span className="h-px  bg-green-600 lg:w-11/12 mb-4 mt-4"></span>
-                </div>
-                <div className="flex">
-                  <img
-                    className="rounded-lg w-[40rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-bottom"
-                    src={articel8}
-                    alt="post-8"
-                  />
-                  <div className="mt-9 ml-8 ">
-                    <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                      <img
-                        className="w-10 h-8 rounded-full"
-                        src={profile}
-                        alt={profile}
-                      />
-                      <p className="text-sm text-dark mt-2 ml-2">Tiara</p>
-                      <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
-                      <p className="text-sm text-dark mt-2 ml-2">Wisata</p>
-                      <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
-                      <p className="text-sm text-dark mt-2 ml-2">
-                        Oktober 09, 2020
-                      </p>
-                    </div>
-                    <a
-                      href="/Detail"
-                      className="block mt-1 text-xl font-semibold text-green-900 mr-[20rem]"
-                    >
-                      Wajib Melipir: 5 Tempat Wisata Geopark Ciletuh yang Bagus
-                      Banget
-                    </a>
-                    <p className="mt-2 text-green-900 text-base mr-10">
-                      Wisata ke Geopark Ciletuh adalah satu hal yang harus kamu
-                      masukkan ke dalam wishlist. Geopark Ciletuh adalah
-                      satu-satunya Global Geopark Network yang ada di Jawa Barat.{" "}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex justify-center">
-                  <span className="h-px  bg-green-600 lg:w-11/12 mb-4 mt-4"></span>
-                </div>
-                <div className="flex">
-                  <img
-                    className="rounded-lg w-[17rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-bottom"
-                    src={articel9}
-                    alt="post-9"
-                  />
-                  <div className="mt-9 ml-8 ">
-                    <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
-                      <img className="w-10 h-8 rounded-full" src={profile} />
-                      <p className="text-sm text-dark mt-2 ml-2">Echi</p>
-                      <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
-                      <p className="text-sm text-dark mt-2 ml-2">Wisata</p>
-                      <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
-                      <p className="text-sm text-dark mt-2 ml-2">
-                        Februari 20, 2020
-                      </p>
-                    </div>
-                    <a
-                      href="/Detail"
-                      className="block mt-1 text-xl font-semibold text-green-900"
-                    >
-                      Indahnya Air Terjun
-                    </a>
-                    <p className="mt-2 mb-5 text-green-900 text-base mr-10">
-                      Geopark Ciletuh Palabuhanratu, Sukabumi kini resmi menjadi
-                      global geopark pertama di Jawa Barat.{" "}
-                    </p>
-                  </div>
+                  <a
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900"
+                  >
+                    Lagi Viral, yuk Healing ke
+                  </a>
+                  <a
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900"
+                  >
+                    Geopark Ciletuh Sukabumi{" "}
+                  </a>
+                  <p className="mt-2 text-green-900 text-base mr-10">
+                    Sukabumi menyimpan berbagai wisata alam yang membuat betah
+                    berlama - lama di sini. Dengan dataran tinggi, pegunungan
+                    dan pantai indah, menjadikan kawasan ini selalu menjadi
+                    favorit untuk liburan
+                  </p>
                 </div>
               </div>
-
-              <div className="ml-20 bg-white h-40 p-5 w-[380px]">
-                <p>kdsoakdoaskdosad</p>
+              <div className="flex justify-center">
+                <span className="h-px  bg-green-600 lg:w-11/12 mb-4 mt-4"></span>
+              </div>
+              <div className="flex">
+                <img
+                  className="rounded-lg w-[40rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-bottom"
+                  src={articel8}
+                  alt="post-8"
+                />
+                <div className="mt-9 ml-8 ">
+                  <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
+                    <img
+                      className="w-10 h-8 rounded-full"
+                      src={profile}
+                      alt={profile}
+                    />
+                    <p className="text-sm text-dark mt-2 ml-2">Tiara</p>
+                    <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
+                    <p className="text-sm text-dark mt-2 ml-2">Wisata</p>
+                    <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
+                    <p className="text-sm text-dark mt-2 ml-2">
+                      Oktober 09, 2020
+                    </p>
+                  </div>
+                  <a
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900 mr-[20rem]"
+                  >
+                    Wajib Melipir: 5 Tempat Wisata Geopark Ciletuh yang Bagus
+                    Banget
+                  </a>
+                  <p className="mt-2 text-green-900 text-base mr-10">
+                    Wisata ke Geopark Ciletuh adalah satu hal yang harus kamu
+                    masukkan ke dalam wishlist. Geopark Ciletuh adalah
+                    satu-satunya Global Geopark Network yang ada di Jawa Barat.{" "}
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <span className="h-px  bg-green-600 lg:w-11/12 mb-4 mt-4"></span>
+              </div>
+              <div className="flex">
+                <img
+                  className="rounded-lg w-[17rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-bottom"
+                  src={articel9}
+                  alt="post-9"
+                />
+                <div className="mt-9 ml-8 ">
+                  <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
+                    <img className="w-10 h-8 rounded-full" src={profile} />
+                    <p className="text-sm text-dark mt-2 ml-2">Echi</p>
+                    <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
+                    <p className="text-sm text-dark mt-2 ml-2">Wisata</p>
+                    <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
+                    <p className="text-sm text-dark mt-2 ml-2">
+                      Februari 20, 2020
+                    </p>
+                  </div>
+                  <a
+                    href="/Detail"
+                    className="block mt-1 text-xl font-semibold text-green-900"
+                  >
+                    Indahnya Air Terjun
+                  </a>
+                  <p className="mt-2 mb-5 text-green-900 text-base mr-10">
+                    Geopark Ciletuh Palabuhanratu, Sukabumi kini resmi menjadi
+                    global geopark pertama di Jawa Barat.{" "}
+                  </p>
+                </div>
               </div>
             </div>
-
-
 
             <div className="w-fit pt-10 pb-14 px-40 bg-green-600 flex-col justify-center items-center text-white rounded-xl mx-auto mb-10">
               <p className="mb-2 text-center">Newsletter</p>
