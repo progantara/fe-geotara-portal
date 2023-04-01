@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import PortalTemplate from '../../Component/Layout';
 
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { getOneAtraksi } from '../../Services/AtraksiService';
-import { useParams } from 'react-router-dom';
+import { Stars } from '../../Component/Stars/Stars';
 
 const AttractionDetail = () => {
 	const items = [
@@ -30,50 +30,34 @@ const AttractionDetail = () => {
 			<div className="flex flex-col p-20 bg-green-100">
 				<section>
 					<div className="flex flex-col text-primary">
-						<p className="text-4xl font-bold">{atraksi.nama}</p>
+						<p className="sm:text-2xl lg:text-4xl font-bold">{atraksi.nama}</p>
 						<div className="flex items-center mt-4 mb-2">
 							<p className="text-black px-6 mr-2 rounded-3xl bg-[#FFE141]">{atraksi.detail?.tipe_atraksi}</p>
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiOutlineStar size={20} color="#FFE141" />
+							<Stars rating={atraksi.detail?.rating} />
 						</div>
 					</div>
-					<div className="flex my-10">
-						<div class="grid grid-cols-4 gap-5 pr-8">
-							<img src={"http://127.0.0.1:8000/storage/atraksi/" + atraksi.thumbnail} alt="atraksi" class="col-span-4 rounded-xl relative h-full w-full bg-center bg-cover"/>
-						
-							{/* <div
-								class="  rounded-xl relative w-full bg-center bg-cover"
-								style={{
-									backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-								}}
-							></div>
-							<div
-								class="  rounded-xl relative w-full bg-center bg-cover"
-								style={{
-									backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-								}}
-							></div>
-							<div
-								class="  rounded-xl relative w-full bg-center bg-cover"
-								style={{
-									backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
-								}}
-							></div> */}
+					<div className="flex flex-col md:flex-row my-10 gap-5">
+						{/* <div className="w-full h-full md:w-[80%] md:h-[80%]">
+							<div className="rounded-xl h-full w-full overflow-hidden bg-center bg-cover bg-white">
+								<img src={"http://127.0.0.1:8000/storage/atraksi/" + atraksi.thumbnail} alt="atraksi"/>
+							</div>
+						</div> */}
+						<div className="w-full h-full md:w-[80%] md:h-[80%]">
+							<div className="rounded-xl h-full w-full overflow-hidden bg-center bg-cover bg-white">
+								<img src={process.env.REACT_APP_API_BASE_URL + "/storage/atraksi/" + atraksi.thumbnail} alt="atraksi"/>
+							</div>
 						</div>
-						<div className="w-1/4">
-							<div className="flex flex-col px-4 pt-5 space-y-4 bg-white rounded">
+						<div className="grid sm:grid-cols-1 w-full lg:w-1/4 h-full lg:h-[50%]">
+							<div className="flex flex-col overflow-hidden px-4 pt-5 space-y-4 bg-white rounded">
 								<div>
-									<p className="text-2xl font-bold text-primary">
+									<p className="sm:text-lg text-2xl font-bold text-primary">
 										{atraksi.nama}
 									</p>
 									<p>
 										{atraksi.detail?.deskripsi}
 									</p>
 								</div>
-								<div className="flex space-x-20 w-full">
+								<div className="grid sm:grid-cols-1 md:grid-cols-2 w-full">
 									<div>
 										<p>Durasi</p>
 										<p className="font-bold">
@@ -92,7 +76,7 @@ const AttractionDetail = () => {
 										</p>
 									</div>
 								</div>
-								<div className="text-lg ">
+								<div className="sm:text-sm lg:text-lg">
 									<p className="font-bold">Rp</p>
 									<p className="font-bold text-red-500">
 										{atraksi.harga_tiket}{' '}
