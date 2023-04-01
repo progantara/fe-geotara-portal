@@ -96,7 +96,7 @@ const Navbar = () => {
 			</nav>
 
 			{/* Navbar Mobile */}
-			<div className={`${isNavMobile ? 'block' : 'hidden'} absolute bg-primary w-full shadow-lg`}>
+			<div className={`${isNavMobile ? 'block' : 'hidden'} absolute bg-primary w-full shadow-lg z-[9999]`}>
 				<ul className='flex flex-col py-8'>
 					<li>
 						<Link

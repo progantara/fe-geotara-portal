@@ -12,6 +12,8 @@ import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
 import IMAGES from '../../Assets/img';
+import { useEffect } from 'react';
+import { getTour } from '../../Services/TourService';
 
 const TourAndTravel = () => {
 
@@ -90,7 +92,15 @@ const TourAndTravel = () => {
 	}
 
 	const items = [{ label: 'TourAndTravel', url: '/TourAndTravel' }];
-	let data = [1, 2, 3, 4, 5, 6];
+
+	// Get Data TOur
+	const [tour, setTour] = useState([]);
+
+  useEffect(() => {
+    getTour().then((res) => {
+      setTour(res.data.data);
+    });
+  }, []);
 
 	return (
 		<PortalTemplate items={items}>
@@ -236,7 +246,7 @@ const TourAndTravel = () => {
 							{/* Showing */}
 							<div className="flex items-center">
 								<p className="mr-4 text-[10px] hidden md:block xl:text-lg">SHOWING 1 - 6 OF 12 ITEM(S)</p>
-							<Dropdown></Dropdown>
+								<Dropdown></Dropdown>
 							</div>
 
 						</div>
@@ -245,54 +255,22 @@ const TourAndTravel = () => {
 					
 					{/* Card Tour */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
-							title="Travel Buddies"
-							image={IMAGES.travel1}
-							address="Duren Sawit, Kota Jakarta Timur"
-							rating="200"
-							price={280000}
-							link={"/tour-travel/detail"}
-						/>
-						<Card
-							title="Jaswita Tourism"
-							image={IMAGES.travel2}
-							address="Lengkong, Bandung"
-							rating="358"
-							price={220000}
-							link={"/tour-travel/detail"}
-						/>
-						<Card
-							title="Raja Wisata"
-							image={IMAGES.travel3}
-							address="Cempaka, Jatibening Baru"
-							rating="200"
-							price={800000}
-							link={"/tour-travel/detail"}
-						/>
-						<Card
-							title="Campa Travel"
-							image={IMAGES.travel4}
-							address="Ngaglik Sleman, Yogyakarta"
-							rating="200"
-							price={280000}
-							link={"/tour-travel/detail"}
-						/>
-						<Card
-							title="Ladita Tour"
-							image={IMAGES.travel5}
-							address="Kramat Jati, DKI Jakarta"
-							rating="200"
-							price={219000}
-							link={"/tour-travel/detail"}
-						/>
-						<Card
-							title="Pandooin"
-							image={IMAGES.travel6}
-							address="Tangerang, Banten"
-							rating="200"
-							price={225000}
-							link={"/tour-travel/detail"}
-						/>
+						{
+							tour.map((item, index) => {
+								return (
+									<Card
+										key={index}
+										id={item._id}
+										title={item.nama}
+										image={process.env.REACT_APP_API_BASE_URL + "/storage/tour/" + item.thumbnail}
+										address={item.lokasi.alamat}
+										rating={item.rating}
+										price={item.harga}
+										link={"/tour-travel/detail/"+ item._id}
+									/>
+								)
+							})
+						}
 					</div>
 
 					{/* Artikel */}
@@ -303,9 +281,9 @@ const TourAndTravel = () => {
 								Alasan Harus Memilih Raja Wisata Sebagai Tour Dan Travel Terbaik
 							</p>
 							<button className="flex items-center px-8 py-4 bg-yellow-300 rounded-md">
-								<span className="font-semibold text-black">
-									Lihat Artikel
-								</span>
+								<a href={process.env.REACT_APP_API_BASE_URL + "/Detail/"} className='font-semibold text-black'>
+								Lihat Artikel
+								</a>
 							</button>
 						</div>
 					</div>

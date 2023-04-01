@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PortalTemplate from '../../Component/Layout';
 import { BiMap, BiTrash } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -11,7 +11,7 @@ import "../../Assets/Css/custom/custom.css"
 import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
-import IMAGES from '../../Assets/img';
+import { getPenginapan } from '../../Services/PenginapanService';
 
 const Accomodation = () => {
 
@@ -94,6 +94,16 @@ const Accomodation = () => {
 		});
 		setCheckboxStatus(newCheckboxStatus);
 	}
+
+	// Get Data Accomodation
+	const [penginapan, setPenginapan] = useState([]);
+
+  useEffect(() => {
+    getPenginapan().then((res) => {
+      setPenginapan(res.data.data);
+    });
+  }, []);
+
 
 	return (
 		<PortalTemplate items={items}>
@@ -248,7 +258,25 @@ const Accomodation = () => {
 					
 					{/* Card Hotel */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
+
+						{
+							penginapan.map((item, index) => {
+								return (
+									<Card
+										key={index}
+										id={item._id}
+										title={item.nama}
+										image={process.env.REACT_APP_API_BASE_URL + "/storage/penginapan/" + item.thumbnail}
+										address={item.lokasi.alamat}
+										rating={item.rating}
+										price={item.harga}
+										link={"/accomodation/detail/"+ item._id}
+									/>
+								)
+							})
+						}
+
+						{/* <Card
 							title="Vanada Bugeul Cottage"
 							image={IMAGES.hotel1}
 							address="Ciwaru, Ciemas"
@@ -299,7 +327,7 @@ const Accomodation = () => {
 							rating="650"
 							price={530000}
 							link={"/accomodation/detail"}
-						/>
+						/> */}
 					</div>
 
 					{/* Artikel */}

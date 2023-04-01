@@ -19,9 +19,20 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 			rupiah += separator + ribuan.join('.');
 		}
 
-		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+		rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+		return prefix === undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
 	}
+
+  function setStars(rating) {
+    const stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push(<AiFillStar key={i+"fill"} size={20} color="#FFE141" />);
+    }
+    for (let i = 0; i < 5 - rating; i++) {
+      stars.push(<AiOutlineStar key={i+"out"} size={20} color="#FFE141" />);
+    }
+    return stars;
+  }
   
   return (
     <div className="bg-white rounded-xl shadow-xl overflow-hidden p-3 text-primary relative max-w-[250px] md:min-w-[260px] xl:w-[360px] xl:max-w-[360px] xl:p-5 2xl:w-[380px] 2xl:max-w-2xl">
@@ -44,7 +55,7 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 
         {/* Title */}
         <div>
-          <p className="text-lg font-bold mb-0 xl:text-xl">{title}</p>
+          <p className="text-lg font-bold mb-0 xl:text-xl text-left">{title}</p>
           <p className="text-sm flex items-center">
             <BiMap />
             {address}
@@ -53,11 +64,7 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
 
         {/* Rating */}
         <div className="flex items-center my-2">
-          <AiFillStar size={20} color="#FFE141" />
-          <AiFillStar size={20} color="#FFE141" />
-          <AiFillStar size={20} color="#FFE141" />
-          <AiFillStar size={20} color="#FFE141" />
-          <AiOutlineStar size={20} color="#FFE141" />
+          {setStars(rating)}
           <p className="ml-2 text-sm font-bold">({rating})</p>
         </div>
 
@@ -103,17 +110,23 @@ const BaseCard = ({ title, image, address, rating, price, link, discount, priceB
         }
 
           {/* Link */}
-          <div className="xl:hidden">
-            <Link to={link}>
-              <Button size="small">Lihat</Button>
-            </Link>
-          </div>
+          {
+            link &&
+            <>
+              <div className="xl:hidden">
+                <Link to={link}>
+                  <Button size="small">Lihat</Button>
+                </Link>
+              </div>
 
-          <div className="hidden xl:block">
-            <Link to={link}>
-              <Button size="default">Lihat</Button>
-            </Link>
-          </div>
+              <div className="hidden xl:block">
+                <Link to={link}>
+                  <Button size="default">Lihat</Button>
+                </Link>
+              </div>
+            </>
+
+          }
 
         </div>
 

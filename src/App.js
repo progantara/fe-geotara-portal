@@ -47,7 +47,7 @@ function App() {
 
           {/* Artikel */}
           <Route path="/artikel" element={<Artikel />} />
-          <Route path="/Detail" element={<Detail />} />
+          <Route path="/artikel/detail" element={<Detail />} />
 
           {/* Event */}
           <Route path="/event" element={<Event />} />
@@ -55,15 +55,15 @@ function App() {
 
           {/* Virtual Tour */}
           <Route path="/virtual-tour" element={<Virtual />} />
-          <Route path="/virtual-tour/view" element={<ViewArea />} />
+          <Route path="/virtual-tour/view/:id" element={<ViewArea />} />
 
           {/* Akomodasi */}
           <Route exact path="/accomodation" element={<Accomodation />} />
-          <Route path="/accomodation/detail" element={<AccomodationDetail />} />
+          <Route path="/accomodation/detail/:id" element={<AccomodationDetail />} />
 
           {/* Tour And Travel */}
           <Route exact path="/tour-travel" element={<TourAndTravel />} />
-          <Route path="/tour-travel/detail" element={<TourAndTravelDetail />} />
+          <Route path="/tour-travel/detail/:id" element={<TourAndTravelDetail />} />
 
           {/* Merchant And Sourvenir */}
           <Route
@@ -78,7 +78,7 @@ function App() {
 
           {/* Restaurant */}
           <Route exact path="/restaurant" element={<Restaurant />} />
-          <Route path="/restaurant/detail" element={<RestaurantDetail />} />
+          <Route path="/restaurant/detail/:id" element={<RestaurantDetail />} />
 
           {/* Attraction */}
           <Route exact path="/attraction" element={<Attraction />} />
