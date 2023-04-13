@@ -34,7 +34,7 @@ const EventDetail = () => {
           <div className="relative overflow-hidden rounded-2xl">
             <img
               // src={"http://127.0.0.1:8000/storage/event/" + event.flyer_image}
-              src={process.env.REACT_APP_API_BASE_URL+ "/storage/event/" + item.flyer_image}
+              src={process.env.REACT_APP_API_BASE_URL+ "/storage/event/" + event.flyer_image}
               alt="Event"
               className=" bg-center object-cover h-full w-full filter brightness-50 bg-cover rounded-2xl"
             />
