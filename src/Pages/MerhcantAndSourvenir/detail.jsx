@@ -7,7 +7,7 @@ import { BiMap } from 'react-icons/bi';
 import { BsHouseDoor } from 'react-icons/bs';
 import { getOneMerchant } from '../../Services/MerchantService';
 import { useParams } from 'react-router-dom';
-import IMAGES from '../../Assets/img';
+import { Stars } from '../../Component/Stars/Stars'
 
 const MerhcantAndSouvenirDetail = () => {
 	const items = [
@@ -35,12 +35,7 @@ const MerhcantAndSouvenirDetail = () => {
 					<div className="flex flex-col text-primary">
 						<p className="text-4xl font-bold">{merchant.detail?.product[0].nama}</p>
 						<div className="flex items-center mt-4 mb-2">
-							{/* <p className="text-black px-6 mr-2 rounded-3xl bg-[#FFE141]">Hotel</p> */}
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiFillStar size={20} color="#FFE141" />
-							<AiOutlineStar size={20} color="#FFE141" />
+							<Stars rating={merchant.detail?.rating} />
 						</div>
 					</div>
 					<div className="flex my-10">

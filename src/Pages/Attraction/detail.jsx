@@ -37,11 +37,6 @@ const AttractionDetail = () => {
 						</div>
 					</div>
 					<div className="flex flex-col md:flex-row my-10 gap-5">
-						{/* <div className="w-full h-full md:w-[80%] md:h-[80%]">
-							<div className="rounded-xl h-full w-full overflow-hidden bg-center bg-cover bg-white">
-								<img src={"http://127.0.0.1:8000/storage/atraksi/" + atraksi.thumbnail} alt="atraksi"/>
-							</div>
-						</div> */}
 						<div className="w-full h-full md:w-[80%] md:h-[80%]">
 							<div className="rounded-xl h-full w-full overflow-hidden bg-center bg-cover bg-white">
 								<img src={process.env.REACT_APP_API_BASE_URL + "/storage/atraksi/" + atraksi.thumbnail} alt="atraksi"/>

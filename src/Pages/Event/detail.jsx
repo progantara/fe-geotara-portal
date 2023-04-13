@@ -33,20 +33,21 @@ const EventDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <div className="relative overflow-hidden rounded-2xl">
             <img
-              src={"http://127.0.0.1:8000/storage/event/" + event.flyer_image}
+              // src={"http://127.0.0.1:8000/storage/event/" + event.flyer_image}
+              src={process.env.REACT_APP_API_BASE_URL+ "/storage/event/" + item.flyer_image}
               alt="Event"
-              className=" bg-center object-cover h-full w-full filter brightness-75 bg-cover rounded-2xl"
+              className=" bg-center object-cover h-full w-full filter brightness-50 bg-cover rounded-2xl"
             />
-			<div className="absolute flex flex-col items-start justify-end w-30 h-17 bottom-10 left-4 backdrop-opacity-10 backdrop-invert bg-black/40">
-				<p className="text-xs text-white">Rp 20.000 - Rp 100.000</p>
+			<div className="absolute flex flex-col items-start justify-end w-30 h-17 bottom-10 left-4">
+				<p className="text-xs text-white">Rp. {event.harga}</p>
 				<p className="text-xs md:text-lg font-bold text-white my-1">
 					{event.nama}
 				</p>
 				<p className="flex items-center space-x-3 text-xs text-white color-white ">
 					<IoCalendarClearOutline className="mr-1" />
-					{event.start_date}
+					{event.start_event?.date}
 					<BiMap className="mr-1" />
-					Pantai Palangpang, Geopark Ciletuh
+					{event.wisata?.lokasi?.alamat}
 				</p>
 			</div>
           </div>
@@ -60,22 +61,22 @@ const EventDetail = () => {
                 Tanggal :<div className="">Lokasi :</div>
               </div>
               <div className="grid grid-cols-2">
-                {event.start_date}
-                <div className="">Pantai Palangpang, Geopark Ciletuh</div>
+                {event.start_event?.date}
+                <div className="">{event.wisata?.lokasi?.alamat}</div>
               </div>
               <div className="pt-3 font-bold grid grid-cols-2">
                 Waktu :<div className="">Kontak :</div>
               </div>
               <div className="grid grid-cols-2">
-                08.30 WIB - 23.59 WIB
-                <div className="">(WA) 089512345678</div>
+                {event.start_event?.time} - {event.end_event?.time}
+                <div className="">{event.organizer?.kontak}</div>
               </div>
               <div className="pt-3 font-bold grid grid-cols-2">
                 Organizer :<div className="">Harga Tiket :</div>
               </div>
               <div className="grid grid-cols-2">
-                {event.organizer}
-                <div className="">Rp 15.000</div>
+                {event.organizer?.nama}
+                <div className="">Rp. {event.harga}</div>
               </div>
             </div>
             <div className="flex justify-center">
