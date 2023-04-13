@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PortalTemplate from '../../Component/Layout';
 import { BiMap, BiTrash } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -11,7 +11,7 @@ import "../../Assets/Css/custom/custom.css"
 import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
-import IMAGES from '../../Assets/img';
+import { getAtraksi } from '../../Services/AtraksiService';
 
 const Attraction = () => {
 		let dataKecamatan = [
@@ -86,13 +86,21 @@ const Attraction = () => {
 
 	const items = [{ label: 'Attraction', url: '/Attraction' }];
 
+	// Get Data Atraksi
+	const [atraksi, setAtraksi] = useState([]);
+
+	useEffect(() => {
+		getAtraksi().then((res) => {
+		setAtraksi(res.data.data);
+		});
+	}, []);
+
 	return (
 		<PortalTemplate items={items}>
 			<div className="relative h-72 bg-center bg-cover bg-hero-restaurant -z-50 xl:h-[400px]">
 				<div className='w-full h-full bg-gray-900 absolute opacity-50'></div>
 				<div className="absolute px-4 py-2 font-semibold top-10 border-white border-2 rounded-2xl flex items-center text-white right-20 w-62 ml-5">
-					<p className='text-sm'>Rafting Citatih, <br /> Ciletuh Sukabumi</p>
-					
+					<p className='text-sm'>Pangandaran Beach, <br />Pangandaran</p>
 					<div className='lg:hidden'>
 						<BiMap size={40} />
 					</div>
@@ -100,8 +108,6 @@ const Attraction = () => {
 					<div className='hidden xl:block'>
 						<BiMap size={60} />
 					</div>
-
-
 				</div>
 			</div>
 			<section className="z-50 px-2 -mt-10 md:px-10">
@@ -239,60 +245,23 @@ const Attraction = () => {
 					
 					{/* Card Attraction */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
-							title="Banana Boat"
-							image={IMAGES.attraction1}
-							address="Desa Jayanti, Pelabuhan Ratu"
-							rating="500"
-							price={480000}
-							per="Boat"
-							link={"/attraction/detail"}
-						/>
-						<Card
-							title="Snorkeling"
-							image={IMAGES.attraction2}
-							address="Pulau Kunti, Ciletuh"
-							rating="487"
-							price={750000}
-							per="Ticket"
-							link={"/attraction/detail"}
-						/>
-						<Card
-							title="Rafting Citarik"
-							image={IMAGES.attraction3}
-							address="Ciwaru, Ciemas"
-							rating="320"
-							price={950000}
-							per="Trip"
-							link={"/attraction/detail"}
-						/>
-						<Card
-							title="Offroad"
-							image={IMAGES.attraction4}
-							address="Ciletuh, Sukabumi"
-							rating="438"
-							price={551000}
-							per="Trip"
-							link={"/attraction/detail"}
-						/>
-						<Card
-							title="Flying Fox"
-							image={IMAGES.attraction5}
-							address="Ciletuh, Sukabumi"
-							rating="420"
-							price={125500}
-							per="Ticket"
-							link={"/attraction/detail"}
-						/>
-						<Card
-							title="ATV"
-							image={IMAGES.attraction6}
-							address="Pulau Kunti, Ciletuh"
-							rating="120"
-							price={50000}
-							per="Ticket"
-							link={"/attraction/detail"}
-						/>
+						{
+							atraksi.map((item, index) => {
+								return (
+									<Card
+										key={index}
+										id={item._id}
+										title={item.nama}
+										image={process.env.REACT_APP_API_BASE_URL+ "/storage/atraksi/" + item.thumbnail}
+										address={item.lokasi.alamat}
+										rating={item.detail.rating}
+										price={item.harga_tiket}
+										per={"Tiket"}
+										link={"/attraction/detail/"+ item._id}
+									/>
+								)
+							})
+						}
 					</div>
 
 					{/* Artikel */}

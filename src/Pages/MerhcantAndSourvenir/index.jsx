@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PortalTemplate from '../../Component/Layout';
 import { BiMap, BiTrash } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -11,7 +11,8 @@ import "../../Assets/Css/custom/custom.css"
 import Button from '../../Component/Button/Button';
 import Dropdown from '../../Component/Dropdown';
 import { Card } from '../../Component/Card/Card';
-import IMAGES from '../../Assets/img';
+import { getMerchant } from '../../Services/MerchantService';
+import IMAGES from '../../Assets/img/index';	
 
 const MerhcantAndSourvenir = () => {
 	let dataKecamatan = [
@@ -89,6 +90,15 @@ const MerhcantAndSourvenir = () => {
 	}
 
 	const items = [{ label: 'MerhcantAndSourvenir', url: '/MerhcantAndSourvenir' }];
+
+	// Get Data Merchant
+	const [merchant, setMerchant] = useState([]);
+
+	useEffect(() => {
+		getMerchant().then((res) => {
+			setMerchant(res.data.data);
+		});
+	}, []);
 
 	return (
 		<PortalTemplate items={items}>
@@ -243,7 +253,55 @@ const MerhcantAndSourvenir = () => {
 					
 					{/* Card Merchant */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						<Card
+						{
+							merchant.map((items, indexItems) => {
+								// console.log(items.detail.product);
+								items.detail.product.map((item, index) => {
+									console.log(item);
+									// console.log(item.nama);
+									return (
+										<Card
+											key={index}
+											id={item.kode_barang}
+											title={item.nama}
+											image={"http://127.0.0.1:8000/storage/merchant/" + item.thumbnail}
+											rating={item.rating}
+											price={item.harga}
+											link={"/merchant-sourvenir/detail/"+ item.kode_barang}
+										/>
+									)
+								})
+							})
+						}
+						
+						{/* {
+							merchant.map((items, indexItems) => { 
+								console.log(items);
+							})
+						} */}
+
+
+						{/* {
+							merchant.map((item, index) => {
+								//console.log(item.detail.product[index]);
+								return (
+									<>
+										<Card
+											key={index}
+											id={item._id}
+											title={item.detail?.product[0].nama}
+											address={item.lokasi?.alamat}
+											image={"http://127.0.0.1:8000/storage/merchant/" + item.detail?.product.thumbnail}
+											rating={item.detail?.product.rating}
+											price={item.detail?.product.harga}
+											link={"/merchant-sourvenir/detail/"+ item._id}
+										/>
+									</>
+								)
+							})
+						} */}
+						
+						{/* <Card
 							title="Gantungan Kunci"
 							image={IMAGES.merchant1}
 							address="Giri Mukti, Ciemas"
@@ -290,7 +348,7 @@ const MerhcantAndSourvenir = () => {
 							rating="280"
 							price={15500}
 							link={"/merchant-sourvenir/detail"}
-						/>
+						/> */}
 					</div>
 
 					{/* Artikel */}

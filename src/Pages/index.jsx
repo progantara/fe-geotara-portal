@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PortalTemplate from "../Component/Layout";
 import BgHero from "../Assets/img/hero.jpg";
 import "../Assets/Css/custom/custom.css";
