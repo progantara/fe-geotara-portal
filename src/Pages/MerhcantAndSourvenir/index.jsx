@@ -253,7 +253,7 @@ const MerhcantAndSourvenir = () => {
 					
 					{/* Card Merchant */}
 					<div className='flex flex-wrap gap-5 justify-center lg:justify-between xl:gap-10 mb-10'>
-						{
+						{/* {
 							merchant.map((items, indexItems) => {
 								// console.log(items.detail.product);
 								items.detail.product.map((item, index) => {
@@ -272,35 +272,23 @@ const MerhcantAndSourvenir = () => {
 									)
 								})
 							})
-						}
-						
-						{/* {
-							merchant.map((items, indexItems) => { 
-								console.log(items);
-							})
 						} */}
-
-
-						{/* {
+						{
 							merchant.map((item, index) => {
-								//console.log(item.detail.product[index]);
 								return (
-									<>
-										<Card
-											key={index}
-											id={item._id}
-											title={item.detail?.product[0].nama}
-											address={item.lokasi?.alamat}
-											image={"http://127.0.0.1:8000/storage/merchant/" + item.detail?.product.thumbnail}
-											rating={item.detail?.product.rating}
-											price={item.detail?.product.harga}
-											link={"/merchant-sourvenir/detail/"+ item._id}
-										/>
-									</>
+									<Card
+										key={index}
+										id={item.detail?.product?.kode_barang}
+										title={item.detail?.product?.nama}
+										//image={"http://127.0.0.1:8000/storage/merchant/" + item.detail?.product?.thumbnail}
+										image={process.env.REACT_APP_API_BASE_URL+ "/storage/merchant/" + item.detail?.product?.thumbnail}
+										rating={item.detail?.product?.rating}
+										price={item.detail?.product?.harga}
+										link={"/merchant-sourvenir/detail/"+ item.detail?.product?.kode_barang}
+									/>
 								)
 							})
-						} */}
-						
+						}
 						{/* <Card
 							title="Gantungan Kunci"
 							image={IMAGES.merchant1}
