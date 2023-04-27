@@ -1,8 +1,34 @@
+import { Link } from "react-router-dom";
 import profile from "../../Assets/img/profile.jpg";
 
 const ArtikelCard = ({ artikel }) => {
+  
+  const handleDescription = (text) => {
+    // clear tags html
+    const regex = /(<([^>]+)>)/gi;
+    const result = text.replace(regex, "");
+    // clear &nbsp;&amp;&quot;&gt;&lt;
+    const regex2 = /(&nbsp;|&amp;|&quot;|&gt;|&lt;)/gi;
+    const result2 = result.replace(regex2, "");
+
+    // trim text
+    const trimText = result2.substring(0, 200);
+    return trimText + "...";    
+
+   };
+
+   const handleTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
+    const year = date.getFullYear();
+    // get name month
+    const month = date.toLocaleString("default", { month: "long" });
+    const day = date.getDate();;
+
+    return `${day} ${month}, ${year}`;
+    };
+
   return (
-    <div className="flex hover:bg-white items-center space-y-10">
+    <Link to={"/artikel/detail/"+artikel._id} className="flex hover:bg-white items-center p-5">
       <div className="w-2/5 h-[12rem]">
         <img
           className="rounded-lg w-full h-full object-cover object-right"
@@ -17,25 +43,22 @@ const ArtikelCard = ({ artikel }) => {
       <div className="w-3/5 pl-5">
         <div className="tracking-wide text-sm text-dark font-semibold flex flex-row">
           <img className="w-10 h-8 rounded-full" src={profile} alt={profile} />
-          <p className="text-sm text-dark mt-2 ml-2">NurFauziyah</p>
+          <p className="text-sm text-dark mt-2 ml-2">Admin</p>
           <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
           <p className="text-sm text-dark mt-2">Wisata</p>
           <p className="text-yellow-200 text-2xl ml-1 mr-1 ">•</p>
-          <p className="text-sm text-dark mt-2">September 21, 2022</p>
+          <p className="text-sm text-dark mt-2">{handleTimestamp(artikel.updated_at)}</p>
         </div>
-        <a
-          href="/Detail"
+        <div          
           className="block mt-1 text-xl font-semibold text-green-900"
         >
           {artikel.judul}
-        </a>
+        </div>
         <p className="mt-2 text-green-900 text-base mr-10">
-          Sukabumi menyimpan berbagai wisata alam yang membuat betah berlama -
-          lama di sini. Dengan dataran tinggi, pegunungan dan pantai indah,
-          menjadikan kawasan ini selalu menjadi favorit untuk liburan
+          {handleDescription(artikel.content)}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
