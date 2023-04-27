@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import PortalTemplate from "../../Component/Layout";
 
 // image
@@ -12,10 +12,20 @@ import articel6 from "../../Assets/img/Article-6.jpg";
 import articel7 from "../../Assets/img/Article-7.jpg";
 import articel8 from "../../Assets/img/Article-8.jpg";
 import articel9 from "../../Assets/img/Article-9.jpg";
+import { getAllArtikel } from "../../Services/ArtikelService";
+import ArtikelCard from "../../Component/Card/ArtikelCard";
 
 const Artikel = () => {
   const items = [{ label: "Artikel", url: "/artikel" }];
   let data = [1, 2, 3, 4, 5, 6];
+
+  const [artikels, setArtikels] = useState([]);
+
+  useEffect(() => {
+    getAllArtikel().then((res) => {
+      setArtikels(res.data.data);
+    });
+  }, []);
 
   return (
     <>
@@ -114,8 +124,17 @@ const Artikel = () => {
             <p className="text-green-900 text-4xl font-semibold mb-4 mt-3">
               Artikel
             </p>
-            <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10">
-              <div className="flex">
+            <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10 p-5">
+              
+              {artikels.map((artikel) => {
+                return(
+                  <ArtikelCard
+                    key={artikel.id}
+                    artikel={artikel}
+                    />
+                )
+              })}
+              {/* <div className="flex">
                 <img
                   className="rounded-lg w-[45rem] h-[12rem] mt-7 ml-7 mb-3 object-cover object-right"
                   src={articel7}
@@ -153,8 +172,8 @@ const Artikel = () => {
                     favorit untuk liburan
                   </p>
                 </div>
-              </div>
-              <div className="flex justify-center">
+              </div> */}
+              {/* <div className="flex justify-center">
                 <span className="h-px  bg-green-600 lg:w-11/12 mb-4 mt-4"></span>
               </div>
               <div className="flex">
@@ -223,7 +242,7 @@ const Artikel = () => {
                     global geopark pertama di Jawa Barat.{" "}
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="w-fit pt-10 pb-14 px-40 bg-green-600 flex-col justify-center items-center text-white rounded-xl mx-auto mb-10">
