@@ -195,11 +195,6 @@ const Detail = () => {
                   </p>
                 </div>
               </div>
-              <div className="">
-                <p className="text-green-800 text-4xl font-semibold">
-                  Komentar
-                </p>
-              </div>
               <div className="flex flex-row mt-3">
                 <img className="w-10 h-8 rounded-full mt-3" src={profile} />
                 <p className="text-base text-dark font-medium ml-3 mt-3">
@@ -218,6 +213,24 @@ const Detail = () => {
                   Post Komentar
                 </button>
               </div>
+              {/* Semua komentar */}
+              <div className="flex">
+                <img className="w-10 h-8 rounded-full mt-3" src={profile} />
+                  <p className="text-base font-bold ml-3 mt-3">
+                    Selly Ardiyati 
+                  </p>
+                  <a className="text-base text-dark font-medium ml-3 mt-3"> 30 jaunari 2019</a>
+              </div>
+                  <div className="flex flex-col mt-2 mb-2">
+                    <p>
+                        Saya sangat berkesan dengan artiekl ini, diakrenakan artiekl yang ada sangat membantu apa yang saya ingin tahu
+                    </p>
+                    <div className="divide-y hover:underline mt-3">
+                      <a href="">
+                        Membalas
+                      </a>
+                    </div>
+                 </div>
             </div>
 
             {/* Taks border */}
@@ -278,7 +291,9 @@ const Detail = () => {
                 />
                 <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
-                    Senyuman Baru dari Geopark Ciletuh
+                    <a href="/artikel/detail">
+                       Senyuman Baru dari Geopark Ciletuh 
+                    </a>
                   </p>
                   <p className="text-sm">Agustus 26, 2022</p>
                 </div>
@@ -288,7 +303,9 @@ const Detail = () => {
                 />
                 <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg flex ">
-                    Pesona Geopark Ciletuh
+                    <a href="/artikel/detail"> 
+                     Pesona Geopark Ciletuh 
+                    </a> 
                   </p>
                   <p className="text-sm">Febuari 20, 2022</p>
                 </div>
@@ -298,7 +315,9 @@ const Detail = () => {
                 />
                 <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
-                    Berpetualang Menyusuri Geopark
+                    <a href="/artikel/detail"> 
+                      Berpetualang Menyusuri Geopark 
+                    </a>
                   </p>
                   <p className="text-sm">November 15, 2022</p>
                 </div>
@@ -308,7 +327,9 @@ const Detail = () => {
                 />
                 <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
-                    Geopark Ciletuh Spektakuler
+                    <a href="/artikel/detail"> 
+                      Geopark Ciletuh Spektakuler
+                    </a>
                   </p>
                   <p className="text-sm">Desember 31, 2022</p>
                 </div>
@@ -318,7 +339,9 @@ const Detail = () => {
                 />
                 <div className="text-green-900 ml-[11rem] mr-[6rem]">
                   <p className="-mt-20 font-bold text-lg">
-                    Mengenal Geopark Ciletuh
+                    <a href="/artikel/detail">
+                      Mengenal Geopark Ciletuh
+                    </a>
                   </p>
                   <p className="mb-4 text-sm">May 02, 2018</p>
                 </div>

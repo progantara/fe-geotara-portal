@@ -135,13 +135,13 @@ const Artikel = () => {
                     <p className="text-sm text-dark mt-2">September 21, 2022</p>
                   </div>
                   <a
-                    href="/Detail"
+                    href="/artikel/detail"
                     className="block mt-1 text-xl font-semibold text-green-900"
                   >
-                    Lagi Viral, yuk Healing ke
+                    Lagi Viral, yuk Healing ke Geopark Ciletuh Sukabumi{" "}
                   </a>
                   <a
-                    href="/Detail"
+                    href="/artikel/detail"
                     className="block mt-1 text-xl font-semibold text-green-900"
                   >
                     Geopark Ciletuh Sukabumi{" "}
@@ -179,7 +179,7 @@ const Artikel = () => {
                     </p>
                   </div>
                   <a
-                    href="/Detail"
+                    href="/artikel/detail"
                     className="block mt-1 text-xl font-semibold text-green-900 mr-[20rem]"
                   >
                     Wajib Melipir: 5 Tempat Wisata Geopark Ciletuh yang Bagus
@@ -213,7 +213,7 @@ const Artikel = () => {
                     </p>
                   </div>
                   <a
-                    href="/Detail"
+                    href="/artikel/detail"
                     className="block mt-1 text-xl font-semibold text-green-900"
                   >
                     Indahnya Air Terjun
