@@ -13,7 +13,7 @@ const BannerFirstArtikel = () => {
     <div className="md:flex">
       <div className="md:shrink-0">
       <img
-        className="rounded-lg brightness-75 h-[40rem] w-[40rem] md:h-[30rem] md:w-[52rem]"
+        className="rounded-lg brightness-75 pl-10 h-[40rem] w-[40rem] md:h-[30rem] md:w-[52rem]"
         src={articel1}
         alt="post-1"
       />
@@ -108,7 +108,7 @@ const Artikel = () => {
             </div>
           </div>
           <div className="">
-            <p className="text-green-900 text-4xl font-semibold mb-4 mt-3">
+            <p className="text-green-900 text-4xl sm:text-left font-semibold mb-4 mt-3">
               Artikel Terbaru
             </p>
             <div className="max-w-4xl border border-green-800 rounded-lg flex flex-col mb-10 p-5">
