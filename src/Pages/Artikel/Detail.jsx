@@ -132,7 +132,6 @@ const Detail = () => {
                   <h1 className="text-xl font-bold text-center mb-2">
                     Artikel Terkait
                   </h1>
-
                   {artikels &&
                     artikels.map((artikel, index) => (
                       <CardTerkait key={index} artikel={artikel} />

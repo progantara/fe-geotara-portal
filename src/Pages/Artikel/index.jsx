@@ -13,7 +13,7 @@ const BannerFirstArtikel = () => {
     <div className="md:flex">
       <div className="md:shrink-0">
       <img
-        className="rounded-lg brightness-75 pl-10 h-[40rem] w-[40rem] md:h-[30rem] md:w-[52rem]"
+        className="rounded-lg brightness-75 pl-10 h-[40rem] w-[40rem] md:h-[35rem] md:w-[52rem]"
         src={articel1}
         alt="post-1"
       />
