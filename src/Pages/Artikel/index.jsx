@@ -10,12 +10,16 @@ import { Link } from "react-router-dom";
 const BannerFirstArtikel = () => {
   return (
     <Link to="/artikel/detail" className="relative">
+    <div className="md:flex">
+      <div className="md:shrink-0">
       <img
-        className="rounded-lg brightness-75 max-w-xl xl:max-w-4xl"
+        className="rounded-lg brightness-75 h-[20rem] w-[40rem] md:h-[35rem] md:w-[60rem]"
         src={articel1}
         alt="post-1"
       />
-      <div className="absolute bottom-[10%] left-[15%] xl:left-[10%]">
+      </div>
+    </div>
+      <div className="absolute bottom-[10%] left-[3rem] xl:left-[10%]">
         <div className="font-dmserif text-lg xl:text-3xl font-semibold text-white mt-96 -ml-10">
           Keragaman Keindahan Pariwista Indonesia
         </div>
@@ -94,7 +98,7 @@ const Artikel = () => {
             <div className="block">
               <BannerFirstArtikel />
             </div>
-            <div className="block border border-green-800 rounded-lg ml-10 xl:ml-20 p-5 h-full">
+            <div className="block border border-green-800 rounded-lg ml-10 p-5 md:ml-20 md:h-full">
               <h1 className="text-xl font-bold text-center mb-2">
                 Artikel Populer
               </h1>
