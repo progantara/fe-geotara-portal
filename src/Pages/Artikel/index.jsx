@@ -13,7 +13,7 @@ const BannerFirstArtikel = () => {
     <div className="md:flex">
       <div className="md:shrink-0">
       <img
-        className="rounded-lg brightness-75 h-[20rem] w-[40rem] md:h-[35rem] md:w-[58rem]"
+        className="rounded-lg brightness-75 h-[20rem] w-[40rem] md:h-[35rem] md:w-[56rem]"
         src={articel1}
         alt="post-1"
       />
@@ -93,12 +93,12 @@ const Artikel = () => {
   return (
     <>
       <PortalTemplate items={items}>
-        <div className="py-10 px-10 xl:px-20 bg-white">
+        <div className="py-10 px-10 xl:px-20 bg-green-100">
           <div className="flex mb-10">
             <div className="block">
               <BannerFirstArtikel />
             </div>
-            <div className="block border border-green-800 rounded-lg ml-10 p-5 md:ml-20 md:h-full">
+            <div className="block border border-green-800 rounded-lg ml-10 xl:ml-20 p-5 h-full">
               <h1 className="text-xl font-bold text-center mb-2">
                 Artikel Populer
               </h1>
