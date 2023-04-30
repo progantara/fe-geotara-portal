@@ -20,11 +20,11 @@ const BannerFirstArtikel = () => {
       </div>
     </div>
       <div className="absolute bottom-[10%] left-[3rem] xl:left-[10%]">
-        <div className="font-dmserif text-lg xl:text-3xl font-semibold text-white mt-96 -ml-10">
+        <div className="font-dmserif text-lg xl:text-3xl font-semibold text-white mt-96 ml-2">
           Keragaman Keindahan Pariwista Indonesia
         </div>
         <div className="flex flex-row">
-          <p className="text-sm text-white font-base -ml-10">Selly Ardiyati</p>
+          <p className="text-sm text-white font-base ml-2">Selly Ardiyati</p>
           <p className="text-yellow-200 text-2xl ml-2 -mt-2">•</p>
           <p className="text-sm text-white font-base ml-2"> Juni 27, 2019</p>
         </div>
