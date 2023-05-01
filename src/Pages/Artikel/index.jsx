@@ -21,7 +21,7 @@ const BannerFirstArtikel = () => {
             <p className="">Juni 27, 2019</p>
           </div>
         </div>
-        <img src={articel1} alt="" className="rounded-lg object-cover w-full h-full"/>
+        <img src={articel1} alt="" className="rounded-lg object-cover w-[55rem] h-full"/>
       </div>
     </Link>
   );
@@ -55,7 +55,7 @@ const ListPopularArtikel = ({ artikel }) => {
         className="object-cover h-full w-full rounded-lg"
         scr={
           process.env.REACT_APP_API_BASE_URL +
-          '/store/artikel' +
+          `/storage/artikel/` +
           artikel.thumbnail
         }
         alt="post-2"
@@ -70,8 +70,8 @@ const ListPopularArtikel = ({ artikel }) => {
       </div>
     </div>
     </Link>
-  )
-}
+  );
+};
 
 const Artikel = () => {
   const items = [{ label: "Artikel", url: "/artikel" }];
@@ -86,7 +86,7 @@ const Artikel = () => {
 
   return (
     <PortalTemplate items={items}>
-      <section className="p-5 lg:px-32">
+      <section className="p-5 lg:px-32 bg-green-100">
         <div className="flex flex-col gap-5 lg:flex-row">
           <div>
             <BannerFirstArtikel />
@@ -107,11 +107,11 @@ const Artikel = () => {
           </div>
         </div>
       </section>
-      <section className="p-5 lg:px-32">
+      <section className="p-5 lg:px-32 bg-green-100">
         <h2 className="text-2xl font-bold text-primary mb-4">Artikel Terbaru</h2>
-        <div className="flex flex-row gap-5 lg:flex-row">
+        <div className="flex flex-col gap-5 lg:flex-row">
           <div className="w-full border-primary border-2 rounded-lg p-5 lg:basis-2/3">
-            <div className="flex flex-row gap-2 lg:flex-col">
+            <div className="flex flex-col gap-2 lg:flex-col">
               {artikels.map((artikel)=>{
                 return <ArtikelCard key={artikel.id} artikel={artikel} />;
               })}
