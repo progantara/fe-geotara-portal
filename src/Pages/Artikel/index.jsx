@@ -11,7 +11,7 @@ import { BiChevronRight } from "react-icons/bi";
 const BannerFirstArtikel = () => {
   return (
     <Link to="/artike/detail" className="relative">
-      <div className="h-96 w-full overflow-hidden relative lg:basis-2/3">
+      <div className="h-[35rem] w-full overflow-hidden relative lg:basis-2/3">
         <div className="w-full h-full bg-gray-900 absolute opacity-40 rounded-lg"/>
         <div className="absolute text-white bottom-28 left-10 lg:bottom-16">
           <h1 className="text-xl font-bold lg:text-3xl"><a href="/artike/detail">Keragaman Keindahan, Pariwisata Indonesia</a></h1>
@@ -139,7 +139,7 @@ const Artikel = () => {
           </div>
         </div>
       </section>
-      <section className="p-5 lg:px-32">
+      <section className="p-5 lg:px-32 bg-green-100">
         <div className="bg-primary pt-5 pb-10 flex flex-col rounded-xl justify-center items-center gap-5 lg:w-1/2 lg:mx-auto">
           <h3 className="text-lg text-white">Newsletter</h3>
           <div className="flex flex-row gap-2 justify-center">
