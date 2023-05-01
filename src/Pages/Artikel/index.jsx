@@ -6,7 +6,6 @@ import articel1 from "../../Assets/img/Article-1.jpg";
 import { getAllArtikel } from "../../Services/ArtikelService";
 import ArtikelCard from "../../Component/Card/ArtikelCard";
 import { Link } from "react-router-dom";
-import BgHero from "../../Assets/img/hero.jpg";
 import { BiChevronRight } from "react-icons/bi";
 
 const BannerFirstArtikel = () => {
@@ -61,6 +60,13 @@ const ListPopularArtikel = ({ artikel }) => {
         }
         alt="post-2"
         />
+      </div>
+    </div>
+    <div className="ml-3 text-primary">
+      <p className="font-bold text-md">{handleJudul(artikel.judul)}</p>
+      <div className="flex flex-row items-center">
+        <p className="text-yellow-200 text-2xl ml-1 mr-1">•</p>
+        <p className="text-sm">{handleTimestamp(artikel.updated_at)}</p>
       </div>
     </div>
     </Link>
