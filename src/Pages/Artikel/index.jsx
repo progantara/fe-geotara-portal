@@ -111,7 +111,7 @@ const Artikel = () => {
         <h2 className="text-2xl font-bold text-primary mb-4">Artikel Terbaru</h2>
         <div className="flex flex-row gap-5 lg:flex-row">
           <div className="w-full border-primary border-2 rounded-lg p-5 lg:basis-2/3">
-            <div className="flex flex-row gap-2 lg:flex-row">
+            <div className="flex flex-row gap-2 lg:flex-col">
               {artikels.map((artikel)=>{
                 return <ArtikelCard key={artikel.id} artikel={artikel} />;
               })}
