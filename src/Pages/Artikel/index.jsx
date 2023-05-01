@@ -54,7 +54,7 @@ const ListPopularArtikel = ({ artikel }) => {
         <img 
         className="object-cover h-full w-full rounded-lg"
         scr={
-          ProcessingInstruction.env.REACT_APP_API_BASE_URL +
+          process.env.REACT_APP_API_BASE_URL +
           '/store/artikel' +
           artikel.thumbnail
         }
