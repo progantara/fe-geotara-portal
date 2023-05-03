@@ -122,7 +122,7 @@ const Detail = () => {
                       </div>
                       <button type="submit"
                           className="inline-flex items-center py-4 px-8 text-base font-medium text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                          Post comment
+                          Kirim Komentar
                       </button>
                   </form>
                   <article className="p-6 mb-6 text-bas rounded-lg dark:bg-gray-900">
