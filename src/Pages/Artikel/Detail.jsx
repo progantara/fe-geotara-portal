@@ -136,9 +136,7 @@ const Detail = () => {
                                   title="February 8th, 2022">Feb. 8, 2022</time></p>
                       </div>
                     </footer>
-                      <p className="text-black dark:text-gray-400">Very straight-to-point article. Really worth time reading. Thank you! But tools are just the
-                          instruments for the UX designers. The knowledge of the design tools are as important as the
-                          creation of the design strategy.</p>
+                      <p className="text-black dark:text-gray-400">Dalam keseluruhan, wisata ke Pantai Pangandaran adalah pengalaman yang tidak boleh dilewatkan. Kita dapat menikmati keindahan alam yang menakjubkan dan belajar tentang budaya lokal, sambil tetap menjaga kelestarian lingkungan dan kebudayaan setempat.</p>
                 </article>
                 </div>
             </div>
