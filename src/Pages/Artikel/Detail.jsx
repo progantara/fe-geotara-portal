@@ -117,7 +117,7 @@ const Detail = () => {
                   <form className="mb-6">
                       <div className="py-2 px-4 mb-6 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                           <textarea id="comment" rows="6"
-                              className="w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                              className="w-full text-base text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                               placeholder="Berikan Komentar Anda......." required></textarea>
                       </div>
                       <button type="submit"
