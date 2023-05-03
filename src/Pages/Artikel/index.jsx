@@ -23,7 +23,7 @@ const BannerFirstArtikel = () => {
 						<p className="">Juni 27, 2019</p>
 					</div>
 				</div>
-				<img src={articel1} alt="" className="rounded-lg object-cover w-[55rem] h-full" />
+				<img src={articel1} alt="" className="rounded-lg object-cover w-full lg:w-[55rem] h-full" />
 			</div>
 		</Link>
 	);
@@ -48,7 +48,7 @@ const ListPopularArtikel = ({ artikel }) => {
 
 	return (
 		<Link to={'/artikel/detail/' + artikel._id} className="flex items-center p-2 mb-2 hover:bg-white">
-			<div className="flex-wrap felx">
+			<div className="flex flex-wrap">
 				<div className="w-32 h-20">
 					<img
 						className="object-cover w-full h-full rounded-lg"
@@ -144,11 +144,11 @@ const Artikel = () => {
 			<section className="p-5 lg:px-32 bg-green-100SA">
 				<div className="flex flex-col items-center justify-center gap-5 pt-5 pb-10 bg-primary rounded-xl lg:w-1/2 lg:mx-auto">
 					<h3 className="text-lg text-white">Newsletter</h3>
-					<div className="flex flex-row justify-center gap-2">
+					<div className="flex flex-col justify-center gap-2 lg:flex-row">
 						<input
 							type="text"
 							placeholder="Alamat Email"
-							className="block w-56 text-gray-900 border border-gray-300 rounded-lg h-14 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 lg:w-96"
+							className="block w-56 text-gray-900 border border-gray-300 rounded-lg lg:h-14 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 lg:w-96"
 						/>
 						<button className="px-4 py-3 text-sm font-semibold text-green-900 bg-yellow-300 rounded-lg hover:bg-yellow-400 text-dark">
 							Subscribe
