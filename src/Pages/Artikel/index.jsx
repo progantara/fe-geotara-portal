@@ -10,7 +10,7 @@ import { BiChevronRight } from "react-icons/bi";
 
 const BannerFirstArtikel = () => {
   return (
-    <Link to="/artike/detail" className="relative">
+    <Link to="/artikel/detail/" className="relative">
       <div className="h-[35rem] w-full overflow-hidden relative lg:basis-2/3">
         <div className="w-full h-full bg-gray-900 absolute opacity-40 rounded-lg"/>
         <div className="absolute text-white bottom-28 left-10 lg:bottom-16">
