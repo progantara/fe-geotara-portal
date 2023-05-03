@@ -78,7 +78,7 @@ const Detail = () => {
             <h1 className="text-green-900 text-3xl font-bold">
               {artikel.judul}
             </h1>
-            <div className="flex items-center">
+            <div className="flex items-center pt-3">
               <img
                 src={profile}
                 alt="profile"
@@ -107,10 +107,43 @@ const Detail = () => {
               </div>
               <div id="content" className="mt-10">
                 <div dangerouslySetInnerHTML={{ __html: artikel.content }} />
+              <hr class="h-px my-8 bg-gray-700 border-0 dark:bg-gray-700"></hr>
               </div>
+              {/* Komentar */}
+                <div className="max-w-1xl mx-auto">
+                  <div className="flex justify-between items-center mb-6">
+                    <h2  className="text-lg lg:text-2xl font-bold text-green-900">Komentar</h2>
+                  </div>
+                  <form className="mb-6">
+                      <div className="py-2 px-4 mb-6 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                          <textarea id="comment" rows="6"
+                              className="w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                              placeholder="Berikan Komentar Anda......." required></textarea>
+                      </div>
+                      <button type="submit"
+                          className="inline-flex items-center py-4 px-8 text-base font-medium text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                          Post comment
+                      </button>
+                  </form>
+                  <article className="p-6 mb-6 text-bas rounded-lg dark:bg-gray-900">
+                    <footer className="flex justify-between items-center mb-2">
+                      <div className="flex items-center">
+                          <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
+                                  class="mr-2 w-6 h-6 rounded-full"
+                                  src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                  alt="Michael Gough"/>Michael Gough</p>
+                          <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
+                                  title="February 8th, 2022">Feb. 8, 2022</time></p>
+                      </div>
+                    </footer>
+                      <p className="text-black dark:text-gray-400">Very straight-to-point article. Really worth time reading. Thank you! But tools are just the
+                          instruments for the UX designers. The knowledge of the design tools are as important as the
+                          creation of the design strategy.</p>
+                </article>
+                </div>
             </div>
             <div className="w-2/6">
-              <div className="p-5">
+              <div className="pl-5">
                 <div
                   id="tag"
                   className="border border-green-800 rounded-lg p-5 h-full"

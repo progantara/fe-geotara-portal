@@ -139,7 +139,7 @@ const Artikel = () => {
           </div>
         </div>
       </section>
-      <section className="p-5 lg:px-32 bg-green-100">
+      <section className="p-5 lg:px-32 bg-green-100SA">
         <div className="bg-primary pt-5 pb-10 flex flex-col rounded-xl justify-center items-center gap-5 lg:w-1/2 lg:mx-auto">
           <h3 className="text-lg text-white">Newsletter</h3>
           <div className="flex flex-row gap-2 justify-center">
