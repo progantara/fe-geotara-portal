@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen and (max-width: 767px) {
+	#navbar-tour {
+		display: none;
+	}
+}
+
 @font-face {
 	font-family: 'DMSans'; /*Can be any text*/
 	src: local('DMSans-Regular'), url('./Assets/Fonts/DMSans-Regular.ttf') format('truetype');

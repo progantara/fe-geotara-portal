@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import Logo from '../../Assets/img/logo.png'
+import Logo from '../../Assets/img/logo.png';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
-
 	const [isNavbarActive, setIsNavbarActive] = useState(false);
 	const [isNavMobile, setIsNavMobile] = useState(false);
 
-  const toggleClass = () => {
-    setIsNavbarActive(!isNavbarActive);
-  };
+	const toggleClass = () => {
+		setIsNavbarActive(!isNavbarActive);
+	};
 
-  const toggleClassMobile = () => {
-    setIsNavMobile(!isNavMobile);
-  };
+	const toggleClassMobile = () => {
+		setIsNavMobile(!isNavMobile);
+	};
 
 	return (
 		<>
@@ -83,45 +82,40 @@ const Navbar = () => {
 					{/* Login */}
 					<Link
 						to="/login"
-						className="hidden md:block focus:outline-none shadow-lg text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+						className="hidden md:block focus:outline-none shadow-lg text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+					>
 						Login
 					</Link>
 
 					{/* Hamburger */}
 					<div onClick={toggleClassMobile} className="md:hidden text-primary">
-						<GiHamburgerMenu className='text-primary'></GiHamburgerMenu>
+						<GiHamburgerMenu className="text-primary"></GiHamburgerMenu>
 					</div>
-
 				</div>
 			</nav>
 
 			{/* Navbar Mobile */}
 			<div className={`${isNavMobile ? 'block' : 'hidden'} absolute bg-primary w-full shadow-lg z-[9999]`}>
-				<ul className='flex flex-col py-8'>
+				<ul className="flex flex-col py-8">
 					<li>
-						<Link
-							to="/virtual-tour"
-							className="text-base text-white py-2 mx-8 flex"
-							aria-current="page">
+						<Link to="/virtual-tour" className="text-base text-white py-2 mx-8 flex" aria-current="page">
 							Virtual Tour
 						</Link>
 					</li>
 					<li>
-						<Link
-							to="/artikel"
-							className="text-base text-white py-2 mx-8 flex"
-							aria-current="page">
+						<Link to="/artikel" className="text-base text-white py-2 mx-8 flex" aria-current="page">
 							Artikel
 						</Link>
 					</li>
 					<li key={3}>
-						<p className='text-base text-white pt-2 mx-8 flex'>Rencanakan Perjalanan Anda</p>
+						<p className="text-base text-white pt-2 mx-8 flex">Rencanakan Perjalanan Anda</p>
 						<ul className="flex flex-col py-2 mx-8 font-normal text-white rounded">
 							<li>
 								<Link
 									to="/accomodation"
 									className="text-white py-1 mx-8 flex"
-									aria-current="page">
+									aria-current="page"
+								>
 									Penginapan
 								</Link>
 							</li>
@@ -129,7 +123,8 @@ const Navbar = () => {
 								<Link
 									to="/tour-travel"
 									className="text-white py-1 mx-8 flex"
-									aria-current="page">
+									aria-current="page"
+								>
 									Tour & Travel
 								</Link>
 							</li>
@@ -137,7 +132,8 @@ const Navbar = () => {
 								<Link
 									to="/merchant-sourvenir"
 									className="text-white py-1 mx-8 flex"
-									aria-current="page">
+									aria-current="page"
+								>
 									Merchant & Souveniers
 								</Link>
 							</li>
@@ -145,7 +141,8 @@ const Navbar = () => {
 								<Link
 									to="/restaurant"
 									className="text-white py-1 mx-8 flex"
-									aria-current="page">
+									aria-current="page"
+								>
 									Restoran
 								</Link>
 							</li>
@@ -153,24 +150,20 @@ const Navbar = () => {
 								<Link
 									to="/attraction"
 									className="text-white py-1 mx-8 flex"
-									aria-current="page">
+									aria-current="page"
+								>
 									Atraksi
 								</Link>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<Link
-							to="/event"
-							className="text-base text-white py-2 mx-8 flex"
-							aria-current="page">
+						<Link to="/event" className="text-base text-white py-2 mx-8 flex" aria-current="page">
 							Event
 						</Link>
 					</li>
 					<li>
-						<Link
-							to="/login"
-							className="text-base bg-white text-primary py-2 mx-8 mt-5 flex justify-center rounded">
+						<Link to="/login" className="text-base bg-white text-primary py-2 mx-8 mt-5 flex justify-center rounded">
 							Login
 						</Link>
 					</li>
@@ -179,37 +172,27 @@ const Navbar = () => {
 
 			<ul className={`${isNavbarActive ? 'block' : 'hidden'} bg-white shadow-2xl py-2 absolute z-50 left-[50%] text-sm text-primary dark:text-gray-400 rounded xl:text-base`}>
 				<li key={1}>
-					<Link
-						to="/accomodation"
-						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
+					<Link to="/accomodation" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Penginapan
 					</Link>
 				</li>
 				<li key={2}>
-					<Link
-						to="/tour-travel"
-						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
+					<Link to="/tour-travel" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Tour & Travel
 					</Link>
 				</li>
 				<li key={3}>
-					<Link
-						to="/merchant-sourvenir"
-						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
+					<Link to="/merchant-sourvenir" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Merchant & Souveniers
 					</Link>
 				</li>
 				<li key={4}>
-					<Link
-						to="/restaurant"
-						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
+					<Link to="/restaurant" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Restoran
 					</Link>
 				</li>
 				<li key={5}>
-					<Link
-						to="/attraction"
-						className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
+					<Link to="/attraction" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">
 						Atraksi
 					</Link>
 				</li>
