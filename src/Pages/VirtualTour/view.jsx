@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Pannellum } from "pannellum-react";
 
 //image
@@ -10,21 +10,24 @@ const View = () => {
   let { id } = useParams();
   const [wisata, setWisata] = useState([]);
 
-
   useEffect(() => {
     getOneWisata(id).then((res) => {
-      setWisata(res.data.data);      
+      setWisata(res.data.data);
     });
   }, []);
 
   return (
     <>
       {/*360 */}
-      <div>
+      <div className="relative">
         <Pannellum
           width="100%"
-          height="760px"
-          image={process.env.REACT_APP_API_BASE_URL+'/storage/wisata/'+wisata.file360}
+          height="100vh"
+          image={
+            process.env.REACT_APP_API_BASE_URL +
+            "/storage/wisata/" +
+            wisata.file360
+          }
           pitch={0}
           yaw={180}
           hfov={200}
@@ -39,8 +42,21 @@ const View = () => {
           onLoad={() => {
             console.log("panorama loaded");
           }}
-        >
-        </Pannellum>
+        ></Pannellum>
+        <div className="absolute bottom-0 left-0 right-0 text-center mb-3 mx-auto">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => window.history.back()}
+          >
+            Kembali
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4"
+            onClick={() => window.open(process.env.REACT_APP_API_BASE_URL + "/wisata-cardboard/" + wisata._id)}
+          >
+            Cardboard VR
+          </button>          
+        </div>
       </div>
     </>
   );
